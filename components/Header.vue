@@ -97,6 +97,24 @@
                     <div class="flex items-center">
                       <div class="bg-blue-500 p-1 mr-2 rounded-md">
                         <Icon
+                          name="streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit"
+                          class="cursor-pointer text-white text-2xl"
+                        />
+                      </div>
+                      <div>Business & Marketing</div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                        <Icon
+                          name="ph:code-bold"
+                          class="cursor-pointer text-white text-2xl"
+                        />
+                      </div>
+                      <div>IT & Development</div>
+                    </div>
+                    <div class="flex items-center">
+                      <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                        <Icon
                           name="lucide:languages"
                           class="cursor-pointer text-white text-2xl"
                         />
