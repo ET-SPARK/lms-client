@@ -1,17 +1,113 @@
 <template>
   <Header />
   <div class="flex justify-between ml-20 mr-20 mt-10">
-    <section>1</section>
-    <section class="flex1 bg-gray-200 w-[350px]">
+    <section class="flex1">
+      <div>
+        <p class="text-4xl font-bold">
+          Learn English: Upgrade Your Speaking and Listening Skill
+        </p>
+      </div>
+      <div class="flex items-center">
+        <div class="mt-4">
+          <img src="/images/profile.jpg" class="w-20 h-20 rounded-full" />
+        </div>
+        <NuxtLink to="#"
+          ><div class="ml-5 text-gray-500 hover:text-blue-500">
+            A course by <br />
+            Abbeb
+          </div></NuxtLink
+        >
+      </div>
+      <div>1</div>
+      <div class="flex1 bg-gray-200 w-[750px] rounded-l">
+        <div class="flex justify-between items-center p-4">
+          <div>
+            <p class="text-2xl font-bold">About the Course</p>
+          </div>
+          <div
+            class="border border-blue-500 hover:border-blue-600 hover:bg-blue-100 p-2 rounded-xl"
+          >
+            <Icon name="ic:twotone-share" class="text-blue-600 text-xl" />
+            <button class="pl-2 text-lg text-blue-600">share</button>
+          </div>
+        </div>
+        <div class="p-4 text-justify">
+          <p class="mt-2">
+            Are you struggling to communicate in English? We understand that it
+            can be difficult to speak naturally in a new language, which is why
+            we have developed an online course to help you master the art of
+            conversation in English. Our course is designed for non-English
+            speakers who want to expand their vocabulary and communicate
+            effectively in everyday situations, whether it be making friends,
+            conducting business, watching English films, or traveling to an
+            English-speaking country.
+          </p>
+          <p class="mt-2">
+            As the world's universal language, having a basic understanding of
+            English is essential for functioning in most countries. However, our
+            course will take your English skills to the next level, enabling you
+            to communicate like a native and express even your most complex
+            thoughts. Our comprehensive curriculum covers all aspects of the
+            English language, including grammar, vocabulary, and pronunciation,
+            with a focus on real-life scenarios.
+          </p>
+          <p class="mt-2">
+            Upon completion of our course, you'll be able to navigate through
+            any English-speaking country with ease, connect with locals and
+            other travelers, conduct business, enroll in classes, and so much
+            more. We strive to make our course accessible and easy to understand
+            for non-English speakers, so whether you're a beginner or an
+            intermediate speaker, our course will help you achieve your goals.
+          </p>
+          <p class="mt-2 text-2xl font-bold">Requirements</p>
+          <ul class="mt-2 list-disc ml-10">
+            <li>Basic understanding of computers and the internet</li>
+            <li>
+              Familiarity with social media platforms (helpful, but not
+              required)
+            </li>
+            <li>
+              Access to a computer or mobile device with a stable internet
+              connection
+            </li>
+          </ul>
+          <p class="mt-2 text-2xl font-bold">Who is this course for?</p>
+          <ul class="mt-2 list-disc ml-10">
+            <li>
+              Non-native English speakers who want to improve their fluency and
+              pronunciation
+            </li>
+            <li>
+              English language learners who want to improve their listening
+              comprehension
+            </li>
+            <li>
+              Business professionals who want to improve their English
+              communication skills
+            </li>
+            <li>
+              Students who need to pass an English proficiency test for academic
+              or professional purposes
+            </li>
+            <li>
+              Anyone who wants to gain confidence speaking and listening in
+              English.
+            </li>
+          </ul>
+        </div>
+        <div>1</div>
+      </div>
+    </section>
+    <section class="flex1 bg-gray-200 w-[350px] rounded-l h-[530px]">
       <div class="text-center border-b-2 border-gray-100 p-4">
-        <p class="mt-2">Ready to become web developer?</p>
+        <p class="mt-2">Ready to learn English?</p>
         <button
           class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 mt-2 w-[320px] rounded-l"
         >
           Register Now
         </button>
       </div>
-      <div class="flex1 ml-4">
+      <div class="flex1 ml-4 mb-4">
         <div class="p-2">
           <Icon
             name="carbon:skill-level-basic"
