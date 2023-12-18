@@ -108,15 +108,19 @@
         <div class="p-4">
           <p class="font-bold text-2xl">What you will learn</p>
           <div class="m-5">
-            <div class="p-4 mt-4 bg-gray-100" @click="toggleLesson">
-              <button class="text-xl">
+            <div class="p-4 mt-4 bg-gray-100">
+              <button class="text-xl" @click="toggleLesson">
                 <div class="flex justify-between w-[650px]">
                   <div>
                     <span class="font-bold">Contents</span>
                   </div>
                   <div>
                     <Icon
-                      name="material-symbols:arrow-drop-down"
+                      :name="
+                        showLesson
+                          ? 'material-symbols:arrow-drop-up'
+                          : 'material-symbols:arrow-drop-down'
+                      "
                       class="cursor-pointer"
                       color="black"
                     />
