@@ -11,7 +11,9 @@
           </NuxtLink>
         </div>
         <div class="flex justify-between">
-          <NuxtLink to="'/'"><div class="mr-3">Contact Us</div></NuxtLink>
+          <NuxtLink to="/content/contact"
+            ><div class="mr-3">Contact Us</div></NuxtLink
+          >
           <NuxtLink to="'/'"><div class="mr-3">FAQ</div></NuxtLink>
           <NuxtLink to="'/'"><div class="mr-3">Terms of Service</div></NuxtLink>
           <NuxtLink to="'/'"><div class="mr-3">Privacy Policy</div></NuxtLink>
