@@ -226,7 +226,7 @@
                     <div>My course</div>
                   </div>
                 </NuxtLink>
-                <NuxtLink to="/">
+                <NuxtLink to="/account/profile">
                   <div class="flex items-center mb-2">
                     <div>
                       <Icon
