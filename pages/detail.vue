@@ -37,8 +37,10 @@
           <div
             class="border border-blue-500 hover:border-blue-600 hover:bg-blue-100 p-2 rounded-xl"
           >
-            <Icon name="ic:twotone-share" class="text-blue-600 text-xl" />
-            <button class="pl-2 text-lg text-blue-600">share</button>
+            <button class="text-lg text-blue-600">
+              <Icon name="ic:twotone-share" class="text-blue-600 text-xl" />
+              share
+            </button>
           </div>
         </div>
         <div class="p-4 text-justify">
