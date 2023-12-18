@@ -14,7 +14,7 @@
         <NuxtLink to="#"
           ><div class="ml-5 text-gray-500 hover:text-blue-500">
             A course by <br />
-            Abbeb
+            Abebe
           </div></NuxtLink
         >
       </div>
@@ -95,7 +95,136 @@
             </li>
           </ul>
         </div>
-        <div>1</div>
+        <div class="p-4">
+          <p class="font-bold text-2xl">What you will learn</p>
+          <div class="m-5">
+            <div class="p-4 mt-4 bg-gray-100" @click="toggleLesson">
+              <button class="text-xl">
+                <div class="flex justify-between w-[650px]">
+                  <div>
+                    <span class="font-bold">Contents</span>
+                  </div>
+                  <div>
+                    <Icon
+                      name="material-symbols:arrow-drop-down"
+                      class="cursor-pointer"
+                      color="black"
+                    />
+                  </div>
+                </div>
+              </button>
+              <div v-if="showLesson" class="p-4">
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">Lesson 1 : Why Learn English?</div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 2 : English Language Basics Part 1
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 3 : English Language Basics Part 2
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 4 : How to make business phone calls in English
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 5 : How to introduce yourself and others in English
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 6 : How to make small talk in English
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 7 : How to ask for and give directions in English
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 8 : How to order food in English
+                  </div>
+                </div>
+                <div class="p-1 flex items-center">
+                  <div>
+                    <Icon
+                      name="material-symbols:play-arrow-outline"
+                      class="cursor-pointer text-xl"
+                      color="black"
+                    />
+                  </div>
+                  <div class="ml-2">
+                    Lesson 9 : How to talk about hobbies and interests in
+                    English
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
     <section class="flex1 bg-gray-200 w-[350px] rounded-l h-[530px]">
@@ -185,3 +314,19 @@
   <About />
   <Footer />
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      showLesson: false,
+    };
+  },
+  methods: {
+    toggleLesson() {
+      // Toggle the value of showLesson when the button is pressed
+      this.showLesson = !this.showLesson;
+    },
+  },
+};
+</script>
