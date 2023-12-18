@@ -18,7 +18,17 @@
           </div></NuxtLink
         >
       </div>
-      <div>1</div>
+      <div class="mb-6 rounded-xl">
+        <iframe
+          width="750"
+          height="450"
+          src="https://www.youtube.com/embed/yYF2Vf1Gc14?si=o4MaabEp_FWPTcMn"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
       <div class="flex1 bg-gray-200 w-[750px] rounded-l">
         <div class="flex justify-between items-center p-4">
           <div>
