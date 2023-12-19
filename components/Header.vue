@@ -7,7 +7,7 @@
           <NuxtLink to="/" class="hover:text-gray-300">
             <img
               class="w-20 h-20 cursor-pointer rounded-full"
-              src="https://static.vecteezy.com/system/resources/previews/009/123/201/non_2x/lms-logo-lms-letter-lms-letter-logo-design-initials-lms-logo-linked-with-circle-and-uppercase-monogram-logo-lms-typography-for-technology-business-and-real-estate-brand-vector.jpg"
+              src="../static/homeimage/andinet_logo.jpg"
             />
           </NuxtLink>
         </div>
