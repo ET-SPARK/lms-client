@@ -1,4 +1,4 @@
-# Andinet LMS
+# Andnet LMS
 
 Web app for Andnet LMS built with [nuxt3](https://nuxt.com/)
 
