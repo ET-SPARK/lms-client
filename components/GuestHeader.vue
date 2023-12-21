@@ -186,119 +186,28 @@
           />
         </div>
       </div>
-      <!-- Navigation header sections -->
-      <nav
-        class="flex text-[14px] font-semibold text-gray-300 w-[300px] justify-around items-center"
-      >
-        <NuxtLink to="/">
-          <div>Assignments</div>
-        </NuxtLink>
-        <NuxtLink to="/">
-          <div>Discussions</div>
-        </NuxtLink>
-      </nav>
       <!-- right side header sections -->
       <div class="flex">
         <!-- profile part -->
-        <div class="text-right flex items-center">
-          <div class="flex items-center">
-            <p class="text-[14px]">hello Abebe</p>
-            <div @click="profile" class="relative">
-              <Icon
-                name="material-symbols:account-circle-outline"
-                class="cursor-pointer ml-2 text-4xl rounded-sm"
-                color="white"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- profile menu -->
-        <div
-          v-show="isProfileVisible"
-          class="absolute top-[60px] right-8 bg-white text-black p-4 text-xl w-[200px] rounded-xl shadow-md"
-        >
-          <div class="flex1 items-end">
-            <NuxtLink to="/">
-              <div
-                class="flex items-center mb-2 border-b-2 border-gray-300 pb-4"
-              >
-                <div>
-                  <Icon
-                    name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
-                    class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
-                    color="black"
-                  />
-                </div>
-                <div>My course</div>
-              </div>
-            </NuxtLink>
-            <NuxtLink to="/">
-              <div class="flex items-center mb-2">
-                <div>
-                  <Icon
-                    name="material-symbols:person-outline"
-                    class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                    color="black"
-                  />
-                </div>
-                <div>Profile</div>
-              </div>
-            </NuxtLink>
-            <NuxtLink to="/">
-              <div class="flex items-center mb-2">
-                <div>
-                  <Icon
-                    name="material-symbols:circle-notifications-outline"
-                    class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                    color="black"
-                  />
-                </div>
-                <div>Notifications</div>
-              </div>
-            </NuxtLink>
-            <NuxtLink to="/">
-              <div class="flex items-center mb-2">
-                <div>
-                  <Icon
-                    name="material-symbols:android-messages-outline"
-                    class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                    color="black"
-                  />
-                </div>
-                <div>Messages</div>
-              </div>
-            </NuxtLink>
-            <NuxtLink to="/">
-              <div class="flex items-center mb-2">
-                <div>
-                  <Icon
-                    name="material-symbols:settings"
-                    class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                    color="black"
-                  />
-                </div>
-                <div>Settings</div>
-              </div>
-            </NuxtLink>
-            <NuxtLink to="/">
-              <div class="flex items-center mb-2">
-                <div>
-                  <Icon
-                    name="clarity:sign-out-line"
-                    class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                    color="black"
-                  />
-                </div>
-                <div>Log out</div>
-              </div>
-            </NuxtLink>
-          </div>
-        </div>
+        <NuxtLink to="/">
+          <button
+            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
+          >
+            Sign Up
+          </button>
+        </NuxtLink>
+        <NuxtLink to="/">
+          <button
+            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 rounded-full ml-6"
+          >
+            Log in
+          </button>
+        </NuxtLink>
         <!-- used to change the language -->
         <div>
           <button
             @click="toggleStateLanguage()"
-            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-6"
+            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-10"
           >
             {{ language }}
           </button>
@@ -316,11 +225,6 @@ const isProfileVisible = ref(false);
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
-};
-
-// function to handle Profile dropdown
-const profile = () => {
-  isProfileVisible.value = !isProfileVisible.value;
 };
 
 // function to handle Course dropdown
