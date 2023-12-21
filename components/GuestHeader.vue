@@ -226,6 +226,25 @@
             {{ language }}
           </button>
         </div>
+        <div>
+          <button
+            @click="toggleStateTheme()"
+            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-5"
+          >
+            <Icon
+              v-if="!isDarkTheme"
+              name="ph:sun-dim-light"
+              class="cursor-pointer text-xl"
+              color="white"
+            />
+            <Icon
+              v-else
+              name="ph:moon-stars-thin"
+              class="cursor-pointer text-xl"
+              color="white"
+            />
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -234,7 +253,7 @@
 <script setup>
 const language = ref("አማ");
 const isDropdownVisible = ref(false);
-const isProfileVisible = ref(false);
+const isDarkTheme = ref(false);
 
 // function to handle language change
 const toggleStateLanguage = () => {
@@ -244,5 +263,10 @@ const toggleStateLanguage = () => {
 // function to handle Course dropdown
 const toggleDropdown = () => {
   isDropdownVisible.value = !isDropdownVisible.value;
+};
+
+// function to handle theme change
+const toggleStateTheme = () => {
+  isDarkTheme.value = !isDarkTheme.value;
 };
 </script>
