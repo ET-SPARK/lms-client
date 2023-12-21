@@ -1,6 +1,24 @@
 <template>
   <header class="bg-gray-800 text-white p-2 sticky top-0 shadow-xl z-50">
-    <div class="container mx-auto flex items-center justify-between">
+    <div
+      class="container mx-auto flex flex-col-reverse sm:flex-row items-center justify-between"
+    >
+      <!-- navigation for mobile device -->
+      <div class="xl:hidden mt-2 mb-2" v-show="isNav">
+        <nav
+          class="text-[14px] font-semibold text-gray-300 w-[200px] flex justify-between"
+        >
+          <NuxtLink to="/">
+            <div>Home</div>
+          </NuxtLink>
+          <NuxtLink to="/">
+            <div>About</div>
+          </NuxtLink>
+          <NuxtLink to="/">
+            <div>Contact</div>
+          </NuxtLink>
+        </nav>
+      </div>
       <!-- Left side header sections -->
       <div class="text-2xl font-bold flex items-center">
         <div>
@@ -12,7 +30,7 @@
           </NuxtLink>
         </div>
         <!-- on click show list of course  -->
-        <div class="relative flex text-[14px] font-semibold ml-5 text-gray-300">
+        <div class="relative flex text-[14px] font-semibold ml-2 text-gray-300">
           <div class="cursor-pointer" @click="toggleDropdown">
             Courses
             <Icon
@@ -24,7 +42,7 @@
           <!-- all Categories course  -->
           <div
             v-show="isDropdownVisible"
-            class="absolute bg-white text-black p-4 text-sm w-[600px] top-[50px] rounded-xl shadow-md"
+            class="absolute bg-white text-black p-4 text-sm xl:w-[600px] sm: w-[320px] top-[50px] rounded-xl shadow-md"
           >
             <div class="flex1">
               <div class="flex justify-between mb-5">
@@ -173,22 +191,30 @@
           </div>
         </div>
         <!-- serach input box -->
-        <div class="ml-5 flex items-center relative">
+        <div class="ml-2 flex items-center relative">
           <input
             type="text"
             placeholder="What do you want to learn?"
-            class="bg-gray-700 text-white font-light text-xs px-4 w-80 py-2 rounded-sm focus:outline-none focus:shadow-outline"
+            class="bg-gray-700 text-white font-light text-xs px-4 xl:w-80 sm: w-[200px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
           />
           <Icon
             name="material-symbols:search"
-            class="absolute right-2 cursor-pointer"
+            class="absolute right-2 cursor-pointer sm:"
+            color="white"
+          />
+        </div>
+        <!-- menu for navigation -->
+        <div class="block xl:hidden" @click="showNav">
+          <Icon
+            name="material-symbols:menu"
+            class="ml-2 cursor-pointer text-4xl"
             color="white"
           />
         </div>
       </div>
       <!-- Navigation header sections -->
       <nav
-        class="flex text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center"
+        class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center hidden xl:flex"
       >
         <NuxtLink to="/">
           <div>Home</div>
@@ -201,7 +227,7 @@
         </NuxtLink>
       </nav>
       <!-- right side header sections -->
-      <div class="flex">
+      <div class="flex mb-1">
         <!-- profile part -->
         <NuxtLink to="/">
           <button
@@ -254,6 +280,7 @@
 const language = ref("አማ");
 const isDropdownVisible = ref(false);
 const isDarkTheme = ref(false);
+const isNav = ref(false);
 
 // function to handle language change
 const toggleStateLanguage = () => {
@@ -267,6 +294,11 @@ const toggleDropdown = () => {
 
 // function to handle theme change
 const toggleStateTheme = () => {
-  isDarkTheme.value = !isDarkTheme.value;
+  isDarkTheme.value = isDarkTheme.value === false ? true : false;
+};
+
+// function to handle navigation visiblity in mobile device
+const showNav = () => {
+  isNav.value = !isNav.value;
 };
 </script>
