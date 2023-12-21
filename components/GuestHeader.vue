@@ -4,9 +4,12 @@
       class="container mx-auto flex flex-col-reverse sm:flex-row items-center justify-between"
     >
       <!-- navigation for mobile device -->
-      <div class="xl:hidden mt-2 mb-2" v-show="isNav">
+      <div
+        class="xl:hidden lg:hidden md:hidden absolute top-[110px] right-2 bg-gray-800 text-black p-4 text-xl w-[100px] rounded-xl shadow-md"
+        v-show="isNav"
+      >
         <nav
-          class="text-[14px] font-semibold text-gray-300 w-[200px] flex justify-between"
+          class="text-[14px] font-semibold text-gray-300 flex-1 justify-between"
         >
           <NuxtLink to="/">
             <div>Home</div>
@@ -19,6 +22,7 @@
           </NuxtLink>
         </nav>
       </div>
+
       <!-- Left side header sections -->
       <div class="text-2xl font-bold flex items-center">
         <div>
@@ -35,7 +39,7 @@
             Courses
             <Icon
               name="material-symbols:arrow-drop-down"
-              class="cursor-pointer text-3xl"
+              class="cursor-pointer text-3xl sm: text-xl"
               color="white"
             />
           </div>
@@ -204,7 +208,7 @@
           />
         </div>
         <!-- menu for navigation -->
-        <div class="block xl:hidden" @click="showNav">
+        <div class="block xl:hidden lg:hidden md:hidden" @click="showNav">
           <Icon
             name="material-symbols:menu"
             class="ml-2 cursor-pointer text-4xl"
@@ -214,7 +218,7 @@
       </div>
       <!-- Navigation header sections -->
       <nav
-        class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center hidden xl:flex"
+        class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center hidden lg:flex xl:flex"
       >
         <NuxtLink to="/">
           <div>Home</div>
