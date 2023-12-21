@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss",'@pinia/nuxt','shadcn-nuxt'],
+  modules: ["@nuxtjs/tailwindcss",'@pinia/nuxt','shadcn-nuxt',"nuxt-icon"],
    shadcn: {
     
     prefix: '',
