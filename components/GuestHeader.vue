@@ -186,6 +186,20 @@
           />
         </div>
       </div>
+      <!-- Navigation header sections -->
+      <nav
+        class="flex text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center"
+      >
+        <NuxtLink to="/">
+          <div>Home</div>
+        </NuxtLink>
+        <NuxtLink to="/">
+          <div>About</div>
+        </NuxtLink>
+        <NuxtLink to="/">
+          <div>Contact</div>
+        </NuxtLink>
+      </nav>
       <!-- right side header sections -->
       <div class="flex">
         <!-- profile part -->

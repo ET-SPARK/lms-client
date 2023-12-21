@@ -188,7 +188,7 @@
       </div>
       <!-- Navigation header sections -->
       <nav
-        class="flex text-[14px] font-semibold text-gray-300 w-[300px] justify-around items-center"
+        class="flex text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center"
       >
         <NuxtLink to="/">
           <div>Assignments</div>
