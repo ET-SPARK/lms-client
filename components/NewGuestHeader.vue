@@ -278,7 +278,7 @@
     </div>
   </header>
   <div
-    class="font-semibold bg-gray-800 items-center text-white p-4"
+    class="font-semibold bg-gray-800 items-center text-white p-4 xl:hidden"
     v-if="isNav"
   >
     <!-- serach box for mobile  -->
