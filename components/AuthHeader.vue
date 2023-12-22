@@ -16,8 +16,10 @@
           <!-- on click show list of course  -->
           <div
             class="xl:flex lg:hidden md:hidden sm: hidden relative flex text-[14px] font-semibold ml-2 text-gray-300"
+            @mouseover="showDropdown"
+            @mouseout="hideDropdown"
           >
-            <div class="cursor-pointer" @click="toggleDropdown">
+            <div class="cursor-pointer py-2" @click="toggleDropdown">
               Courses
               <Icon
                 name="material-symbols:arrow-drop-down"
@@ -28,7 +30,7 @@
             <!-- all Categories course  -->
             <div
               v-show="isDropdownVisible"
-              class="absolute bg-white text-black p-4 text-sm xl:w-[600px] sm: w-[320px] top-[50px] rounded-xl shadow-md"
+              class="absolute bg-white text-black p-4 text-sm xl:w-[600px] sm:w-[320px] top-[50px] rounded-xl shadow-md"
             >
               <div class="flex1">
                 <div class="flex justify-between mb-5">
@@ -561,6 +563,8 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
+
 const language = ref("አማ");
 const isDropdownVisible = ref(false);
 const isDarkTheme = ref(false);
@@ -585,16 +589,26 @@ const toggleDropdown = () => {
 
 // function to handle theme change
 const toggleStateTheme = () => {
-  isDarkTheme.value = isDarkTheme.value === false ? true : false;
+  isDarkTheme.value = !isDarkTheme.value;
 };
 
-// function to handle navigation visiblity menu in mobile device
+// function to handle navigation visibility menu in a mobile device
 const showNav = () => {
   isNav.value = !isNav.value;
 };
 
-//handle course dropdown in mobile and tab screen
+// handle course dropdown in mobile and tab screen
 const toggleDropdownCourese = () => {
   isCourse.value = !isCourse.value;
+};
+
+// mouse hover show course Dropdown
+const showDropdown = () => {
+  isDropdownVisible.value = true;
+};
+
+// mouse hover remove course Dropdown
+const hideDropdown = () => {
+  isDropdownVisible.value = false;
 };
 </script>

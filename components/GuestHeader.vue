@@ -16,8 +16,10 @@
           <!-- on click show list of course  -->
           <div
             class="xl:flex lg:hidden md:hidden sm: hidden relative flex text-[14px] font-semibold ml-2 text-gray-300"
+            @mouseover="showDropdown"
+            @mouseout="hideDropdown"
           >
-            <div class="cursor-pointer" @click="toggleDropdown">
+            <div class="cursor-pointer py-2" @click="toggleDropdown">
               Courses
               <Icon
                 name="material-symbols:arrow-drop-down"
@@ -501,5 +503,15 @@ const showNav = () => {
 //handle course dropdown in mobile and tab screen
 const toggleDropdownCourese = () => {
   isCourse.value = !isCourse.value;
+};
+
+// mouse hover show course Dropdown
+const showDropdown = () => {
+  isDropdownVisible.value = true;
+};
+
+// mouse hover remove course Dropdown
+const hideDropdown = () => {
+  isDropdownVisible.value = false;
 };
 </script>
