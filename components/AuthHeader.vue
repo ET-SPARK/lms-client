@@ -25,7 +25,7 @@
               <Icon
                 v-if="!isDropdownVisible"
                 name="material-symbols:arrow-drop-down"
-                class="cursor-pointer text-3xl sm:text-xl"
+                class="cursor-poi text-3xl sm:text-xl"
                 color="white"
               />
               <Icon
@@ -211,10 +211,14 @@
           class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center flex"
         >
           <NuxtLink to="/">
-            <div>Assignments<sup>0</sup></div>
+            <div>
+              Assignments<sup class="font-bold text-xl text-red-600">0</sup>
+            </div>
           </NuxtLink>
           <NuxtLink to="/">
-            <div>Discussions</div>
+            <div>
+              Discussions<sup class="font-bold text-xl text-red-600">0</sup>
+            </div>
           </NuxtLink>
         </nav>
       </div>
@@ -390,10 +394,14 @@
 
     <!-- navigation  -->
     <NuxtLink to="/">
-      <div class="border-gray-200 border-b-2 py-2">Assignments</div>
+      <div class="border-gray-200 border-b-2 py-2">
+        Assignments<sup class="font-bold text-xl text-red-600">0</sup>
+      </div>
     </NuxtLink>
     <NuxtLink to="/">
-      <div class="border-gray-200 border-b-2 py-2">Discussions</div>
+      <div class="border-gray-200 border-b-2 py-2">
+        Discussions<sup class="font-bold text-xl text-red-600">0</sup>
+      </div>
     </NuxtLink>
 
     <!-- course dropdown -->
