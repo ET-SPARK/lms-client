@@ -14,7 +14,8 @@
             </NuxtLink>
             <div class="ml-4">LMS</div>
           </div>
-          <!-- on click show list of course  -->
+
+          <!-- on hover show list of course  -->
           <div
             class="xl:flex lg:hidden md:hidden sm: hidden relative flex text-[14px] font-semibold ml-2 text-gray-300"
             @mouseover="showDropdown"
@@ -188,6 +189,7 @@
               </div>
             </div>
           </div>
+
           <!-- serach input box -->
           <div
             class="ml-2 flex items-center relative xl:flex lg:hidden md:hidden sm: hidden"

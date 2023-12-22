@@ -15,7 +15,7 @@
             <div class="ml-4">LMS</div>
           </div>
 
-          <!-- on click show list of course  -->
+          <!-- on hover show list of course  -->
           <div
             class="xl:flex lg:hidden md:hidden sm: hidden relative flex text-[14px] font-semibold ml-2 text-gray-300"
             @mouseover="showDropdown"
@@ -229,7 +229,6 @@
       <div>
         <div class="flex mb-1">
           <!-- Auth part -->
-
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
             <NuxtLink to="/">
               <button
