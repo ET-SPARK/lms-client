@@ -4,6 +4,7 @@
       <!-- left side header -->
       <div>
         <div class="text-2xl font-bold flex items-center">
+          <!-- logo -->
           <div class="flex">
             <NuxtLink to="/" class="hover:text-gray-300">
               <img
@@ -13,6 +14,7 @@
             </NuxtLink>
             <div class="ml-4">LMS</div>
           </div>
+
           <!-- on click show list of course  -->
           <div
             class="xl:flex lg:hidden md:hidden sm: hidden relative flex text-[14px] font-semibold ml-2 text-gray-300"
@@ -22,8 +24,15 @@
             <div class="cursor-pointer py-2" @click="toggleDropdown">
               Courses
               <Icon
+                v-if="!isDropdownVisible"
                 name="material-symbols:arrow-drop-down"
-                class="cursor-pointer text-3xl sm: text-xl"
+                class="cursor-pointer text-3xl sm:text-xl"
+                color="white"
+              />
+              <Icon
+                v-if="isDropdownVisible"
+                name="material-symbols:arrow-drop-up"
+                class="cursor-pointer text-3xl sm:text-xl"
                 color="white"
               />
             </div>
@@ -180,6 +189,7 @@
               </div>
             </div>
           </div>
+
           <!-- serach input box -->
           <div
             class="ml-2 flex items-center relative xl:flex lg:hidden md:hidden sm: hidden"
@@ -197,6 +207,7 @@
           </div>
         </div>
       </div>
+
       <!-- navigation part -->
       <div class="xl:flex lg:hidden md:hidden sm: hidden">
         <nav
@@ -218,6 +229,7 @@
       <div>
         <div class="flex mb-1">
           <!-- Auth part -->
+
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
             <NuxtLink to="/">
               <button
@@ -234,7 +246,8 @@
               </button>
             </NuxtLink>
           </div>
-          <!-- used to change the language -->
+
+          <!-- used to change language -->
           <div class="">
             <button
               @click="toggleStateLanguage()"
@@ -243,6 +256,8 @@
               {{ language }}
             </button>
           </div>
+
+          <!-- used to change theme -->
           <div class="">
             <button
               @click="toggleStateTheme()"
@@ -262,7 +277,8 @@
               />
             </button>
           </div>
-          <!-- menu for navigation -->
+
+          <!-- menu navigation for mobile and tab screen -->
           <div class="flex xl:hidden" @click="showNav">
             <Icon
               v-if="isNav"
@@ -282,12 +298,12 @@
     </div>
   </header>
 
-  <!-- mobile dropdown part -->
+  <!-- mobile and tab screen dropdown part -->
   <div
     class="font-semibold bg-gray-800 items-center text-white p-4 xl:hidden"
     v-if="isNav"
   >
-    <!-- serach box for mobile  -->
+    <!-- serach box -->
     <div class="items-center flex mt-5 mb-2 justify-start">
       <input
         type="text"
@@ -304,6 +320,7 @@
       </div>
     </div>
 
+    <!-- navigation links -->
     <NuxtLink to="/">
       <div class="border-gray-200 border-b-2 py-2">Home</div>
     </NuxtLink>
@@ -314,6 +331,7 @@
       <div class="border-gray-200 border-b-2 py-2">Contact</div>
     </NuxtLink>
 
+    <!-- course dropdown -->
     <div
       class="flex border-gray-200 border-b-2 py-2 cursor-pointer"
       @click="toggleDropdownCourese"
@@ -334,6 +352,7 @@
         />
       </div>
     </div>
+    <!-- show all Categories course  -->
     <div class="flex-1 font-light mt-4" v-if="isCourse">
       <div class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4">
         <div class="flex items-center">
@@ -495,7 +514,7 @@ const toggleStateTheme = () => {
   isDarkTheme.value = isDarkTheme.value === false ? true : false;
 };
 
-// function to handle navigation visiblity menu in mobile device
+// function to handle navigation visiblity menu in mobile & tab device
 const showNav = () => {
   isNav.value = !isNav.value;
 };

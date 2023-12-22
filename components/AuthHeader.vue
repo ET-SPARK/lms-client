@@ -4,6 +4,7 @@
       <!-- left side header -->
       <div>
         <div class="text-2xl font-bold flex items-center">
+          <!-- logo -->
           <div class="flex">
             <NuxtLink to="/" class="hover:text-gray-300">
               <img
@@ -22,8 +23,15 @@
             <div class="cursor-pointer py-2" @click="toggleDropdown">
               Courses
               <Icon
+                v-if="!isDropdownVisible"
                 name="material-symbols:arrow-drop-down"
-                class="cursor-pointer text-3xl sm: text-xl"
+                class="cursor-pointer text-3xl sm:text-xl"
+                color="white"
+              />
+              <Icon
+                v-if="isDropdownVisible"
+                name="material-symbols:arrow-drop-up"
+                class="cursor-pointer text-3xl sm:text-xl"
                 color="white"
               />
             </div>
@@ -203,7 +211,7 @@
           class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center flex"
         >
           <NuxtLink to="/">
-            <div>Assignments</div>
+            <div>Assignments<sup>0</sup></div>
           </NuxtLink>
           <NuxtLink to="/">
             <div>Discussions</div>
@@ -257,7 +265,7 @@
               </div>
             </div>
           </div>
-          <!-- profile menu -->
+          <!-- profile menu dropdown -->
           <div
             v-show="isProfileVisible"
             class="absolute top-[60px] right-8 bg-white text-black p-4 text-xl w-[200px] rounded-xl shadow-md"
@@ -339,8 +347,7 @@
               </NuxtLink>
             </div>
           </div>
-
-          <!-- menu for navigation -->
+          <!-- menu for navigation for mobile and tab screen -->
           <div class="flex xl:hidden" @click="showNav">
             <Icon
               v-if="isNav"
@@ -360,12 +367,12 @@
     </div>
   </header>
 
-  <!-- mobile dropdown part -->
+  <!-- for mobile and tab screen navigation, search box, theme and language changing part -->
   <div
     class="font-semibold bg-gray-800 items-center text-white p-4 xl:hidden"
     v-if="isNav"
   >
-    <!-- serach box for mobile  -->
+    <!-- serach box   -->
     <div class="items-center flex mt-5 mb-2 justify-start">
       <input
         type="text"
@@ -373,7 +380,6 @@
         class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
       />
       <div class="ml-1 bg-white py-1 px-1">
-        <!-- Use span instead of div for inline elements -->
         <Icon
           name="material-symbols:search"
           class="cursor-pointer"
@@ -382,6 +388,7 @@
       </div>
     </div>
 
+    <!-- navigation  -->
     <NuxtLink to="/">
       <div class="border-gray-200 border-b-2 py-2">Assignments</div>
     </NuxtLink>
@@ -389,6 +396,7 @@
       <div class="border-gray-200 border-b-2 py-2">Discussions</div>
     </NuxtLink>
 
+    <!-- course dropdown -->
     <div
       class="flex border-gray-200 border-b-2 py-2 cursor-pointer"
       @click="toggleDropdownCourese"
@@ -409,6 +417,8 @@
         />
       </div>
     </div>
+
+    <!-- on click show list of course  -->
     <div class="flex-1 font-light mt-4" v-if="isCourse">
       <div class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4">
         <div class="flex items-center">
@@ -528,8 +538,8 @@
       </div>
     </div>
 
+    <!-- theme and language change -->
     <div class="flex mt-5 justify-around">
-      <!-- auth part for mobile -->
       <div class="">
         <button
           @click="toggleStateLanguage()"
