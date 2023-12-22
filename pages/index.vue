@@ -1,4 +1,5 @@
 <template>
   <!-- <AuthHeader /> -->
-  <GuestHeader />
+  <!-- <GuestHeader /> -->
+  <NewGuestHeader />
 </template>
