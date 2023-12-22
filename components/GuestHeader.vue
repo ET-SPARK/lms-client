@@ -256,27 +256,6 @@
             </button>
           </div>
 
-          <!-- used to change theme -->
-          <div class="">
-            <button
-              @click="toggleStateTheme()"
-              class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-5"
-            >
-              <Icon
-                v-if="!isDarkTheme"
-                name="ph:sun-dim-light"
-                class="cursor-pointer text-xl"
-                color="white"
-              />
-              <Icon
-                v-else
-                name="ph:moon-stars-thin"
-                class="cursor-pointer text-xl"
-                color="white"
-              />
-            </button>
-          </div>
-
           <!-- menu navigation for mobile and tab screen -->
           <div class="flex xl:hidden" @click="showNav">
             <Icon

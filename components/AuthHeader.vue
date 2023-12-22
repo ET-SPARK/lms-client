@@ -237,26 +237,6 @@
               {{ language }}
             </button>
           </div>
-          <!-- used to change the theme -->
-          <div class="xl:flex lg:hidden md:hidden sm: hidden">
-            <button
-              @click="toggleStateTheme()"
-              class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-5"
-            >
-              <Icon
-                v-if="!isDarkTheme"
-                name="ph:sun-dim-light"
-                class="cursor-pointer text-xl"
-                color="white"
-              />
-              <Icon
-                v-else
-                name="ph:moon-stars-thin"
-                class="cursor-pointer text-xl"
-                color="white"
-              />
-            </button>
-          </div>
 
           <!-- profile part -->
           <div class="text-right flex items-center ml-4">
@@ -549,33 +529,13 @@
     </div>
 
     <!-- theme and language change -->
-    <div class="flex mt-5 justify-around">
+    <div class="flex mt-5">
       <div class="">
         <button
           @click="toggleStateLanguage()"
           class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-10"
         >
           {{ language }}
-        </button>
-      </div>
-      <!-- used to change the theme -->
-      <div class="">
-        <button
-          @click="toggleStateTheme()"
-          class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-5"
-        >
-          <Icon
-            v-if="!isDarkTheme"
-            name="ph:sun-dim-light"
-            class="cursor-pointer text-xl"
-            color="white"
-          />
-          <Icon
-            v-else
-            name="ph:moon-stars-thin"
-            class="cursor-pointer text-xl"
-            color="white"
-          />
         </button>
       </div>
     </div>
@@ -587,7 +547,6 @@ import { ref } from "vue";
 
 const language = ref("አማ");
 const isDropdownVisible = ref(false);
-const isDarkTheme = ref(false);
 const isNav = ref(false);
 const isCourse = ref(false);
 const isProfileVisible = ref(false);
@@ -605,11 +564,6 @@ const toggleStateLanguage = () => {
 // function to handle Course dropdown
 const toggleDropdown = () => {
   isDropdownVisible.value = !isDropdownVisible.value;
-};
-
-// function to handle theme change
-const toggleStateTheme = () => {
-  isDarkTheme.value = !isDarkTheme.value;
 };
 
 // function to handle navigation visibility menu in a mobile device
