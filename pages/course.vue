@@ -84,20 +84,9 @@
           <div class="flex1 bg-gray-200 mt-2">
             <!-- course detail -->
             <div>
-              <div class="flex justify-between items-center p-4">
+              <div class="p-4">
                 <div>
                   <p class="text-2xl font-bold">About the Course</p>
-                </div>
-                <div
-                  class="border border-blue-500 hover:border-blue-600 hover:bg-blue-100 p-2 rounded-xl"
-                >
-                  <button class="text-lg text-blue-600">
-                    <Icon
-                      name="ic:twotone-share"
-                      class="text-blue-600 text-xl"
-                    />
-                    share
-                  </button>
                 </div>
               </div>
               <div class="p-4 text-justify">

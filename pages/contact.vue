@@ -3,7 +3,7 @@
   <div class="z-50">
     <div class="text-4xl text-center mt-10 font-bold">Contact Us</div>
     <div class="flex-1 xl:flex lg:flex p-8 justify-center">
-      <div class="bg-gray-800 text-white h-auto p-8">
+      <div class="bg-gray-800 text-white h-fit p-8">
         <div class="flex-1 ml-4 mt-4 items-center">
           <div class="text-4xl font-semibold mt-8 mb-4">Info</div>
           <div class="flex-1">
@@ -204,12 +204,7 @@
                   </label>
                 </div>
                 <div>
-                  <button
-                    type="submit"
-                    class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full"
-                  >
-                    Register
-                  </button>
+                  <Button type="submit" class="mb-2"> Register </Button>
                 </div>
               </div>
             </form>

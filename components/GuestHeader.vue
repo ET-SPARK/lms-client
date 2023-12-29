@@ -67,12 +67,8 @@
                 Sign Up
               </button>
             </NuxtLink>
-            <div @click="showLogin()">
-              <button
-                class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 rounded-sm ml-6"
-              >
-                Log in
-              </button>
+            <div>
+              <Login />
             </div>
           </div>
 
@@ -290,12 +286,8 @@
             Sign Up
           </button>
         </NuxtLink>
-        <div @click="showLogin">
-          <button
-            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 rounded-sm ml-6"
-          >
-            Log in
-          </button>
+        <div>
+          <Login />
         </div>
       </div>
     </div>
@@ -306,14 +298,14 @@
       v-if="isLogin"
     >
       <div
-        class="text-center bg-white h-[600px] my-2 px-16 rounded-lg modal relative"
+        class="text-center bg-white h-fit my-2 px-16 rounded-lg modal relative"
       >
         <Icon
           name="material-symbols:close-small"
           class="text-black text-4xl cursor-pointer absolute top-4 right-4"
           @click="showLogin"
         />
-        <div class="font-semibold text-2xl mt-28">Good to see you again!</div>
+        <div class="font-semibold text-2xl mt-10">Good to see you again!</div>
         <form class="mt-12">
           <div class="flex1 text-start">
             <div class="mb-4">
@@ -382,7 +374,7 @@
             <div>or</div>
             <button
               type="submit"
-              class="hover:bg-gray-100 text-black border px-4 py-2 rounded-sm flex justify-between items-center w-[250px] mt-4"
+              class="hover:bg-gray-100 text-black border px-4 py-2 rounded-sm flex justify-between items-center w-[250px] mt-4 mb-8"
             >
               <div>
                 <img src="../static/images/google.svg" class="w-6 h-6" />
