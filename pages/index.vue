@@ -1,4 +1,7 @@
 <template>
   <GuestHeader />
-  <AuthHeader />
+  <!-- <Guestfooter /> -->
+  <!-- <AuthHeader /> -->
+  <!-- <Authfooter /> -->
 </template>
+<script></script>

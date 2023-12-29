@@ -2,9 +2,11 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss",'@pinia/nuxt','shadcn-nuxt',"nuxt-icon"],
-   shadcn: {
-    
+  modules: ["@nuxtjs/tailwindcss",'@pinia/nuxt','nuxt-icon','shadcn-nuxt'],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
     prefix: '',
     /**
      * Directory that the component lives in.
