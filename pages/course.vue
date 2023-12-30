@@ -161,6 +161,7 @@
       </div>
     </section>
   </div>
+  <Guestfooter />
 </template>
 
 <script setup lang="ts">

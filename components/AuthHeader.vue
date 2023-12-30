@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-800 text-white p-2 sticky top-0 shadow-xl z-50">
+  <header class="bg-gray-800 text-white py-2 sticky top-0 shadow-xl z-50">
     <div class="container mx-auto flex items-center justify-between">
       <!-- left side header -->
       <div>
@@ -12,7 +12,7 @@
                 src="../static/homeimage/andinet_logo.jpg"
               />
             </NuxtLink>
-            <div class="ml-4">LMS</div>
+            <div class="ml-2">LMS</div>
           </div>
 
           <!-- on hover show list of course  -->
@@ -55,114 +55,109 @@
         </nav>
       </div>
 
-      <!-- Profile, theme and language part -->
-      <div class="mr-2">
+      <!-- Profile and language part -->
+      <div>
         <div class="flex mb-1">
-          <!-- used to change the language -->
-          <div class="xl:flex lg:hidden md:hidden sm: hidden">
-            <button
-              @click="toggleStateLanguage()"
-              class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-10"
-            >
-              {{ language }}
-            </button>
-          </div>
-
           <!-- profile part -->
-          <div class="text-right flex items-center ml-4">
-            <div class="flex items-center">
-              <p class="text-[14px]">hello Abebe</p>
-              <div @click="profile" class="relative">
+          <div>
+            <DropdownMenu>
+              <DropdownMenuTrigger>
                 <Icon
                   name="material-symbols:account-circle-outline"
-                  class="cursor-pointer ml-2 text-4xl rounded-sm"
+                  class="cursor-pointer text-4xl rounded-sm"
                   color="white"
-                />
-              </div>
-            </div>
+              /></DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  <div
+                    class="flex items-center mb-2 border-b-2 border-gray-300 pb-4"
+                  >
+                    <div>
+                      <Icon
+                        name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
+                        class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
+                        color="black"
+                      />
+                    </div>
+                    <div>My course</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <div class="flex items-center mb-2">
+                    <div>
+                      <Icon
+                        name="material-symbols:person-outline"
+                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                        color="black"
+                      />
+                    </div>
+                    <div>Profile</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <div class="flex items-center mb-2">
+                    <div>
+                      <Icon
+                        name="material-symbols:circle-notifications-outline"
+                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                        color="black"
+                      />
+                    </div>
+                    <div>Notifications</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  ><div class="flex items-center mb-2">
+                    <div>
+                      <Icon
+                        name="material-symbols:android-messages-outline"
+                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                        color="black"
+                      />
+                    </div>
+                    <div>Messages</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <div class="flex items-center mb-2">
+                    <div>
+                      <Icon
+                        name="material-symbols:settings"
+                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                        color="black"
+                      />
+                    </div>
+                    <div>Settings</div>
+                  </div>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <div class="flex items-center mb-2">
+                    <div>
+                      <Icon
+                        name="clarity:sign-out-line"
+                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                        color="black"
+                      />
+                    </div>
+                    <div>Log out</div>
+                  </div>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
-          <!-- profile menu dropdown -->
-          <div
-            v-show="isProfileVisible"
-            class="absolute top-[60px] right-8 bg-white text-black p-4 text-xl w-[200px] rounded-xl shadow-md"
-          >
-            <div class="flex1 items-end">
-              <NuxtLink to="/">
-                <div
-                  class="flex items-center mb-2 border-b-2 border-gray-300 pb-4"
-                >
-                  <div>
-                    <Icon
-                      name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
-                      class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
-                      color="black"
-                    />
-                  </div>
-                  <div>My course</div>
-                </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex items-center mb-2">
-                  <div>
-                    <Icon
-                      name="material-symbols:person-outline"
-                      class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                      color="black"
-                    />
-                  </div>
-                  <div>Profile</div>
-                </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex items-center mb-2">
-                  <div>
-                    <Icon
-                      name="material-symbols:circle-notifications-outline"
-                      class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                      color="black"
-                    />
-                  </div>
-                  <div>Notifications</div>
-                </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex items-center mb-2">
-                  <div>
-                    <Icon
-                      name="material-symbols:android-messages-outline"
-                      class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                      color="black"
-                    />
-                  </div>
-                  <div>Messages</div>
-                </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex items-center mb-2">
-                  <div>
-                    <Icon
-                      name="material-symbols:settings"
-                      class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                      color="black"
-                    />
-                  </div>
-                  <div>Settings</div>
-                </div>
-              </NuxtLink>
-              <NuxtLink to="/">
-                <div class="flex items-center mb-2">
-                  <div>
-                    <Icon
-                      name="clarity:sign-out-line"
-                      class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                      color="black"
-                    />
-                  </div>
-                  <div>Log out</div>
-                </div>
-              </NuxtLink>
-            </div>
+          <!-- used to change the language -->
+          <div class="xl:flex lg:hidden md:hidden sm: hidden">
+            <Button
+              @click="toggleStateLanguage()"
+              variant="outline"
+              class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
+            >
+              {{ language }}
+            </Button>
           </div>
+
           <!-- menu for navigation for mobile and tab screen -->
           <div class="flex xl:hidden" @click="showNav">
             <Icon
@@ -361,13 +356,14 @@
 
       <!-- language change button -->
       <div class="flex mt-5">
-        <div class="">
-          <button
+        <div>
+          <Button
             @click="toggleStateLanguage()"
-            class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-10"
+            variant="outline"
+            class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
           >
             {{ language }}
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -376,26 +372,22 @@
 
 <script setup>
 import { ref } from "vue";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const language = ref("አማ");
-const isDropdownVisible = ref(false);
 const isNav = ref(false);
 const isCourse = ref(false);
-const isProfileVisible = ref(false);
-
-// function to handle Profile dropdown
-const profile = () => {
-  isProfileVisible.value = !isProfileVisible.value;
-};
 
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
-};
-
-// function to handle Course dropdown
-const toggleDropdown = () => {
-  isDropdownVisible.value = !isDropdownVisible.value;
 };
 
 // function to handle navigation visibility menu in a mobile device
@@ -406,15 +398,5 @@ const showNav = () => {
 // handle course dropdown in mobile and tab screen
 const toggleDropdownCourese = () => {
   isCourse.value = !isCourse.value;
-};
-
-// mouse hover show course Dropdown
-const showDropdown = () => {
-  isDropdownVisible.value = true;
-};
-
-// mouse hover remove course Dropdown
-const hideDropdown = () => {
-  isDropdownVisible.value = false;
 };
 </script>

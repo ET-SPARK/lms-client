@@ -29,16 +29,19 @@ import { Label } from "@/components/ui/label";
         <DialogDescription> Welcome, Let's get started </DialogDescription>
       </DialogHeader>
       <div class="py-4">
-        <div class="flex-1 items-center">
+        <div class="flex-1 items-center mb-2">
           <Label for="email" class="text-left mr-2 text-[16px] mb-1">
             Email
           </Label>
           <Input type="email" placeholder="Enter your email" />
-          <Label for="password" class="text-left mr-2 text-[16px] mb-1 mt-2">
+          <Label for="password" class="text-left mr-2 text-[16px] mb-2 mt-2">
             Password
           </Label>
           <Input type="password" placeholder="Enter your password" />
         </div>
+        <NuxtLink to="/forgotPassword" class="hover:underline">
+          Forgot your password?
+        </NuxtLink>
       </div>
       <DialogFooter>
         <div class="flex-1 text-center">

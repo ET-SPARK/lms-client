@@ -7,7 +7,7 @@
         <div class="flex-1 ml-4 mt-4 items-center">
           <div class="text-4xl font-semibold mt-8 mb-4">Info</div>
           <div class="flex-1">
-            <div class="flex mt-6">
+            <div class="flex mt-4">
               <div>
                 <Icon
                   name="material-symbols:location-on-rounded"
@@ -21,7 +21,7 @@
                 </div>
               </div>
             </div>
-            <div class="flex mt-6">
+            <div class="flex mt-4">
               <div>
                 <Icon name="material-symbols:call" class="text-3xl" />
               </div>
@@ -30,7 +30,7 @@
                 <div class="text-[14px]">+251 9XXXXXXXXX</div>
               </div>
             </div>
-            <div class="flex mt-6">
+            <div class="flex mt-4">
               <div>
                 <Icon
                   name="material-symbols:alternate-email"
@@ -44,7 +44,7 @@
             </div>
           </div>
 
-          <div class="flex mt-16 mb-4">
+          <div class="flex mt-10 mb-4">
             <a
               href="#"
               class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
@@ -121,5 +121,5 @@
       </div>
     </div>
   </div>
-  <!-- <Guestfooter /> -->
+  <Guestfooter />
 </template>

@@ -61,11 +61,12 @@
           <!-- Auth part -->
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
             <NuxtLink to="">
-              <button
-                class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-sm"
+              <Button
+                variant="outline"
+                class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
               >
-                Sign Up
-              </button>
+                Sign up
+              </Button>
             </NuxtLink>
             <div>
               <Login />
@@ -74,12 +75,13 @@
 
           <!-- used to change language -->
           <div class="">
-            <button
+            <Button
               @click="toggleStateLanguage()"
-              class="border border-blue-500 hover:border-blue-600 text-blue-500 hover:text-white px-4 py-2 ml-10"
+              variant="outline"
+              class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
             >
               {{ language }}
-            </button>
+            </Button>
           </div>
 
           <!-- menu navigation for mobile and tab screen -->
@@ -100,6 +102,7 @@
         </div>
       </div>
     </div>
+
     <!-- mobile and tab screen dropdown part -->
     <div
       class="font-semibold bg-gray-800 items-center text-white p-4 xl:hidden"
@@ -280,11 +283,12 @@
       <!-- auth part for mobile -->
       <div class="flex justify-around mt-5">
         <NuxtLink to="/">
-          <button
-            class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-sm"
+          <Button
+            variant="outline"
+            class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
           >
-            Sign Up
-          </button>
+            Signup
+          </Button>
         </NuxtLink>
         <div>
           <Login />

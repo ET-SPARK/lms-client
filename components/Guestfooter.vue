@@ -2,7 +2,7 @@
 
 <template>
   <footer
-    class="bg-blue dark:bg-gray-900 text-white text-center py-4 bottom-0 w-full overflow-x-auto"
+    class="bg-gray-900 text-white text-center py-4 absolute bottom-0-0 w-full"
   >
     <div>
       <form action="">
