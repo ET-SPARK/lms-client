@@ -60,14 +60,9 @@
         <div class="flex mb-1">
           <!-- Auth part -->
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
-            <NuxtLink to="">
-              <Button
-                variant="outline"
-                class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
-              >
-                Sign up
-              </Button>
-            </NuxtLink>
+            <div>
+              <Signup />
+            </div>
             <div>
               <Login />
             </div>
@@ -282,14 +277,9 @@
 
       <!-- auth part for mobile -->
       <div class="flex justify-around mt-5">
-        <NuxtLink to="/">
-          <Button
-            variant="outline"
-            class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
-          >
-            Signup
-          </Button>
-        </NuxtLink>
+        <div>
+          <Signup />
+        </div>
         <div>
           <Login />
         </div>

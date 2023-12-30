@@ -67,7 +67,7 @@
                   class="cursor-pointer text-4xl rounded-sm"
                   color="white"
               /></DropdownMenuTrigger>
-              <DropdownMenuContent>
+              <DropdownMenuContent class="px-4">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
