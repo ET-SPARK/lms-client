@@ -1,6 +1,6 @@
 <template>
   <header class="bg-gray-800 text-white p-2 sticky top-0 shadow-xl z-50">
-    <div class="container mx-auto flex items-center justify-between">
+    <div class="container flex items-center justify-between">
       <!-- left side header -->
       <div>
         <div class="flex items-center">
@@ -79,8 +79,8 @@
             </Button>
           </div>
 
+          <!-- mobile and tab screen dropdown part -->
           <div>
-            <!-- mobile and tab screen dropdown part -->
             <Sheet>
               <SheetTrigger as-child>
                 <Button
@@ -97,10 +97,12 @@
                 </Button>
               </SheetTrigger>
               <div>
-                <SheetContent class="bg-gray-800 text-white font-semibold">
+                <SheetContent
+                  class="bg-gray-800 text-white font-semibold text-[12px]"
+                >
                   <SheetHeader>
                     <!-- serach box -->
-                    <div class="items-center flex mt-10 mb-2 justify-start">
+                    <div class="items-center flex mt-4 mb-2 justify-start">
                       <input
                         type="text"
                         placeholder="What do you want to learn?"
@@ -118,7 +120,7 @@
                   </SheetHeader>
 
                   <!-- navigation links -->
-                  <div class="mt-4">
+                  <div class="mt-2">
                     <NuxtLink to="/">
                       <div
                         class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
@@ -165,7 +167,10 @@
                   </div>
 
                   <!-- show all Categories course  -->
-                  <div class="flex-1 font-light mt-4" v-if="isCourse">
+                  <div
+                    class="flex-1 font-light mt-4 text-[10px]"
+                    v-if="isCourse"
+                  >
                     <div
                       class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4"
                     >
@@ -288,6 +293,7 @@
                       </div>
                     </div>
                   </div>
+
                   <div class="mt-4 flex justify-around">
                     <Signup />
                     <Login />
@@ -306,46 +312,24 @@
 import { ref } from "vue";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 
 const language = ref("አማ");
-const isNav = ref(false);
 const isCourse = ref(false);
-const showPassword = ref(false);
-const isLogin = ref(false);
 
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
 };
 
-// function to handle navigation visibility menu in mobile & tab device
-const showNav = () => {
-  isNav.value = !isNav.value;
-};
-
 // handle course dropdown in mobile and tab screen
 const toggleDropdownCourese = () => {
   isCourse.value = !isCourse.value;
-};
-
-//handle login popup
-const showLogin = () => {
-  isLogin.value = !isLogin.value;
-};
-
-// toggle password visibility
-const togglePasswordVisibility = () => {
-  showPassword.value = !showPassword.value;
 };
 </script>

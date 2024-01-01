@@ -67,13 +67,11 @@
                   class="cursor-pointer text-4xl rounded-sm"
                   color="white"
               /></DropdownMenuTrigger>
-              <DropdownMenuContent class="px-4">
+              <DropdownMenuContent class="px-1">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
-                  <div
-                    class="flex items-center mb-2 border-b-2 border-gray-300 pb-4"
-                  >
+                  <div class="flex items-center mb-2">
                     <div>
                       <Icon
                         name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
@@ -157,213 +155,236 @@
               {{ language }}
             </Button>
           </div>
+          <!-- for mobile and tab screen navigation, search box, theme and language changing part -->
+          <div>
+            <Sheet>
+              <SheetTrigger as-child>
+                <Button
+                  variant="outline"
+                  class="xl:hidden bg-gray-800 boarder border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
+                >
+                  <!-- menu navigation for mobile and tab screen -->
+                  <div class="flex">
+                    <Icon
+                      name="material-symbols:menu"
+                      class="cursor-pointer text-xl"
+                    />
+                  </div>
+                </Button>
+              </SheetTrigger>
+              <div>
+                <SheetContent
+                  class="bg-gray-800 text-white font-semibold text-[12px]"
+                >
+                  <SheetHeader>
+                    <!-- serach box -->
+                    <div class="items-center flex mt-4 mb-2 justify-start">
+                      <input
+                        type="text"
+                        placeholder="What do you want to learn?"
+                        class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
+                      />
+                      <div class="ml-1 bg-white py-1 px-1">
+                        <!-- Use span instead of div for inline elements -->
+                        <Icon
+                          name="material-symbols:search"
+                          class="cursor-pointer"
+                          color="black"
+                        />
+                      </div>
+                    </div>
+                  </SheetHeader>
 
-          <!-- menu for navigation for mobile and tab screen -->
-          <div class="flex xl:hidden" @click="showNav">
-            <Icon
-              v-if="isNav"
-              name="material-symbols:close-rounded"
-              class="ml-2 cursor-pointer text-4xl"
-              color="white"
-            />
-            <Icon
-              v-else
-              name="material-symbols:menu"
-              class="ml-2 cursor-pointer text-4xl"
-              color="white"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- for mobile and tab screen navigation, search box, theme and language changing part -->
-    <div
-      class="font-semibold bg-gray-800 items-center text-white p-4 xl:hidden z-50"
-      v-if="isNav"
-    >
-      <!-- serach box   -->
-      <div class="items-center flex mt-5 mb-2 justify-start">
-        <input
-          type="text"
-          placeholder="What do you want to learn?"
-          class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
-        />
-        <div class="ml-1 bg-white py-1 px-1">
-          <Icon
-            name="material-symbols:search"
-            class="cursor-pointer"
-            color="black"
-          />
-        </div>
-      </div>
+                  <!-- navigation links -->
+                  <div class="mt-2">
+                    <NuxtLink to="/">
+                      <div
+                        class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
+                      >
+                        Assignments<sup class="font-bold text-xl text-red-600"
+                          >0</sup
+                        >
+                      </div>
+                    </NuxtLink>
+                    <NuxtLink to="/">
+                      <div
+                        class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
+                      >
+                        Discussions<sup class="font-bold text-xl text-red-600"
+                          >0</sup
+                        >
+                      </div>
+                    </NuxtLink>
+                  </div>
 
-      <!-- navigation  -->
-      <NuxtLink to="/">
-        <div class="border-gray-200 border-b-2 py-2">
-          Assignments<sup class="font-bold text-xl text-red-600">0</sup>
-        </div>
-      </NuxtLink>
-      <NuxtLink to="/">
-        <div class="border-gray-200 border-b-2 py-2">
-          Discussions<sup class="font-bold text-xl text-red-600">0</sup>
-        </div>
-      </NuxtLink>
+                  <!-- course dropdown -->
+                  <div
+                    class="flex border-gray-200 border-b-2 p-2 cursor-pointer hover:bg-gray-700"
+                    @click="toggleDropdownCourese"
+                  >
+                    <div class="cursor-pointe">Courses</div>
+                    <div>
+                      <Icon
+                        v-if="isCourse"
+                        name="material-symbols:arrow-drop-up"
+                        class="cursor-pointer text-2xl"
+                        color="white"
+                      />
+                      <Icon
+                        v-else
+                        name="material-symbols:arrow-drop-down"
+                        class="cursor-pointer text-2xl"
+                        color="white"
+                      />
+                    </div>
+                  </div>
 
-      <!-- course dropdown -->
-      <div
-        class="flex border-gray-200 border-b-2 py-2 cursor-pointer"
-        @click="toggleDropdownCourese"
-      >
-        <div class="cursor-pointe">Courses</div>
-        <div>
-          <Icon
-            v-if="isCourse"
-            name="material-symbols:arrow-drop-up"
-            class="cursor-pointer text-2xl"
-            color="white"
-          />
-          <Icon
-            v-else
-            name="material-symbols:arrow-drop-down"
-            class="cursor-pointer text-2xl"
-            color="white"
-          />
-        </div>
-      </div>
+                  <!-- show all Categories course  -->
+                  <div
+                    class="flex-1 font-light mt-4 text-[10px]"
+                    v-if="isCourse"
+                  >
+                    <div
+                      class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4"
+                    >
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Accounting & Finance</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="ep:brush"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Art & Crafts</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="mdi:brush-off"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Beauty & Makeup</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="material-symbols:ink-pen-sharp"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Creatives & Design</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="ic:round-fastfood"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Food & Beverage</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="material-symbols:ecg-heart-outline"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Health & Fitness</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Business & Marketing</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="ph:code-bold"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>IT & Development</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="lucide:languages"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Language & Literature</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="ph:music-notes-fill"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Music & Theater</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="guidance:office"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Office productivity</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="guidance:meeting-point"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Personal development</div>
+                      </div>
+                      <div class="flex items-center">
+                        <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                          <Icon
+                            name="material-symbols:camera"
+                            class="cursor-pointer text-white text-2xl"
+                          />
+                        </div>
+                        <div>Photography & Videography</div>
+                      </div>
+                    </div>
+                  </div>
 
-      <!-- on click show list of course  -->
-      <div class="flex-1 font-light mt-4" v-if="isCourse">
-        <div class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4">
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Accounting & Finance</div>
+                  <div class="mt-4 flex">
+                    <!-- language change button -->
+                    <div class="flex mt-5">
+                      <div>
+                        <Button
+                          @click="toggleStateLanguage()"
+                          variant="outline"
+                          class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
+                        >
+                          {{ language }}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                </SheetContent>
+              </div>
+            </Sheet>
           </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="ep:brush"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Art & Crafts</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="mdi:brush-off"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Beauty & Makeup</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="material-symbols:ink-pen-sharp"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Creatives & Design</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="ic:round-fastfood"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Food & Beverage</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="material-symbols:ecg-heart-outline"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Health & Fitness</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Business & Marketing</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="ph:code-bold"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>IT & Development</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="lucide:languages"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Language & Literature</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="ph:music-notes-fill"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Music & Theater</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="guidance:office"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Office productivity</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="guidance:meeting-point"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Personal development</div>
-          </div>
-          <div class="flex items-center">
-            <div class="bg-blue-500 p-1 mr-2 rounded-md">
-              <Icon
-                name="material-symbols:camera"
-                class="cursor-pointer text-white text-2xl"
-              />
-            </div>
-            <div>Photography & Videography</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- language change button -->
-      <div class="flex mt-5">
-        <div>
-          <Button
-            @click="toggleStateLanguage()"
-            variant="outline"
-            class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
-          >
-            {{ language }}
-          </Button>
         </div>
       </div>
     </div>
@@ -380,6 +401,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const language = ref("አማ");
 const isNav = ref(false);
