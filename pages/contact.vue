@@ -43,44 +43,56 @@
               </div>
             </div>
           </div>
-
-          <div class="flex mt-10 mb-4">
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              title="LinkedIn"
-            >
-              <Icon name="uil:linkedin" color="blue" size="28" />
-            </a>
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              title="Youtube"
-            >
-              <Icon name="uil:youtube" color="red" size="28" />
-            </a>
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              title="Facebook"
-            >
-              <Icon name="uil:facebook" color="blue" size="28" />
-            </a>
-
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              title="Instagram"
-            >
-              <Icon name="uil:instagram" color="red" size="28" />
-            </a>
-            <a
-              href="#"
-              class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-              title="Telegram"
-            >
-              <Icon name="uil:telegram" color="blue" size="28" />
-            </a>
+        </div>
+        <div class="flex justify-between py-8 mt-2">
+          <div>
+            <Icon
+              name="tabler:brand-facebook"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="tabler:brand-instagram"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="pajamas:twitter"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="tabler:brand-telegram"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="tabler:brand-youtube"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="tabler:brand-linkedin"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
+          </div>
+          <div>
+            <Icon
+              name="tabler:brand-tiktok"
+              class="bg-#212F3D cursor-pointer ml-3 text-3xl"
+              color="white"
+            />
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@
           <NuxtLink to="/">
             <div>About</div>
           </NuxtLink>
-          <NuxtLink to="/">
+          <NuxtLink to="/contact">
             <div>Contact</div>
           </NuxtLink>
         </nav>
@@ -127,7 +127,7 @@
       <NuxtLink to="/">
         <div class="border-gray-200 border-b-2 py-2">About</div>
       </NuxtLink>
-      <NuxtLink to="/">
+      <NuxtLink to="/contact">
         <div class="border-gray-200 border-b-2 py-2">Contact</div>
       </NuxtLink>
 
@@ -152,6 +152,7 @@
           />
         </div>
       </div>
+
       <!-- show all Categories course  -->
       <div class="flex-1 font-light mt-4" v-if="isCourse">
         <div class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4">
@@ -406,6 +407,7 @@ const toggleDropdownCourese = () => {
   isCourse.value = !isCourse.value;
 };
 
+//handle login popup
 const showLogin = () => {
   isLogin.value = !isLogin.value;
 };
