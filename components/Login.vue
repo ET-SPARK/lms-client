@@ -12,6 +12,11 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+const showPassword = ref(false);
+
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
 </script>
 
 <template>
@@ -39,7 +44,28 @@ import { Label } from "@/components/ui/label";
             <Label for="password" class="text-left mr-2 text-[16px] mb-2 mt-2">
               Password
             </Label>
-            <Input type="password" placeholder="Enter your password" />
+            <div class="relative">
+              <Icon
+                v-if="showPassword"
+                @click="togglePasswordVisibility"
+                name="material-symbols:visibility-lock"
+                class="absolute inset-y-0 right-0 pr-2 mt-2 text-gray-500 text-3xl"
+              />
+              <Icon
+                v-else
+                @click="togglePasswordVisibility"
+                name="material-symbols:visibility"
+                class="absolute inset-y-0 right-0 pr-2 mt-2 text-gray-500 text-3xl cursor-pointer"
+              />
+              <input
+                :type="showPassword ? 'text' : 'password'"
+                id="password"
+                name="password"
+                class="pl-3 mt-1 p-2 border rounded-md w-full text-sm"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
           </div>
           <!-- forgot password -->
           <div class="hover:underline cursor-pointer">
