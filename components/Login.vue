@@ -116,10 +116,28 @@ const togglePasswordVisibility = () => {
                           >
                             New password
                           </Label>
-                          <Input
-                            type="password"
-                            placeholder="Enter your new password"
-                          />
+                          <div class="relative">
+                            <Icon
+                              v-if="showPassword"
+                              @click="togglePasswordVisibility"
+                              name="material-symbols:visibility-lock"
+                              class="absolute inset-y-0 right-0 pr-2 mt-2 text-gray-500 text-3xl"
+                            />
+                            <Icon
+                              v-else
+                              @click="togglePasswordVisibility"
+                              name="material-symbols:visibility"
+                              class="absolute inset-y-0 right-0 pr-2 mt-2 text-gray-500 text-3xl cursor-pointer"
+                            />
+                            <input
+                              :type="showPassword ? 'text' : 'password'"
+                              id="password"
+                              name="password"
+                              class="pl-3 mt-1 p-2 border rounded-md w-full text-sm"
+                              placeholder=""
+                              required
+                            />
+                          </div>
                         </div>
                       </div>
                       <div class="flex justify-between">
