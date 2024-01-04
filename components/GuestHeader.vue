@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-800 text-white p-2 sticky top-0 shadow-xl z-50">
+  <header class="bg-gray-800 text-white py-1 sticky top-0 shadow-xl z-50">
     <div class="container flex items-center justify-between">
       <!-- left side header -->
       <div>

@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-800 text-white py-2 sticky top-0 shadow-xl z-50">
+  <header class="bg-gray-800 text-white py-1 sticky top-0 shadow-xl z-50">
     <div class="container mx-auto flex items-center justify-between">
       <!-- left side header -->
       <div>
@@ -62,11 +62,14 @@
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger>
-                <Icon
-                  name="material-symbols:account-circle-outline"
-                  class="cursor-pointer text-4xl rounded-sm"
-                  color="white"
-              /></DropdownMenuTrigger>
+                <Avatar>
+                  <AvatarImage
+                    src="https://github.com/radix-vue.png"
+                    alt="@radix-vue"
+                  />
+                  <AvatarFallback>S</AvatarFallback>
+                </Avatar>
+              </DropdownMenuTrigger>
               <DropdownMenuContent class="px-1">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
@@ -410,6 +413,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const language = ref("አማ");
 const isNav = ref(false);

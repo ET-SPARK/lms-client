@@ -25,7 +25,7 @@
         >
       </div>
       <div>
-        <div class="flex justify-between">
+        <div class="flex justify-between max-[1024px]:flex-col">
           <div>
             <!-- video player -->
             <div>
@@ -119,7 +119,7 @@
             </div>
           </div>
           <!-- course play list -->
-          <div class="p-4 bg-gray-200 w-full h-fit">
+          <div class="p-4 bg-gray-200 w-full">
             <div class="mb-4">
               <span class="font-bold text-2xl">Contents</span>
             </div>

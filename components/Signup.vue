@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -69,16 +70,20 @@ import { Label } from "@/components/ui/label";
       <DialogFooter>
         <div class="flex-1 text-center">
           <div>
-            <Button type="submit" class="mb-2"> Sign Up </Button>
+            <DialogClose>
+              <Button type="submit" class="mb-2"> Sign Up </Button>
+            </DialogClose>
           </div>
           <div class="mb-2">or</div>
           <div>
-            <Button type="submit">
-              <div>
-                <img src="../static/images/google.svg" class="w-6 h-6" />
-              </div>
-              <div class="ml-4">Continue with Google</div>
-            </Button>
+            <DialogClose>
+              <Button type="submit">
+                <div>
+                  <img src="../static/images/google.svg" class="w-6 h-6" />
+                </div>
+                <div class="ml-4">Continue with Google</div>
+              </Button>
+            </DialogClose>
           </div>
         </div>
       </DialogFooter>
