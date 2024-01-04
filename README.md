@@ -1,6 +1,6 @@
 # Andnet LMS
 
-Web app for Andnet LMS built with [nuxt3](https://nuxt.com/)
+Web app for Andnet LMS customer role built with [nuxt3](https://nuxt.com/)
 
 ## Setup
 1. Install nodejs from version files (.nvmrc/.tool-versions)

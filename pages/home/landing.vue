@@ -1,1 +1,3 @@
-<template>hello</template>
+<template>
+  <div>landing page</div>
+</template>

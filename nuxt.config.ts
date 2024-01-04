@@ -2,23 +2,23 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss",'@pinia/nuxt','nuxt-icon','shadcn-nuxt'],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "shadcn-nuxt"],
   shadcn: {
     /**
      * Prefix for all the imported component
      */
-    prefix: '',
+    prefix: "",
     /**
      * Directory that the component lives in.
      * @default "./components/ui"
      */
-    componentDir: './components/ui'
+    componentDir: "./components/ui",
   },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-      ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
-    },
-  },
+  // postcss: {
+  //   plugins: {
+  //     tailwindcss: {},
+  //     autoprefixer: {},
+  //     ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
+  //   },
+  // },
 });
