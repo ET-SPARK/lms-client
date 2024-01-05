@@ -29,15 +29,24 @@
           <div>
             <!-- video player -->
             <div>
-              <iframe
-                :src="`${selectedValue}?autoplay=1`"
-                width="940"
-                height="400"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
+              <div class="video-section">
+                <div>
+                  <div class="relative">
+                    <video class="w-full" controls>
+                      <source src="../static/video/two.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                    <div
+                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+                    >
+                      <Icon
+                        name="material-symbols:play-circle"
+                        class="cursor-pointer text-[64px] text-blue-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- course detail  -->
             <div class="flex1 bg-gray-200 mt-2">
