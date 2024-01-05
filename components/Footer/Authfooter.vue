@@ -1,10 +1,12 @@
 //fotter for users that have loged in
 
 <template>
-  <footer class="bg-blue text-white text-center w-full overflow-x-auto">
+  <footer
+    class="bg-gray-900 text-white text-center py-4 absolute bottom-0-0 w-full"
+  >
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0 ml-10 sm:ml-1  ">
+        <div class="mb-6 md:mb-0">
           <a href="https://andinetsolutions.com/" class="flex items-center">
             <img
               src="../../static/images/andinet_logo.jpg"
@@ -26,7 +28,9 @@
             </h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
               <li class="mb-4">
-                <a href="#" class="hover:underline">Contact Us</a>
+                <NuxtLink to="/contact" class="hover:underline">
+                  Contact Us
+                </NuxtLink>
               </li>
               <li class="mb-4">
                 <a href="#" class="hover:underline">Help</a>
