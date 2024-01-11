@@ -80,7 +80,7 @@ const courseNavList = [
               class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-gray-200 border-t-2"
             >
               <li
-                class="cursor-pointer"
+                class="cursor-pointer hover:text-blue-500"
                 v-for="course in courseNavList"
                 :key="course.icon"
               >

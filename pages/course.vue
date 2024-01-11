@@ -30,7 +30,8 @@
                   <!-- cource title -->
                   <div>
                     <p class="text-2xl font-bold max-[600px]:text-xl">
-                      Learn English: Upgrade Your Speaking and Listening Skill
+                      {{ selectedTitle }} <br />
+                      {{ selectedLabel }}
                     </p>
                   </div>
                   <!-- profile -->
@@ -172,7 +173,13 @@
                       >
                         <div
                           class="cursor-pointer"
-                          @click="handleItemClick(contentItem.value)"
+                          @click="
+                            handleItemClick(
+                              contentItem.value,
+                              contentItem.label,
+                              item.title
+                            )
+                          "
                         >
                           {{ contentItem.label }}
                         </div>
@@ -244,15 +251,15 @@ const accordionItems = [
     title: "Unit 3: Business communication",
     content: [
       {
-        value: "https://www.youtube.com/embed/GJiZnG-o5FQ?si=3PPcKNBVY7Jq65bK",
+        value: "https://www.youtube.com/embed/kjR-3_ctBMA?si=4E2Jg6i1ifv8KTEz",
         label: "Lesson 1: How to ask for and give directions in English",
       },
       {
-        value: "https://www.youtube.com/embed/j8brjlHycW0?si=eACR3SiUR5giEdx3",
+        value: "https://www.youtube.com/embed/kjR-3_ctBMA?si=27SRf5oDq0OhxDGM",
         label: "Lesson 2: How to order food in English",
       },
       {
-        value: "https://www.youtube.com/embed/skqj4jOSQU4?si=jeExZdZzY_9Z-yKG",
+        value: "https://www.youtube.com/embed/h-Np7dmvw0U?si=LRSOEJY13RcaJH96",
         label: "Lesson 3: How to talk about hobbies and interests",
       },
     ],
@@ -262,9 +269,12 @@ const accordionItems = [
 const selectedValue = ref(
   "https://www.youtube.com/embed/yYF2Vf1Gc14?si=o4MaabEp_FWPTcMn"
 );
+const selectedTitle = ref("Unit 1: Introduction to English language");
+const selectedLabel = ref("Lesson 1: Why learn English");
 
-const handleItemClick = (value: string) => {
-  console.log("Selected Item Value:", value);
+const handleItemClick = (value: string, label: string, title: string) => {
   selectedValue.value = value;
+  selectedLabel.value = label;
+  selectedTitle.value = title;
 };
 </script>
