@@ -47,10 +47,6 @@ const courseNavList = [
     name: "Language & Literature",
   },
   {
-    icon: "ph:music-notes-fill",
-    name: "Music & Theater",
-  },
-  {
     icon: "guidance:office",
     name: "Office productivity",
   },
@@ -70,8 +66,8 @@ const courseNavList = [
     <NavigationMenuList>
       <NavigationMenuItem>
         <NavigationMenuTrigger class="bg-gray-800">
-          Courses</NavigationMenuTrigger
-        >
+          Courses
+        </NavigationMenuTrigger>
         <NavigationMenuContent>
           <div class="text-[14px]">
             <div class="flex justify-between mt-4 mb-2 px-10">
@@ -88,15 +84,17 @@ const courseNavList = [
                 v-for="course in courseNavList"
                 :key="course.icon"
               >
-                <div class="flex items-center">
-                  <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                    <Icon
-                      :name="course.icon"
-                      class="cursor-pointer text-white text-2xl"
-                    />
+                <NuxtLink to="/">
+                  <div class="flex items-center">
+                    <div class="bg-blue-500 p-1 mr-2 rounded-md">
+                      <Icon
+                        :name="course.icon"
+                        class="cursor-pointer text-white text-2xl"
+                      />
+                    </div>
+                    <div>{{ course.name }}</div>
                   </div>
-                  <div>{{ course.name }}</div>
-                </div>
+                </NuxtLink>
               </li>
             </ul>
 
@@ -120,5 +118,3 @@ const courseNavList = [
     </NavigationMenuList>
   </NavigationMenu>
 </template>
-
-<script></script>

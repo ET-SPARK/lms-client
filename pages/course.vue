@@ -1,29 +1,7 @@
 <template>
   <AuthHeader />
-  <div class="mt-4 p-2">
+  <div class="p-2 bg-gray-200">
     <section class="flex1 w-full">
-      <!-- cource title -->
-      <div>
-        <p class="text-4xl font-bold max-[600px]:text-xl">
-          Learn English: Upgrade Your Speaking and Listening Skill
-        </p>
-      </div>
-
-      <!-- profile -->
-      <div class="flex items-center">
-        <div class="mt-4">
-          <img
-            src="https://iuenrktegcxhmvoeyhjh.supabase.co/storage/v1/object/public/instructor/avatar/nabil-emil.jpg?v=5"
-            class="w-full h-20 rounded-full"
-          />
-        </div>
-        <NuxtLink to="#"
-          ><div class="ml-5 text-gray-500 hover:text-blue-500">
-            A course by <br />
-            Abebe
-          </div></NuxtLink
-        >
-      </div>
       <div>
         <div class="flex justify-between max-[1024px]:flex-col">
           <div>
@@ -32,7 +10,7 @@
               <div class="video-section">
                 <div>
                   <div class="relative">
-                    <video class="w-full" controls>
+                    <video class="w-full rounded-xl" controls>
                       <source src="../static/video/two.mp4" type="video/mp4" />
                       <!-- :src="`${selectedValue}?autoplay=1`" -->
                       Your browser does not support the video tag.
@@ -54,6 +32,43 @@
               <!-- course detail -->
               <div>
                 <div class="p-4">
+                  <!-- cource title -->
+                  <div>
+                    <p class="text-2xl font-bold max-[600px]:text-xl">
+                      Learn English: Upgrade Your Speaking and Listening Skill
+                    </p>
+                  </div>
+                  <!-- profile -->
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <div class="mt-4">
+                        <img
+                          src="https://iuenrktegcxhmvoeyhjh.supabase.co/storage/v1/object/public/instructor/avatar/nabil-emil.jpg?v=5"
+                          class="w-14 h-14 rounded-full"
+                        />
+                      </div>
+                      <NuxtLink to="#">
+                        <div class="ml-5 text-gray-500 hover:text-blue-500">
+                          <div>
+                            A course by <br />
+                            Abebe
+                          </div>
+                        </div>
+                      </NuxtLink>
+                    </div>
+                    <div class="flex">
+                      <div class="mr-2">
+                        <Badge>
+                          <Icon name="bx:bxs-like" class="text-2xl" />
+                        </Badge>
+                      </div>
+                      <div>
+                        <Badge>
+                          <Icon name="mdi:share-outline" class="text-2xl" />
+                        </Badge>
+                      </div>
+                    </div>
+                  </div>
                   <div>
                     <p class="text-2xl font-bold">About the Course</p>
                   </div>
@@ -183,6 +198,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 
 const defaultValue = "item-1";
 
