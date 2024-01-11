@@ -10,26 +10,21 @@
               <div class="video-section">
                 <div>
                   <div class="relative">
-                    <video class="w-full rounded-xl" controls>
-                      <source src="../static/video/two.mp4" type="video/mp4" />
-                      <!-- :src="`${selectedValue}?autoplay=1`" -->
-                      Your browser does not support the video tag.
-                    </video>
-                    <div
-                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                    >
-                      <Icon
-                        name="material-symbols:play-circle"
-                        class="cursor-pointer text-[64px] text-blue-500"
-                      />
-                    </div>
+                    <iframe
+                      width="100%"
+                      height="400"
+                      :src="`${selectedValue}`"
+                      title="YouTube video player"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
                   </div>
                 </div>
               </div>
             </div>
             <!-- course detail  -->
             <div class="flex1 bg-gray-200 mt-2">
-              <!-- course detail -->
               <div>
                 <div class="p-4">
                   <!-- cource title -->
@@ -42,10 +37,13 @@
                   <div class="flex items-center justify-between">
                     <div class="flex items-center">
                       <div class="mt-4">
-                        <img
-                          src="https://iuenrktegcxhmvoeyhjh.supabase.co/storage/v1/object/public/instructor/avatar/nabil-emil.jpg?v=5"
-                          class="w-14 h-14 rounded-full"
-                        />
+                        <Avatar>
+                          <AvatarImage
+                            src="https://github.com/radix-vue.png"
+                            alt="@radix-vue"
+                          />
+                          <AvatarFallback>S</AvatarFallback>
+                        </Avatar>
                       </div>
                       <NuxtLink to="#">
                         <div class="ml-5 text-gray-500 hover:text-blue-500">
@@ -73,6 +71,7 @@
                     <p class="text-2xl font-bold">About the Course</p>
                   </div>
                 </div>
+                <!-- course detail discription -->
                 <div class="p-4 text-justify">
                   <p class="mt-2">
                     Are you struggling to communicate in English? We understand
@@ -199,6 +198,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const defaultValue = "item-1";
 
@@ -208,15 +208,15 @@ const accordionItems = [
     title: "Unit 1: Introduction to English language",
     content: [
       {
-        value: "https://www.youtube.com/embed/xT0qms5poA8?si=SrAumfu7XLeH03dQ",
+        value: "https://www.youtube.com/embed/tIwnRkmHNvc?si=VGHhTUQS-4PA1-HX",
         label: "Lesson 1: Why learn English",
       },
       {
-        value: "https://www.youtube.com/embed/ZqO0rrKbKO4?si=8k29Eix3NoDEfm6p",
+        value: "https://www.youtube.com/embed/SaBH_huiJSM?si=i9jforwwyN0DHLdt",
         label: "Lesson 2: English Language Basics Part 1",
       },
       {
-        value: "https://www.youtube.com/embed/rB6mnJTUppg?si=_gE6STxD-cRdJugo",
+        value: "https://www.youtube.com/embed/cB7vltnJsOw?si=PpjSDeBEd2DvTEtS",
         label: "Lesson 3: English Language Basics Part 2",
       },
     ],
@@ -244,15 +244,15 @@ const accordionItems = [
     title: "Unit 3: Business communication",
     content: [
       {
-        value: "https://www.youtube.com/embed/xT0qms5poA8?si=SrAumfu7XLeH03dQ",
+        value: "https://www.youtube.com/embed/GJiZnG-o5FQ?si=3PPcKNBVY7Jq65bK",
         label: "Lesson 1: How to ask for and give directions in English",
       },
       {
-        value: "https://www.youtube.com/embed/ZqO0rrKbKO4?si=8k29Eix3NoDEfm6p",
+        value: "https://www.youtube.com/embed/j8brjlHycW0?si=eACR3SiUR5giEdx3",
         label: "Lesson 2: How to order food in English",
       },
       {
-        value: "https://www.youtube.com/embed/rB6mnJTUppg?si=_gE6STxD-cRdJugo",
+        value: "https://www.youtube.com/embed/skqj4jOSQU4?si=jeExZdZzY_9Z-yKG",
         label: "Lesson 3: How to talk about hobbies and interests",
       },
     ],
