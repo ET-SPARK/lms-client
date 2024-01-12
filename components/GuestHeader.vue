@@ -61,10 +61,10 @@
           <!-- Auth part -->
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
             <div>
-              <Signup />
+              <AuthSignup />
             </div>
             <div>
-              <Login />
+              <AuthLogin />
             </div>
           </div>
 
@@ -174,8 +174,8 @@
                   </div>
 
                   <div class="mt-4 flex justify-around">
-                    <Signup />
-                    <Login />
+                    <AuthSignup />
+                    <AuthLogin />
                   </div>
                 </SheetContent>
               </div>

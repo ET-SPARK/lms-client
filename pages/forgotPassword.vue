@@ -1,3 +1,0 @@
-<template>
-  <ForgotPassword />
-</template>
