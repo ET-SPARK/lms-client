@@ -1,6 +1,6 @@
 <template>
   <header class="bg-gray-800 text-white py-1 sticky top-0 shadow-xl z-50">
-    <div class="container mx-auto flex items-center justify-between">
+    <div class="container flex items-center justify-between">
       <!-- left side header -->
       <div>
         <div class="flex items-center">
@@ -12,7 +12,7 @@
                 src="../static/homeimage/andinet_logo.jpg"
               />
             </NuxtLink>
-            <div class="ml-2">LMS</div>
+            <div class="ml-2 max-[600px]:ml max-[600px]:text-[16px]">LMS</div>
           </div>
 
           <!-- on hover show list of course  -->
