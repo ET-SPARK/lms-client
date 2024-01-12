@@ -17,7 +17,7 @@
 
           <!-- on hover show list of course  -->
           <div class="ml-2 xl:flex lg:flex md:flex sm: hidden">
-            <CourseNav />
+            <NavCourseNav />
           </div>
 
           <!-- serach input box -->
@@ -247,7 +247,7 @@
                     class="flex-1 font-light mt-4 text-[10px]"
                     v-if="isCourse"
                   >
-                    <MobCourseNav />
+                    <NavMobCourseNav />
                   </div>
 
                   <div class="mt-4 flex">
