@@ -14,6 +14,7 @@
                       width="100%"
                       height="400"
                       :src="`${selectedValue}`"
+                      class="rounded-2xl"
                       title="YouTube video player"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -164,7 +165,7 @@
             </div>
           </div>
           <!-- course play list -->
-          <div class="p-4 bg-gray-200 w-full">
+          <div class="px-4 bg-gray-200 w-full">
             <div class="mb-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]"
                 >Contents</span
