@@ -1,5 +1,5 @@
 <template>
-  <GuestHeader />
+  <HeaderGuest />
   <div class="z-50">
     <div class="text-4xl text-center mt-10 font-bold max-[600px]:text-[20px]">
       Contact Us

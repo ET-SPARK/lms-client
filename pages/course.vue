@@ -1,5 +1,5 @@
 <template>
-  <AuthHeader />
+  <HeaderAuth />
   <div class="p-2 bg-gray-200">
     <section class="flex1 w-full">
       <div>
