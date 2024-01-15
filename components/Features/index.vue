@@ -1,97 +1,61 @@
 <template>
-  <div class="home-features">
-    <h1 class="home-text07">
-      <span>Discover our</span>
-      <br />
-      <span>unique features</span>
+  <div class="w-full flex flex-col py-8 px-4 md:px-8 lg:p-12">
+    <h1 class="text-xl text-left mb-8 font-semibold md:text-2xl">
+      Why Choose Us
     </h1>
-    <div class="home-separator"></div>
-    <div class="home-container03">
-      <div class="home-container04 grid grid-cols-2 gap-4">
-        <FeatureCard rootClassName="rootClassName1"></FeatureCard>
-        <FeatureCard rootClassName="rootClassName4"></FeatureCard>
-        <FeatureCard rootClassName="rootClassName3"></FeatureCard>
-        <FeatureCard rootClassName="rootClassName2"></FeatureCard>
+    <div class="w-24 h-1 bg-gray-600"></div>
+    <div class="w-full flex items-center flex-col justify-between lg:flex-row">
+      <div class="grid grid-cols-1 gap-4 mb-3 md:grid-cols-2">
+        <FeaturesCard
+          v-for="(feature, index) in features"
+          :key="index"
+          :rootClassName="feature.rootClassName"
+          :title="feature.title"
+          :description="feature.description"
+        ></FeaturesCard>
       </div>
       <img
         alt="image"
         src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIzfHxtaW5pbWFsaXNtfGVufDB8fHx8MTYyNjQ0NTY1Nw&amp;ixlib=rb-1.2.1&amp;h=1000"
-        class="home-image1 ml-14 rounded-full"
+        class="w-full h-auto object-cover self-center rounded-full md:w-1/2 md:ml-16 lg:w-1/2 xl:w-1/3"
       />
     </div>
   </div>
 </template>
 
-<style scoped>
-.home-features {
-  @apply w-full flex flex-col p-12;
-}
+<script>
+export default {
+  data() {
+    return {
+      features: [
+        {
+          rootClassName: "rootClassName1",
+          title: "Diverse Course Catalog",
+          description:
+            "Choose from a diverse array of courses tailored to your interests",
+        },
+        {
+          rootClassName: "rootClassName2",
+          title: "Expert-Guided Learning",
+          description:
+            "Benefit from the expertise of industry professionals and seasoned educators",
+        },
 
-.home-text07 {
-  @apply text-3xl font-semibold mb-8;
-}
+        {
+          rootClassName: "rootClassName3",
+          title: "Flexible Scheduling",
+          description:
+            "Learn at your own pace with 24/7 access to course materials",
+        },
 
-.home-separator {
-  @apply w-24 h-2 bg-gray-500;
-}
-
-.home-container03 {
-  @apply flex-shrink-0 w-full flex items-center flex-row justify-between mt-8;
-}
-
-.home-container04 {
-  @apply grid grid-cols-2 gap-4;
-}
-
-.home-image1 {
-  @apply w-72 h-72 object-cover flex-shrink-0 ml-14 rounded-full;
-}
-
-@media (max-width: 991px) {
-  .home-features {
-    @apply items-center;
-  }
-
-  .home-container03 {
-    @apply flex-col;
-  }
-
-  .home-image1 {
-    @apply w-48 h-48 mt-8 ml-0;
-  }
-}
-
-@media (max-width: 767px) {
-  .home-features {
-    @apply pl-8 pr-8;
-  }
-
-  .home-text07 {
-    @apply text-center;
-  }
-
-  .home-container03 {
-    @apply flex-col;
-  }
-}
-
-@media (max-width: 479px) {
-  .home-features {
-    @apply pt-8 pl-4 pr-4 pb-8;
-  }
-
-  .home-container04 {
-    @apply grid-cols-1;
-  }
-
-  .home-image1 {
-    @apply w-60 h-60;
-  }
-}
-
-@media (max-width: 350px) {
-  .home-text07 {
-    @apply text-2xl;
-  }
-}
-</style>
+        {
+          rootClassName: "rootClassName4",
+          title: "Interactive Learning Experiences",
+          description:
+            "Immerse yourself in interactive lessons and hands-on projects",
+        },
+      ],
+    };
+  },
+};
+</script>

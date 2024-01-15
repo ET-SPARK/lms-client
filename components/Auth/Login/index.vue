@@ -169,7 +169,10 @@ const togglePasswordVisibility = () => {
               <DialogClose>
                 <Button type="submit">
                   <div>
-                    <img src="../static/images/google.svg" class="w-6 h-6" />
+                    <img
+                      src="../../../static/images/google.svg"
+                      class="w-6 h-6"
+                    />
                   </div>
                   <div class="ml-4">Continue with Google</div>
                 </Button>
