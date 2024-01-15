@@ -1,7 +1,7 @@
 //fotter for users that have loged in
 
 <template>
-  <footer class="bg-blue text-white text-center w-full overflow-x-auto">
+  <footer class="bg-gray-800 text-white text-center w-full overflow-x-auto">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0 ml-10 sm:ml-1">

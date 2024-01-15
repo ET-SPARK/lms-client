@@ -1,7 +1,7 @@
 //fotter for users that dosen't loged in or for the guest users
 
 <template>
-  <footer class="bg-blue text-white text-center w-full overflow-x-auto">
+  <footer class="bg-gray-800 text-white text-center w-full overflow-x-auto">
     <div>
       <form action="">
         <div
