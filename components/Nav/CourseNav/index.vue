@@ -72,7 +72,7 @@ const courseNavList = [
           <div class="text-[14px]">
             <div class="flex justify-between mt-4 mb-2 px-10">
               <div class="">Categories</div>
-              <div class="text-sm text-blue-500 underline">
+              <div class="text-sm hover:text-blue-500 underline">
                 <NuxtLink to="/"> View all </NuxtLink>
               </div>
             </div>
@@ -80,17 +80,16 @@ const courseNavList = [
               class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-gray-200 border-t-2"
             >
               <li
-                class="cursor-pointer hover:text-blue-500"
+                class="cursor-pointer"
                 v-for="course in courseNavList"
                 :key="course.icon"
               >
                 <NuxtLink to="/">
-                  <div class="flex items-center">
-                    <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                      <Icon
-                        :name="course.icon"
-                        class="cursor-pointer text-white text-2xl"
-                      />
+                  <div
+                    class="flex items-center hover:text-blue-500 cursor-pointer"
+                  >
+                    <div class="bg-gray-800 p-1 mr-2 rounded-md">
+                      <Icon :name="course.icon" class="text-white text-2xl" />
                     </div>
                     <div>{{ course.name }}</div>
                   </div>
@@ -107,9 +106,7 @@ const courseNavList = [
                 </div>
               </div>
               <div>
-                <button class="cursor-pointer border bg-gray-300 px-4 py-2">
-                  Get started
-                </button>
+                <Button> Get started</Button>
               </div>
             </div>
           </div>
