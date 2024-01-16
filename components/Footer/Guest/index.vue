@@ -1,7 +1,9 @@
 //fotter for users that dosen't loged in or for the guest users
 
 <template>
-  <footer class="bg-gray-800 text-white text-center w-full overflow-x-auto">
+  <footer
+    class="bg-gray-800 text-white absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto"
+  >
     <div>
       <form action="">
         <div
@@ -9,30 +11,17 @@
         >
           <div class="md:mb-6 md:ml-auto">
             <p class="">
-              <strong>Sign up for our Lms Courses</strong>
+              <strong class="max-[600px]:text-[14px]"
+                >Sign up for our Lms Courses</strong
+              >
             </p>
           </div>
 
-          <!-- Newsletter sign-up input field -->
-          <div class="relative md:mb-6" data-te-input-wrapper-init>
-            <input
-              type="text"
-              class="bg-gray-light block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] text-neutral-200 outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200"
-              id="exampleFormControlInput1"
-              placeholder="Enter your Email address"
-            />
-          </div>
-
-          <!-- Newsletter sign-up submit button -->
-          <div class="mb-6 md:mr-auto">
-            <button
-              type="submit"
-              class="bg-orange inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-            >
+          <div class="flex w-full max-w-sm items-center gap-1.5">
+            <Input id="email" type="email" placeholder="Email" />
+            <Button type="submit" class="max-[600px]:text-[14px]">
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
       </form>
@@ -43,7 +32,7 @@
         <div class="mb-6 md:mb-0 ml-10 sm:ml-1">
           <a href="https://andinetsolutions.com/" class="flex items-center">
             <img
-              src="../../static/images/andinet_logo.jpg"
+              src="../../../static/images/andinet_logo.jpg"
               class="h-12 sm:h-28 me-3"
               alt="Andinet lms logo"
             />

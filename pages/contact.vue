@@ -118,7 +118,7 @@
           </div>
           <div>
             <form>
-              <div class="grid w-full max-w-sm items-center gap-1.5">
+              <div class="grid w-full max-w-xl items-center gap-1.5">
                 <Label for="text" class="max-[600px]:text-[12px]">Name</Label>
                 <Input id="text" type="text" />
               </div>

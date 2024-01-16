@@ -219,7 +219,7 @@
       </div>
     </section>
   </div>
-  <Guestfooter />
+  <FooterGuest />
 </template>
 
 <script setup lang="ts">
