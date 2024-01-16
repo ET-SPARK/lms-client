@@ -4,7 +4,7 @@
     <div class="text-4xl text-center mt-10 font-bold max-[600px]:text-[20px]">
       Contact Us
     </div>
-    <div class="flex-1 xl:flex lg:flex p-8 justify-center">
+    <div class="flex-1 xl:flex lg:flex p-8 justify-evenly">
       <div class="bg-gray-800 text-white h-auto p-8">
         <div class="flex-1 ml-4 mt-4 items-center">
           <div class="text-4xl font-semibold mt-8 mb-4 max-[600px]:text-[16px]">
@@ -118,53 +118,36 @@
           </div>
           <div>
             <form>
-              <div class="grid gap-4 py-4">
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label for="name" class="text-right max-[600px]:text-[12px]">
-                    Your Name
-                  </Label>
-                  <Input id="name" type="text" class="col-span-3" />
-                </div>
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label
-                    for="fatherName"
-                    class="text-right max-[600px]:text-[12px]"
-                  >
-                    Father Name
-                  </Label>
-                  <Input id="fatherName" type="text" class="col-span-3" />
-                </div>
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label for="number" class="text-right max-[600px]:text-[12px]"
-                    >Phone Number
-                  </Label>
-                  <Input id="number" type="number" class="col-span-3" />
-                </div>
-                <div class="grid grid-cols-4 items-center gap-4">
-                  <Label for="email" class="text-right max-[600px]:text-[12px]"
-                    >Email
-                  </Label>
-                  <Input id="email" type="email" class="col-span-3" />
-                </div>
-                <div class="grid w-full gap-2">
-                  <Textarea
-                    placeholder="Type your message here."
-                    class="max-[600px]:text-[12px]"
-                  />
-                  <div class="flex items-center space-x-2 mt-2">
-                    <Checkbox id="terms" />
-                    <label
-                      for="terms"
-                      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 max-[600px]:text-[12px]"
-                    >
-                      Accept terms and conditions
-                    </label>
-                  </div>
-                  <Button type="submit" class="max-[600px]:text-[12px]"
-                    >Send message</Button
-                  >
-                </div>
+              <div class="grid w-full max-w-sm items-center gap-1.5">
+                <Label for="text" class="max-[600px]:text-[12px]">Name</Label>
+                <Input id="text" type="text" />
               </div>
+              <div class="grid w-full max-w-sm items-center gap-1.5">
+                <Label for="email" class="max-[600px]:text-[12px]">Email</Label>
+                <Input id="email" type="email" />
+              </div>
+              <div class="grid w-full max-w-sm items-center gap-1.5">
+                <Label for="number" class="max-[600px]:text-[12px]"
+                  >Phone Number</Label
+                >
+                <Input id="number" type="number" />
+              </div>
+              <div class="grid w-full gap-1.5">
+                <Label for="message-2" class="max-[600px]:text-[12px]"
+                  >Your message</Label
+                >
+                <Textarea id="message-2" />
+              </div>
+              <div class="flex items-center space-x-2 mt-2">
+                <Checkbox id="terms" />
+                <label
+                  for="terms"
+                  class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 max-[600px]:text-[12px]"
+                >
+                  Accept terms and conditions
+                </label>
+              </div>
+              <Button class="mt-2 max-[600px]:text-[12px]">Send message</Button>
             </form>
           </div>
         </div>
