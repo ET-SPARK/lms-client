@@ -11,4 +11,5 @@
     <Testimonial />
     <Course />
   </div>
+  <FooterAuth />
 </template>

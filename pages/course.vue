@@ -1,7 +1,7 @@
 <template>
   <HeaderAuth />
   <div class="p-2 bg-gray-200">
-    <section class="flex1 w-full">
+    <section class="flex1 w-full my-10">
       <div>
         <div class="flex justify-between max-[1024px]:flex-col">
           <div>
@@ -78,13 +78,15 @@
                     </div>
                   </div>
                   <div>
-                    <p class="text-2xl font-bold mt-2 max-[600px]:text-[16px]">
+                    <p
+                      class="text-2xl font-bold mt-2 max-[600px]:text-[16px] ml-14"
+                    >
                       About the Course
                     </p>
                   </div>
                 </div>
                 <!-- course detail discription -->
-                <div class="px-4 text-justify">
+                <div class="px-4 text-justify ml-14">
                   <div class="max-[600px]:text-[12px]">
                     <p class="mt-1">
                       Are you struggling to communicate in English? We

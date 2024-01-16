@@ -7,7 +7,7 @@
         <div class="mb-6 md:mb-0 ml-10 sm:ml-1">
           <a href="https://andinetsolutions.com/" class="flex items-center">
             <img
-              src="../../static/images/andinet_logo.jpg"
+              src="../../../static/images/andinet_logo.jpg"
               class="h-12 sm:h-28 me-3"
               alt="Andinet lms logo"
             />
