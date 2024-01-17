@@ -46,7 +46,7 @@
           <NuxtLink to="/">
             <div>Home</div>
           </NuxtLink>
-          <NuxtLink to="/">
+          <NuxtLink to="/about">
             <div>About</div>
           </NuxtLink>
           <NuxtLink to="/contact">
@@ -127,7 +127,7 @@
                         Home
                       </div>
                     </NuxtLink>
-                    <NuxtLink to="/">
+                    <NuxtLink to="/about">
                       <div
                         class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
                       >
