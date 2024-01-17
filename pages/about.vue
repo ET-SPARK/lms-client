@@ -8,18 +8,25 @@
   >
     <div>
       <div class="mt-16">
-        <div class="text-[48px] font-bold text-gray-800">
-          We are Passionate <br />
-          About Building Tools for <br />the Classroom
+        <div
+          class="text-[48px] font-bold text-gray-800 max-[1024px]:text-[38px] max-[820px]:text-[24px]"
+        >
+          <p
+            class="max-w-[600px] max-[1024px]:max-w-[400px] max-[820px]:max-w-[350px]"
+          >
+            We are Passionate About Building Tools for the Classroom
+          </p>
         </div>
-        <div class="mt-16 font-light text-[20px]">
-          We're driven to empower educators through our Learning Management
-          <br />
-          System (LMS), passionately creating tools that enrich the
-          classroom.<br />
-          With seamless organization and interactive features, we elevate the<br />
-          teaching and learning journey for a transformative educational
-          experience.
+        <div
+          class="mt-16 font-light text-[20px] max-[1024px]:mt-8 max-[820px]:text-[16px] pb-4"
+        >
+          <p class="max-w-[300px]">
+            We're driven to empower educators through our Learning Management
+            System (LMS), passionately creating tools that enrich the classroom.
+            With seamless organization and interactive features, we elevate the
+            teaching and learning journey for a transformative educational
+            experience.
+          </p>
         </div>
       </div>
     </div>
@@ -28,7 +35,7 @@
         width="400"
         height="500"
         src="https://www.youtube.com/embed/yYF2Vf1Gc14?si=o4MaabEp_FWPTcMn"
-        class="rounded-2xl"
+        class="rounded-2x max-[820px]:w-[360px] max-[820px]:h-[400px]"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -47,19 +54,25 @@
         </div>
         <div class="text-[38px] font-bold text-[#7272ff]">Mission</div>
         <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div class="font-light text-[20px]">
-          At Andinet Learning Management System, our mission is to empower<br />
-          individuals and organizations with cutting-edge educational<br />
-          technology, fostering a dynamic and inclusive learning environment.<br />
-          We are dedicated to providing accessible, personalized, and
-          innovative<br />
-          learning solutions that inspire continuous growth and success.
+        <div
+          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+        >
+          <p
+            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+          >
+            At Andinet Learning Management System, our mission is to empower
+            individuals and organizations with cutting-edge educational
+            technology, fostering a dynamic and inclusive learning environment.
+            We are dedicated to providing accessible, personalized, and
+            innovative learning solutions that inspire continuous growth and
+            success.
+          </p>
         </div>
       </div>
       <div>
         <img
           src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-06.png"
-          class="w-[400px]"
+          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px]"
         />
       </div>
     </div>
@@ -69,7 +82,7 @@
       <div>
         <img
           src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-07.png"
-          class="w-[400px]"
+          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px]"
         />
       </div>
       <div>
@@ -81,18 +94,20 @@
         </div>
         <div class="text-[38px] font-bold text-[#7272ff]">Vision</div>
         <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div class="font-light text-[20px]">
-          Envisioning a future where education knows no bounds, Andinet Learning
-          <br />
-          Management System strives to be a global leader in transforming
-          <br />
-          learning experiences. Our vision is to revolutionize education by
-          <br />
-          seamlessly integrating technology, promoting collaboration, <br />
-          unlocking the full potential of learners worldwide. We aspire to be
-          <br />
-          the catalyst for a knowledge-driven world where everyone has the tools
-          to thrive.
+        <div
+          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+        >
+          <p
+            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+          >
+            Envisioning a future where education knows no bounds, Andinet
+            Learning Management System strives to be a global leader in
+            transforming learning experiences. Our vision is to revolutionize
+            education by seamlessly integrating technology, promoting
+            collaboration, unlocking the full potential of learners worldwide.
+            We aspire to be the catalyst for a knowledge-driven world where
+            everyone has the tools to thrive.
+          </p>
         </div>
       </div>
     </div>
@@ -108,22 +123,25 @@
         </div>
         <div class="text-[38px] font-bold text-[#7272ff]">Values</div>
         <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div class="font-light text-[20px]">
-          At Andinet Learning Management System, our core values are rooted in a
-          <br />
-          commitment to excellence, inclusivity, and innovation. We believe
-          in<br />
-          fostering an inclusive learning community that embraces diversity
-          and<br />
-          provides equal access to education for all. Our dedication to<br />
-          excellence drives us to deliver high-quality, learner-centric<br />
-          solutions that exceed expectations.
+        <div
+          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+        >
+          <p
+            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+          >
+            At Andinet Learning Management System, our core values are rooted in
+            a commitment to excellence, inclusivity, and innovation. We believe
+            in fostering an inclusive learning community that embraces diversity
+            and provides equal access to education for all. Our dedication to
+            excellence drives us to deliver high-quality, learner-centric
+            solutions that exceed expectations.
+          </p>
         </div>
       </div>
       <div>
         <img
           src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-08.png"
-          class="w-[400px]"
+          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px]"
         />
       </div>
     </div>
