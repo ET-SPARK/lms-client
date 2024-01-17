@@ -150,58 +150,50 @@
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center">
+              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
                 Learning Management System (LMS)
               </h3>
-              <p class="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="mb-4">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+              <p class="mb-4 text-justify font-light text-gray-800">
+                Our comprehensive Learning Management System offers a
+                user-friendly platform designed to streamline educational
+                processes. With features such as content management, assessment
+                tools, and progress tracking, our LMS ensures an efficient and
+                engaging learning experience for both educators and learners.
+                Customizable to meet diverse needs, it provides a centralized
+                hub for course administration, collaboration, and reporting.
               </p>
             </div>
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center">
+              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
                 Curriculum Development
               </h3>
-              <p class="mb-4 mt-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="mb-4">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+              <p class="mb-4 mt-4 text-justify font-light text-gray-800">
+                Our curriculum development services focus on creating tailored
+                educational content that aligns with specific learning
+                objectives. We collaborate with educators and subject matter
+                experts to design engaging and effective curricula. From
+                identifying key learning outcomes to developing multimedia
+                resources, our curriculum development ensures a well-structured
+                and coherent educational experience.
               </p>
             </div>
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center">
+              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
                 Course Production
               </h3>
-              <p class="mb-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <p class="mb-4">
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <p>
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur.
+              <p class="mb-4 text-justify font-light text-gray-800">
+                Elevate your online courses with our professional course
+                production services. We specialize in crafting multimedia-rich
+                content, including videos, interactive quizzes, and engaging
+                presentations. Our team combines instructional design expertise
+                with cutting-edge technology to produce high-quality courses
+                that captivate learners and facilitate effective knowledge
+                transfer. Whether creating from scratch or enhancing existing
+                materials, we strive to deliver courses that inspire and inform.
               </p>
             </div>
           </div>
