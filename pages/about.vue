@@ -146,7 +146,7 @@
       </div>
     </div>
   </div>
-  <div class="mt-36 mb-10">
+  <div class="mt-36 mb-10 max-[820px]:mb-20">
     <AspectRatio :ratio="16 / 9" class="bg-muted">
       <div class="relative">
         <!-- Image with Text Overlay -->
@@ -155,23 +155,31 @@
           class="rounded-md object-cover w-full h-full"
         />
         <div class="absolute top-0 left-0 right-0 bottom-0 items-center">
-          <div class="text-center mt-28 text-[32px] font-bold text-gray-800">
+          <div
+            class="text-center mt-28 max-[1024px]:mt-6 max-[820px]:mt-4 text-[32px] max-[820px]:text-[24px] font-bold text-gray-800"
+          >
             Products and Services
           </div>
-          <div class="text-center mt-4 text-[20px] font-light text-gray-800">
+          <div
+            class="text-center mt-4 max-[1024px]:mt-2 text-[20px] max-[820px]:text-[16px] max-[820px]:px-10 font-light text-gray-800"
+          >
             Andinet LMS is an innovative full service learning platform that
             produces, markets and manages online courses in a variety of fields
           </div>
           <div
-            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-[1024px]:mt-6 max-[1024px]:px-4 max-[820px]:mt-2"
           >
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
+              <h3
+                class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+              >
                 Learning Management System (LMS)
               </h3>
-              <p class="mb-4 text-justify font-light text-gray-800">
+              <p
+                class="mb-4 text-justify font-light text-gray-800 max-[1024px]:text-[14px] max-[820px]:text-[12px]"
+              >
                 Our comprehensive Learning Management System offers a
                 user-friendly platform designed to streamline educational
                 processes. With features such as content management, assessment
@@ -184,10 +192,14 @@
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
+              <h3
+                class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+              >
                 Curriculum Development
               </h3>
-              <p class="mb-4 mt-4 text-justify font-light text-gray-800">
+              <p
+                class="mb-4 mt-4 text-justify font-light text-gray-800 max-[1024px]:text-[14px] max-[820px]:text-[12px]"
+              >
                 Our curriculum development services focus on creating tailored
                 educational content that aligns with specific learning
                 objectives. We collaborate with educators and subject matter
@@ -200,10 +212,14 @@
             <div
               class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
             >
-              <h3 class="text-xl font-bold mb-4 text-center text-[#7272ff]">
+              <h3
+                class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+              >
                 Course Production
               </h3>
-              <p class="mb-4 text-justify font-light text-gray-800">
+              <p
+                class="mb-4 text-justify font-light text-gray-800 max-[1024px]:text-[14px] max-[820px]:text-[12px]"
+              >
                 Elevate your online courses with our professional course
                 production services. We specialize in crafting multimedia-rich
                 content, including videos, interactive quizzes, and engaging
