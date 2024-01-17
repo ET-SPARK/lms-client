@@ -128,6 +128,87 @@
       </div>
     </div>
   </div>
+  <div class="mt-36 mb-10">
+    <AspectRatio :ratio="16 / 9" class="bg-muted">
+      <div class="relative">
+        <!-- Image with Text Overlay -->
+        <img
+          src="../static/images/splash.jpg"
+          class="rounded-md object-cover w-full h-full"
+        />
+        <div class="absolute top-0 left-0 right-0 bottom-0 items-center">
+          <div class="text-center mt-28 text-[32px] font-bold text-gray-800">
+            Products and Services
+          </div>
+          <div class="text-center mt-4 text-[20px] font-light text-gray-800">
+            Andinet LMS is an innovative full service learning platform that
+            produces, markets and manages online courses in a variety of fields
+          </div>
+          <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-20"
+          >
+            <div
+              class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
+            >
+              <h3 class="text-xl font-bold mb-4 text-center">
+                Learning Management System (LMS)
+              </h3>
+              <p class="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p class="mb-4">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
+            >
+              <h3 class="text-xl font-bold mb-4 text-center">
+                Curriculum Development
+              </h3>
+              <p class="mb-4 mt-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p class="mb-4">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
+            >
+              <h3 class="text-xl font-bold mb-4 text-center">
+                Course Production
+              </h3>
+              <p class="mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <p class="mb-4">
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </AspectRatio>
+  </div>
 
   <FooterGuest />
 </template>
