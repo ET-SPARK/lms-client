@@ -1,21 +1,24 @@
-//fotter for users that dosen't loged in or for the guest users
-
 <template>
   <footer
     class="bg-gray-800 text-white absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto"
   >
     <div>
       <form action="">
-        <div
-          class="gird-cols-1 grid items-center justify-center gap-4 md:grid-cols-3"
-        >
-          <div class="md:mb-6 md:ml-auto">
-            <p class="max-[600px]:text-[14px]">Subscribe our Lms News</p>
+        <div class="flex justify-center items-center max-[600px]:flex-col">
+          <div>
+            <p class="max-[600px]:text-[14px] text-gray-400">
+              Subscribe our Lms News
+            </p>
           </div>
 
-          <div class="flex w-full max-w-sm items-center gap-1.5">
-            <Input id="email" type="email" placeholder="Email" />
-            <Button type="submit" class="max-[600px]:text-[14px]">
+          <div class="flex w-full max-w-sm items-center gap-1.5 ml-4">
+            <Input
+              id="email"
+              type="email"
+              placeholder="Email"
+              class="text-black"
+            />
+            <Button type="submit" class="max-[600px]:text-[14px] text-gray-400">
               Subscribe
             </Button>
           </div>
@@ -33,16 +36,14 @@
               alt="Andinet lms logo"
             />
             <span
-              class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+              class="self-center text-2xl font-semibold whitespace-nowrap text-gray-400 max-[600px]:text-[24px]"
               >Andinet Lms</span
             >
           </a>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
           <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
+            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
               HELP CENTER
             </h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
@@ -59,9 +60,7 @@
             </ul>
           </div>
           <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
+            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
               Resources
             </h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
@@ -77,9 +76,7 @@
             </ul>
           </div>
           <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
+            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
               Follow us
             </h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
@@ -99,9 +96,7 @@
             </ul>
           </div>
           <div>
-            <h2
-              class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
-            >
+            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
               Legal
             </h2>
             <ul class="text-gray-500 dark:text-gray-400 font-medium">
@@ -119,7 +114,8 @@
         class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
       />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        <span
+          class="text-l max-[600px]:text-sm text-gray-500 sm:text-center dark:text-gray-400"
           >© {{ currentYear }}
           <a href="https://andinetsolutions.com/" class="hover:underline"
             >Andinet Business Group</a
