@@ -9,7 +9,7 @@
     <div>
       <div class="mt-16 max-[630px]:mt-4">
         <div
-          class="text-[48px] font-bold text-gray-800 max-[1024px]:text-[38px] max-[820px]:text-[24px] max-[630px]:text-[16px]"
+          class="text-[48px] font-bold text-gray-800 max-[1024px]:text-[38px] max-[820px]:text-[24px] max-[630px]:text-[24px]"
         >
           <p
             class="max-w-[600px] max-[1024px]:max-w-[400px] max-[820px]:max-w-[350px] max-[630px]:max-w-[400px]"
