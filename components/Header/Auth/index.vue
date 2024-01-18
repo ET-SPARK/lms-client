@@ -39,20 +39,9 @@
       </div>
       <!-- navigation part -->
       <div class="xl:flex lg:hidden md:hidden sm: hidden">
-        <nav
-          class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center flex"
-        >
-          <NuxtLink to="/">
-            <div>
-              Assignments<sup class="font-bold text-xl text-red-600">0</sup>
-            </div>
-          </NuxtLink>
-          <NuxtLink to="/">
-            <div>
-              Discussions<sup class="font-bold text-xl text-red-600">0</sup>
-            </div>
-          </NuxtLink>
-        </nav>
+        <div>
+          <NavAuthMenu />
+        </div>
       </div>
 
       <!-- Profile and language part -->

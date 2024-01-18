@@ -40,19 +40,9 @@
 
       <!-- navigation part -->
       <div class="xl:flex lg:hidden md:hidden sm: hidden">
-        <nav
-          class="text-[14px] font-semibold text-gray-300 w-[200px] justify-around items-center flex"
-        >
-          <NuxtLink to="/">
-            <div>Home</div>
-          </NuxtLink>
-          <NuxtLink to="/about">
-            <div>About</div>
-          </NuxtLink>
-          <NuxtLink to="/contact">
-            <div>Contact</div>
-          </NuxtLink>
-        </nav>
+        <div>
+          <NavGuestMenu />
+        </div>
       </div>
 
       <!-- signup, login, theme and language part -->
@@ -119,7 +109,7 @@
                   </SheetHeader>
 
                   <!-- navigation links -->
-                  <div class="mt-2">
+                  <div>
                     <NuxtLink to="/">
                       <div
                         class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
