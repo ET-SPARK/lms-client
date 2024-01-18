@@ -120,7 +120,7 @@
       />
       <div class="sm:flex sm:items-center sm:justify-between">
         <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
-          >© 2023
+          >© {{ currentYear }}
           <a href="https://andinetsolutions.com/" class="hover:underline"
             >Andinet Business Group</a
           >. All Rights Reserved.
@@ -170,6 +170,10 @@
 
 <script>
 export default {
-  // Your component logic here
+  data() {
+    return {
+      currentYear: new Date().getFullYear(),
+    };
+  },
 };
 </script>

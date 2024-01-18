@@ -160,7 +160,6 @@
   </div>
   <div class="mt-36 mb-10 max-[820px]:mb-20">
     <!-- Image with Text Overlay -->
-
     <div class="items-center">
       <div
         class="text-center mt-28 max-[1024px]:mt-6 max-[820px]:mt-4 text-[32px] max-[820px]:text-[24px] font-bold text-gray-800"
@@ -171,7 +170,7 @@
         class="text-center mt-4 max-[1024px]:mt-2 text-[20px] max-[820px]:text-[16px] max-[820px]:px-10 font-light text-gray-800"
       >
         Andinet LMS is an innovative full service learning platform that
-        produces, markets and manages online courses in a variety of fields
+        produces, markets and manages online courses in a variety of fields.
       </div>
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-[1024px]:mt-6 max-[1024px]:px-4 max-[820px]:mt-2"
@@ -180,7 +179,7 @@
           class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
         >
           <h3
-            class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+            class="text-xl font-bold mb-4 text-center text-gray-800 max-[1024px]:text-[16px] max-[820px]:text-[14px]"
           >
             Learning Management System (LMS)
           </h3>
@@ -200,7 +199,7 @@
           class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
         >
           <h3
-            class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+            class="text-xl font-bold mb-4 text-center text-gray-800 max-[1024px]:text-[16px] max-[820px]:text-[14px]"
           >
             Curriculum Development
           </h3>
@@ -220,7 +219,7 @@
           class="p-4 bg-white rounded-lg shadow-md hover:bg-purple hover:text-gray-light"
         >
           <h3
-            class="text-xl font-bold mb-4 text-center text-[#7272ff] max-[1024px]:text-[16px] max-[820px]:text-[14px]"
+            class="text-xl font-bold mb-4 text-center text-gray-800 max-[1024px]:text-[16px] max-[820px]:text-[14px]"
           >
             Course Production
           </h3>
@@ -243,6 +242,4 @@
 
   <FooterGuest />
 </template>
-<script setup lang="ts">
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-</script>
+<script setup lang="ts"></script>
