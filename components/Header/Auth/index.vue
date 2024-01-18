@@ -64,7 +64,7 @@
               <DropdownMenuTrigger>
                 <Avatar>
                   <AvatarImage
-                    src="https://github.com/radix-vue.png"
+                    src="https://github.com/shadcn.png"
                     alt="@radix-vue"
                   />
                   <AvatarFallback>S</AvatarFallback>
