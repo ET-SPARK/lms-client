@@ -154,5 +154,5 @@
       </div>
     </div>
   </div>
-  <Guestfooter />
+  <FooterGuest />
 </template>

@@ -10,11 +10,7 @@
           class="gird-cols-1 grid items-center justify-center gap-4 md:grid-cols-3"
         >
           <div class="md:mb-6 md:ml-auto">
-            <p class="">
-              <strong class="max-[600px]:text-[14px]"
-                >Sign up for our Lms Courses</strong
-              >
-            </p>
+            <p class="max-[600px]:text-[14px]">Subscribe our Lms News</p>
           </div>
 
           <div class="flex w-full max-w-sm items-center gap-1.5">
