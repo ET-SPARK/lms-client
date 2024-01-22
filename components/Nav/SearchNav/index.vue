@@ -16,7 +16,7 @@ import { Label } from "@/components/ui/label";
 <template>
   <Dialog>
     <DialogTrigger as-child>
-      <Button variant="outline">
+      <Button variant="outline" class="max-[600px]:text-[12px]">
         <Icon
           name="material-symbols:search"
           class="cursor-pointer mr-2 text-[20px]"
@@ -24,12 +24,10 @@ import { Label } from "@/components/ui/label";
         Search for anything
       </Button>
     </DialogTrigger>
-    <DialogContent class="sm:max-w-[425px]">
+    <DialogContent class="sm:max-w-[425px] max-[600px]:text-[12px]">
       <DialogHeader>
         <DialogTitle>
-          <div
-            class="mr-2 flex items-center relative xl:flex lg:flex md:flex sm: hidden border-b"
-          >
+          <div class="mr-2 flex items-center relative border-b p-2">
             <Icon
               name="material-symbols:search"
               class="absolute left-2 cursor-pointer"

@@ -1,12 +1,13 @@
 <template>
-  <div class="grid grid-cols-2 gap-5 justify-between mt-4 mb-4 text-[12px]">
-    <div v-for="course in courseNavList" :key="course.icon">
-      <NuxtLink
-        to="/"
-        class="cursor-pointer hover:text-blue-500 flex items-center"
-      >
-        <div class="bg-blue-500 p-1 mr-2 rounded-md">
-          <Icon :name="course.icon" class="text-white text-xl" />
+  <div class="mt-4 mb-4 text-[12px] max-[600px]:text-[12px]">
+    <div
+      v-for="course in courseNavList"
+      :key="course.icon"
+      class="hover:text-blue-500"
+    >
+      <NuxtLink to="/" class="cursor-pointer flex items-center">
+        <div class="p-1 mr-2 rounded-md">
+          <Icon :name="course.icon" class="text-xl max-[600px]:text-[12px]" />
         </div>
 
         {{ course.name }}
