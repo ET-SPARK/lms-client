@@ -36,18 +36,18 @@ const togglePasswordVisibility = () => {
             <Label for="email" class="text-left text-[16px] block">
               Your Name
             </Label>
-            <Input type="text" placeholder="Enter your name" />
+            <Input type="text" />
           </div>
           <div class="mb-2">
             <Label for="password" class="text-left text-[16px] block">
               Father Name
             </Label>
-            <Input type="text" placeholder="Enter your father Name" />
+            <Input type="text" />
           </div>
         </div>
         <div class="mb-2">
           <Label for="email" class="text-left text-[16px] block"> Email </Label>
-          <Input type="email" placeholder="Enter your email" />
+          <Input type="email" />
         </div>
         <div class="mb-2">
           <Label for="number" class="text-left text-[16px] block">
@@ -76,7 +76,7 @@ const togglePasswordVisibility = () => {
               :type="showPassword ? 'text' : 'password'"
               id="password"
               name="password"
-              class="pl-3 mt-1 p-2 border rounded-md w-full text-sm"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-1 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               placeholder=""
               required
             />
@@ -91,7 +91,7 @@ const togglePasswordVisibility = () => {
               :type="showPassword ? 'text' : 'password'"
               id="password"
               name="password"
-              class="pl-3 mt-1 p-2 border rounded-md w-full text-sm"
+              class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-1 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
               placeholder=""
               required
             />
