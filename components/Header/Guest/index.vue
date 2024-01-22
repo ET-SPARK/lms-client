@@ -7,15 +7,99 @@
       <!-- left side header -->
       <div>
         <div class="flex items-center">
+          <!-- mobile and tab screen dropdown part -->
+          <div>
+            <Sheet>
+              <SheetTrigger as-child>
+                <Button variant="outline" class="xl:hidden px-4 py-2 ml-2">
+                  <!-- menu navigation for mobile and tab screen -->
+                  <div class="flex">
+                    <Icon
+                      name="material-symbols:menu"
+                      class="cursor-pointer text-xl"
+                    />
+                  </div>
+                </Button>
+              </SheetTrigger>
+              <div>
+                <SheetContent class="font-semibold text-[12px]">
+                  <SheetHeader>
+                    <div class="flex items-center">
+                      <!-- logo -->
+                      <div class="flex">
+                        <NuxtLink to="/" class="mr-2">
+                          <img
+                            class="w-10 h-10 cursor-pointer rounded-full"
+                            src="../../../static/homeimage/andinet_logo.jpg"
+                          />
+                        </NuxtLink>
+                      </div>
+                      <!-- serach box -->
+                      <div class="items-center flex mt-4 mb-2 justify-start">
+                        <NavSearchNav />
+                      </div>
+                    </div>
+                  </SheetHeader>
+
+                  <!-- navigation links -->
+                  <div>
+                    <NuxtLink to="/">
+                      <div class="border-b-2 p-2">Home</div>
+                    </NuxtLink>
+                    <NuxtLink to="/about">
+                      <div class="border-b-2 p-2">About</div>
+                    </NuxtLink>
+                    <NuxtLink to="/contact">
+                      <div class="border-b-2 p-2">Contact</div>
+                    </NuxtLink>
+                  </div>
+
+                  <!-- course dropdown -->
+                  <div
+                    class="flex border-b-2 p-2 cursor-pointer"
+                    @click="toggleDropdownCourese"
+                  >
+                    <div class="cursor-pointe">Courses</div>
+                    <div>
+                      <Icon
+                        v-if="isCourse"
+                        name="material-symbols:arrow-drop-up"
+                        class="cursor-pointer text-2xl"
+                      />
+                      <Icon
+                        v-else
+                        name="material-symbols:arrow-drop-down"
+                        class="cursor-pointer text-2xl"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- show all Categories course  -->
+                  <div
+                    class="flex-1 font-light mt-4 text-[10px]"
+                    v-if="isCourse"
+                  >
+                    <NavMobCourseNav />
+                  </div>
+
+                  <div class="mt-4 flex justify-around">
+                    <AuthSignup />
+                    <AuthLogin />
+                  </div>
+                </SheetContent>
+              </div>
+            </Sheet>
+          </div>
           <!-- logo -->
-          <div class="flex items-center">
-            <NuxtLink to="/" class="hover:text-gray-300">
+          <div
+            class="flex items-center max-[1280px]:hidden max-[1024px]:hidden max-[768px]:hidden max-[640px]:hidden"
+          >
+            <NuxtLink to="/" class="">
               <img
                 class="w-10 h-10 cursor-pointer rounded-full"
                 src="../../../static/homeimage/andinet_logo.jpg"
               />
             </NuxtLink>
-            <div class="ml-4">LMS</div>
           </div>
 
           <!-- on hover show list of course  -->
@@ -81,109 +165,6 @@
                 class="bg-#212F3D cursor-pointer text-[20px] max-[600px]:text-[12px]"
               />
             </Button>
-          </div>
-
-          <!-- mobile and tab screen dropdown part -->
-          <div>
-            <Sheet>
-              <SheetTrigger as-child>
-                <Button
-                  variant="outline"
-                  class="xl:hidden bg-gray-800 boarder border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
-                >
-                  <!-- menu navigation for mobile and tab screen -->
-                  <div class="flex">
-                    <Icon
-                      name="material-symbols:menu"
-                      class="cursor-pointer text-xl"
-                    />
-                  </div>
-                </Button>
-              </SheetTrigger>
-              <div>
-                <SheetContent
-                  class="bg-gray-800 text-white font-semibold text-[12px]"
-                >
-                  <SheetHeader>
-                    <!-- serach box -->
-                    <div class="items-center flex mt-4 mb-2 justify-start">
-                      <input
-                        type="text"
-                        placeholder="What do you want to learn?"
-                        class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
-                      />
-                      <div class="ml-1 bg-white py-1 px-1">
-                        <Icon
-                          name="material-symbols:search"
-                          class="cursor-pointer"
-                          color="black"
-                        />
-                      </div>
-                    </div>
-                  </SheetHeader>
-
-                  <!-- navigation links -->
-                  <div>
-                    <NuxtLink to="/">
-                      <div
-                        class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
-                      >
-                        Home
-                      </div>
-                    </NuxtLink>
-                    <NuxtLink to="/about">
-                      <div
-                        class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
-                      >
-                        About
-                      </div>
-                    </NuxtLink>
-                    <NuxtLink to="/contact">
-                      <div
-                        class="border-gray-200 border-b-2 p-2 hover:bg-gray-700"
-                      >
-                        Contact
-                      </div>
-                    </NuxtLink>
-                  </div>
-
-                  <!-- course dropdown -->
-                  <div
-                    class="flex border-gray-200 border-b-2 p-2 cursor-pointer hover:bg-gray-700"
-                    @click="toggleDropdownCourese"
-                  >
-                    <div class="cursor-pointe">Courses</div>
-                    <div>
-                      <Icon
-                        v-if="isCourse"
-                        name="material-symbols:arrow-drop-up"
-                        class="cursor-pointer text-2xl"
-                        color="white"
-                      />
-                      <Icon
-                        v-else
-                        name="material-symbols:arrow-drop-down"
-                        class="cursor-pointer text-2xl"
-                        color="white"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- show all Categories course  -->
-                  <div
-                    class="flex-1 font-light mt-4 text-[10px]"
-                    v-if="isCourse"
-                  >
-                    <NavMobCourseNav />
-                  </div>
-
-                  <div class="mt-4 flex justify-around">
-                    <AuthSignup />
-                    <AuthLogin />
-                  </div>
-                </SheetContent>
-              </div>
-            </Sheet>
           </div>
         </div>
       </div>

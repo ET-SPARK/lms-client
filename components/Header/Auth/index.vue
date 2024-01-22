@@ -185,7 +185,6 @@ import {
 } from "@/components/ui/sheet";
 
 const language = ref("አማ");
-const isNav = ref(false);
 const isCourse = ref(false);
 const isDarkMode = ref(false);
 
@@ -199,11 +198,6 @@ const toggleDarkMode = () => {
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
-};
-
-// function to handle navigation visibility menu in a mobile device
-const showNav = () => {
-  isNav.value = !isNav.value;
 };
 
 // handle course dropdown in mobile and tab screen
