@@ -1,6 +1,6 @@
 <template>
   <header
-    class="py-1 sticky top-0 shadow-xl z-50 bg-white"
+    class="py-1 sticky top-0 shadow-xl z-50 bg-white border border-b"
     :class="{ 'dark:bg-background': isDarkMode }"
   >
     <div class="container flex items-center justify-between">
