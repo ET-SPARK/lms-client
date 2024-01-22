@@ -23,12 +23,7 @@ const togglePasswordVisibility = () => {
 <template>
   <Dialog>
     <DialogTrigger as-child>
-      <Button
-        variant="outline"
-        class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-2"
-      >
-        Sign Up
-      </Button>
+      <Button variant="outline" class="px-4 py-2 ml-2"> Sign Up </Button>
     </DialogTrigger>
     <DialogContent class="sm:max-w-[425px]">
       <DialogHeader>

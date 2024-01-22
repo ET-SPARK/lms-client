@@ -1,5 +1,8 @@
 <template>
-  <header class="bg-gray-800 text-white py-1 sticky top-0 shadow-xl z-50">
+  <header
+    class="py-1 sticky top-0 shadow-xl z-50 bg-white border border-b"
+    :class="{ 'dark:bg-background': isDarkMode }"
+  >
     <div class="container flex items-center justify-between">
       <!-- left side header -->
       <div>
@@ -24,16 +27,7 @@
           <div
             class="ml-2 flex items-center relative xl:flex lg:flex md:flex sm: hidden"
           >
-            <input
-              type="text"
-              placeholder="What do you want to learn?"
-              class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
-            />
-            <Icon
-              name="material-symbols:search"
-              class="absolute right-2 cursor-pointer"
-              color="white"
-            />
+            <NavSearchNav />
           </div>
         </div>
       </div>
@@ -63,7 +57,7 @@
             <Button
               @click="toggleStateLanguage()"
               variant="outline"
-              class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
+              class="px-4 py-2 ml-8"
             >
               {{ language }}
             </Button>
