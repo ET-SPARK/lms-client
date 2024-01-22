@@ -1,5 +1,8 @@
 <template>
-  <header class="bg-gray-800 text-white py-1 sticky top-0 shadow-xl z-50">
+  <header
+    class="py-1 sticky top-0 shadow-xl z-50 bg-white"
+    :class="{ 'dark:bg-background': isDarkMode }"
+  >
     <div class="container flex items-center justify-between">
       <!-- left side header -->
       <div>
@@ -12,7 +15,6 @@
                 src="../../../static/homeimage/andinet_logo.jpg"
               />
             </NuxtLink>
-            <div class="ml-2 max-[600px]:ml max-[600px]:text-[16px]">LMS</div>
           </div>
 
           <!-- on hover show list of course  -->
@@ -21,20 +23,7 @@
           </div>
 
           <!-- serach input box -->
-          <div
-            class="ml-2 flex items-center relative xl:flex lg:flex md:flex sm: hidden"
-          >
-            <input
-              type="text"
-              placeholder="What do you want to learn?"
-              class="bg-gray-700 text-white font-light text-xs px-4 w-[300px] py-2 rounded-sm focus:outline-none focus:shadow-outline"
-            />
-            <Icon
-              name="material-symbols:search"
-              class="absolute right-2 cursor-pointer"
-              color="white"
-            />
-          </div>
+          <div class="ml-2"><NavSearchNav /></div>
         </div>
       </div>
       <!-- navigation part -->
@@ -49,100 +38,14 @@
         <div class="flex mb-1">
           <!-- profile part -->
           <div>
-            <DropdownMenu>
-              <DropdownMenuTrigger>
-                <Avatar>
-                  <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@radix-vue"
-                  />
-                  <AvatarFallback>S</AvatarFallback>
-                </Avatar>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent class="px-1">
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
-                        class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
-                        color="black"
-                      />
-                    </div>
-                    <div>My course</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="material-symbols:person-outline"
-                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                        color="black"
-                      />
-                    </div>
-                    <div>Profile</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="material-symbols:circle-notifications-outline"
-                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                        color="black"
-                      />
-                    </div>
-                    <div>Notifications</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem
-                  ><div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="material-symbols:android-messages-outline"
-                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                        color="black"
-                      />
-                    </div>
-                    <div>Messages</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="material-symbols:settings"
-                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                        color="black"
-                      />
-                    </div>
-                    <div>Settings</div>
-                  </div>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <div class="flex items-center mb-2">
-                    <div>
-                      <Icon
-                        name="clarity:sign-out-line"
-                        class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-                        color="black"
-                      />
-                    </div>
-                    <div>Log out</div>
-                  </div>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <NavProfileNav />
           </div>
           <!-- used to change the language -->
           <div class="xl:flex lg:hidden md:hidden sm: hidden">
             <Button
               @click="toggleStateLanguage()"
               variant="outline"
-              class="bg-gray-800 border border-blue-500 hover:border-gray-800 text-blue-500 px-4 py-2 ml-8"
+              class="px-4 py-2 ml-8"
             >
               {{ language }}
             </Button>
@@ -284,14 +187,6 @@
 
 <script setup>
 import { ref } from "vue";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -301,7 +196,6 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const language = ref("አማ");
 const isNav = ref(false);

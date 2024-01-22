@@ -65,9 +65,7 @@ const courseNavList = [
   <NavigationMenu>
     <NavigationMenuList>
       <NavigationMenuItem>
-        <NavigationMenuTrigger class="bg-gray-800">
-          Courses
-        </NavigationMenuTrigger>
+        <NavigationMenuTrigger class=""> Courses </NavigationMenuTrigger>
         <NavigationMenuContent>
           <div class="text-[14px]">
             <div class="flex justify-between mt-4 mb-2 px-10">
@@ -77,7 +75,7 @@ const courseNavList = [
               </div>
             </div>
             <ul
-              class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-gray-200 border-t-2"
+              class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-t-2"
             >
               <li
                 class="cursor-pointer"
@@ -88,8 +86,8 @@ const courseNavList = [
                   <div
                     class="flex items-center hover:text-blue-500 cursor-pointer"
                   >
-                    <div class="bg-gray-800 p-1 mr-2 rounded-md">
-                      <Icon :name="course.icon" class="text-white text-2xl" />
+                    <div class="p-1 mr-2 rounded-md">
+                      <Icon :name="course.icon" class="text-2xl" />
                     </div>
                     <div>{{ course.name }}</div>
                   </div>
@@ -97,7 +95,7 @@ const courseNavList = [
               </li>
             </ul>
 
-            <div class="flex justify-between items-center bg-gray-100 p-6">
+            <div class="flex justify-between items-center p-6">
               <div class="flex1">
                 <div>Get started</div>
                 <div class="font-light">
