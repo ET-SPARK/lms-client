@@ -69,6 +69,26 @@
             </Button>
           </div>
 
+          <!-- used to change the theme -->
+          <div>
+            <Button
+              class="ml-2 max-[600px]:text-[12px]"
+              :class="{ dark: isDarkMode }"
+              @click="toggleDarkMode"
+            >
+              <Icon
+                v-if="isDarkMode"
+                name="material-symbols:light-mode-outline"
+                class="bg-#212F3D cursor-pointer text-[20px] max-[600px]:text-[12px]"
+              />
+              <Icon
+                v-else
+                name="ph:moon-stars-light"
+                class="bg-#212F3D cursor-pointer text-[20px] max-[600px]:text-[12px]"
+              />
+            </Button>
+          </div>
+
           <!-- mobile and tab screen dropdown part -->
           <div>
             <Sheet>
@@ -191,6 +211,14 @@ import {
 
 const language = ref("አማ");
 const isCourse = ref(false);
+const isDarkMode = ref(false);
+
+// function to handle theme change
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value;
+  const html = document.querySelector("html");
+  html.classList.toggle("dark", isDarkMode.value);
+};
 
 // function to handle language change
 const toggleStateLanguage = () => {
