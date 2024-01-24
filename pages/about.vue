@@ -45,7 +45,7 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_19.jpg"
-              class="w-20 h-20"
+              class="w-20 h-20 rounded-full"
             />
           </div>
           <div
@@ -89,7 +89,7 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_15.jpg"
-              class="w-20 h-20"
+              class="w-20 h-20 rounded-full"
             />
           </div>
           <div
@@ -122,7 +122,7 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_16.jpg"
-              class="w-20 h-20"
+              class="w-20 h-20 rounded-full"
             />
           </div>
           <div
