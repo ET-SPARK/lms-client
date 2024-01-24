@@ -8,7 +8,7 @@
       Contact Us
     </div>
     <div class="flex-1 xl:flex lg:flex p-8 max-[600px]:py-4 justify-center">
-      <div class="bg-gray-800 text-gray-400 h-auto p-8">
+      <div class="bg-gray-800 text-white h-auto p-8">
         <div class="flex-1 ml-2 mt-4 items-center">
           <div class="text-4xl font-semibold mt-8 mb-4 max-[600px]:text-[16px]">
             Info
@@ -75,59 +75,48 @@
             <Icon
               name="tabler:brand-facebook"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-instagram"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="pajamas:twitter"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-telegram"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-youtube"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-linkedin"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-tiktok"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[12px]"
-              color="white"
             />
           </div>
         </div>
       </div>
-      <div
-        style="
-          background-image: url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?w=800&dpr=2&q=80');
-        "
-      >
-        <div class="text-gray-800 p-4">
+      <div>
+        <div class="p-4">
           <div class="flex-1 ml-2 items-center">
             <div
               class="text-4xl font-semibold text-center max-[600px]:text-[20px]"
