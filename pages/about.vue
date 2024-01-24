@@ -38,123 +38,125 @@
       ></iframe>
     </div>
   </div>
-  <div class="mt-36 max-[630px]:mt-20">
-    <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
-      <div>
+  <section class="border-b pb-4">
+    <div class="mt-36 max-[630px]:mt-20">
+      <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
+        <div>
+          <div>
+            <img
+              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_19.jpg"
+              class="w-20 h-20"
+            />
+          </div>
+          <div
+            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
+          >
+            Mission
+          </div>
+          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div
+            class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
+          >
+            <p
+              class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+            >
+              At Andinet Learning Management System, our mission is to empower
+              individuals and organizations with cutting-edge educational
+              technology, fostering a dynamic and inclusive learning
+              environment. We are dedicated to providing accessible,
+              personalized, and innovative learning solutions that inspire
+              continuous growth and success.
+            </p>
+          </div>
+        </div>
         <div>
           <img
-            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_19.jpg"
-            class="w-20 h-20"
+            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-06.png"
+            class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
           />
-        </div>
-        <div
-          class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
-        >
-          Mission
-        </div>
-        <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div
-          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
-        >
-          <p
-            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
-          >
-            At Andinet Learning Management System, our mission is to empower
-            individuals and organizations with cutting-edge educational
-            technology, fostering a dynamic and inclusive learning environment.
-            We are dedicated to providing accessible, personalized, and
-            innovative learning solutions that inspire continuous growth and
-            success.
-          </p>
-        </div>
-      </div>
-      <div>
-        <img
-          src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-06.png"
-          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
-        />
-      </div>
-    </div>
-  </div>
-  <div class="mt-36 max-[630px]:mt-20">
-    <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
-      <div>
-        <img
-          src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-07.png"
-          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
-        />
-      </div>
-      <div>
-        <div>
-          <img
-            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_15.jpg"
-            class="w-20 h-20"
-          />
-        </div>
-        <div
-          class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
-        >
-          Vision
-        </div>
-        <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div
-          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
-        >
-          <p
-            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
-          >
-            Envisioning a future where education knows no bounds, Andinet
-            Learning Management System strives to be a global leader in
-            transforming learning experiences. Our vision is to revolutionize
-            education by seamlessly integrating technology, promoting
-            collaboration, unlocking the full potential of learners worldwide.
-            We aspire to be the catalyst for a knowledge-driven world where
-            everyone has the tools to thrive.
-          </p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="mt-36 max-[630px]:mt-20">
-    <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
-      <div>
+    <div class="mt-36 max-[630px]:mt-20">
+      <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
         <div>
           <img
-            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_16.jpg"
-            class="w-20 h-20"
+            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-07.png"
+            class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
           />
         </div>
-        <div
-          class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
-        >
-          Values
-        </div>
-        <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
-        <div
-          class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
-        >
-          <p
-            class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+        <div>
+          <div>
+            <img
+              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_15.jpg"
+              class="w-20 h-20"
+            />
+          </div>
+          <div
+            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
           >
-            At Andinet Learning Management System, our core values are rooted in
-            a commitment to excellence, inclusivity, and innovation. We believe
-            in fostering an inclusive learning community that embraces diversity
-            and provides equal access to education for all. Our dedication to
-            excellence drives us to deliver high-quality, learner-centric
-            solutions that exceed expectations.
-          </p>
+            Vision
+          </div>
+          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div
+            class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
+          >
+            <p
+              class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+            >
+              Envisioning a future where education knows no bounds, Andinet
+              Learning Management System strives to be a global leader in
+              transforming learning experiences. Our vision is to revolutionize
+              education by seamlessly integrating technology, promoting
+              collaboration, unlocking the full potential of learners worldwide.
+              We aspire to be the catalyst for a knowledge-driven world where
+              everyone has the tools to thrive.
+            </p>
+          </div>
         </div>
-      </div>
-      <div>
-        <img
-          src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-08.png"
-          class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
-        />
       </div>
     </div>
-  </div>
+    <div class="mt-36 max-[630px]:mt-20">
+      <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-10">
+        <div>
+          <div>
+            <img
+              src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_16.jpg"
+              class="w-20 h-20"
+            />
+          </div>
+          <div
+            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
+          >
+            Values
+          </div>
+          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div
+            class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
+          >
+            <p
+              class="text-justify max-w-[600px] max-[1024px]:max-w-[500px] max-[820px]:max-w-[360px]"
+            >
+              At Andinet Learning Management System, our core values are rooted
+              in a commitment to excellence, inclusivity, and innovation. We
+              believe in fostering an inclusive learning community that embraces
+              diversity and provides equal access to education for all. Our
+              dedication to excellence drives us to deliver high-quality,
+              learner-centric solutions that exceed expectations.
+            </p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-08.png"
+            class="w-[400px] max-[1024px]:w-[360px] max-[820px]:w-[300px] max-[630px]:w-[200px]"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
   <div>
-    <div class="mt-36 pt-10 pb-10 max-[820px]:pb-20">
+    <div class="mt-2 pt-10 pb-10 max-[820px]:pb-20">
       <!-- Image with Text Overlay -->
       <div class="items-center">
         <div
