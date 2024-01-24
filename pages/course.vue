@@ -1,6 +1,6 @@
 <template>
   <HeaderAuth />
-  <div class="p-2 bg-gray-200">
+  <div class="p-2">
     <section class="flex1 w-full my-10">
       <div>
         <div class="flex justify-between max-[1024px]:flex-col">
@@ -25,7 +25,7 @@
               </div>
             </div>
             <!-- course detail  -->
-            <div class="flex1 bg-gray-200 mt-2">
+            <div class="flex1 mt-2">
               <div>
                 <div class="p-4">
                   <!-- cource title -->
@@ -49,7 +49,7 @@
                       </div>
                       <NuxtLink to="#">
                         <div
-                          class="ml-5 text-gray-500 hover:text-blue-500 max-[600px]:text-[12px]"
+                          class="ml-5 hover:text-blue-500 max-[600px]:text-[12px]"
                         >
                           <div>
                             A course by <br />
@@ -167,13 +167,13 @@
             </div>
           </div>
           <!-- course play list -->
-          <div class="px-4 bg-gray-200 w-full">
+          <div class="px-4 w-full">
             <div class="mb-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]"
                 >Contents</span
               >
             </div>
-            <div class="bg-white p-4">
+            <div class="p-4">
               <Accordion
                 type="single"
                 class="w-full text-start items-start max-[600px]:text-[12px]"
