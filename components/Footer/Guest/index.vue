@@ -1,14 +1,12 @@
 <template>
   <footer
-    class="bg-gray-800 text-white absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto"
+    class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t"
   >
     <div>
       <form action="">
         <div class="flex justify-center items-center max-[600px]:flex-col">
           <div>
-            <p class="max-[600px]:text-[14px] text-gray-400">
-              Subscribe our Lms News
-            </p>
+            <p class="max-[600px]:text-[14px]">Subscribe our Lms News</p>
           </div>
 
           <div class="flex w-full max-w-sm items-center gap-1.5 ml-4">
@@ -18,7 +16,7 @@
               placeholder="Email"
               class="text-black"
             />
-            <Button type="submit" class="max-[600px]:text-[14px] text-gray-400">
+            <Button type="submit" class="max-[600px]:text-[14px]">
               Subscribe
             </Button>
           </div>
@@ -36,17 +34,15 @@
               alt="Andinet lms logo"
             />
             <span
-              class="self-center text-2xl font-semibold whitespace-nowrap text-gray-400 max-[600px]:text-[24px]"
+              class="self-center text-2xl font-semibold whitespace-nowrap max-[600px]:text-[24px]"
               >Andinet Lms</span
             >
           </a>
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
-              HELP CENTER
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold uppercase">HELP CENTER</h2>
+            <ul class="font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Contact Us</a>
               </li>
@@ -60,10 +56,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
-              Resources
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold uppercase">Resources</h2>
+            <ul class="font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">User Guides</a>
               </li>
@@ -76,10 +70,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
-              Follow us
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold uppercase">Follow us</h2>
+            <ul class="font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Youtube</a>
               </li>
@@ -96,10 +88,8 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-black uppercase">
-              Legal
-            </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <h2 class="mb-6 text-sm font-semibold uppercase">Legal</h2>
+            <ul class="font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Privacy Policy</a>
               </li>
@@ -114,8 +104,7 @@
         class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
       />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span
-          class="text-l max-[600px]:text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        <span class="text-l max-[600px]:text-sm sm:text-center"
           >© {{ currentYear }}
           <a href="https://andinetsolutions.com/" class="hover:underline"
             >Andinet Business Group</a
@@ -126,49 +115,42 @@
             <Icon
               name="tabler:brand-facebook"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-instagram"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="pajamas:twitter"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-telegram"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-youtube"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-linkedin"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
           <div>
             <Icon
               name="tabler:brand-tiktok"
               class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-              color="white"
             />
           </div>
         </div>
