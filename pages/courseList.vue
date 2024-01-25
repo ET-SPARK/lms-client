@@ -2,16 +2,14 @@
   <HeaderGuest />
   <div class="flex justify-between mt-10 mb-10 ml-10">
     <div>
-      <div class="border-gray-500 border-b-2 font-bold text-2xl">
-        CATEGORIES
-      </div>
+      <div class="border-b font-light text-xl">CATEGORIES</div>
       <div
         class="cursor-pointer text-blue-500 underline text-[14px] text-end mt-2"
         @click="selectCategory(null)"
       >
-        Show all
+        View all
       </div>
-      <div class="flex1 mt-5">
+      <!-- <div class="flex1 mt-5">
         <div class="flex-1 font-light border-b-2">
           <div class="justify-between mt-4 mb-4">
             <div
@@ -148,12 +146,13 @@
             </div>
           </div>
         </div>
+      </div> -->
+      <div>
+        <NavMobCourseNav class="text-[18px]" />
       </div>
     </div>
     <div class="flex-1 pl-10">
-      <div class="border-gray-500 border-b-2 font-bold text-2xl">
-        All Courses
-      </div>
+      <div class="border-b font-semibold text-xl">Courses</div>
       <div class="mt-5">
         <div
           v-for="(category, index) in courseList"
@@ -171,7 +170,7 @@
             v-if="!selectedCategory || selectedCategory === category.category"
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
-            class="mt-5 border mr-5"
+            class="mt-5 border mr-5 rounded-xl"
           >
             <div>
               <div class="relative">
@@ -180,9 +179,9 @@
                   name="material-symbols:play-arrow"
                   class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-4xl rounded-full bg-opacity-60"
                 />
-                <img :src="course.imageSource" />
+                <img :src="course.imageSource" class="rounded-t-xl" />
               </div>
-              <div class="border-t-2 px-3">
+              <div class="border-t-2 px-3 h-[100px]">
                 <div>
                   <p class="text-xl">{{ course.title }}</p>
                 </div>
