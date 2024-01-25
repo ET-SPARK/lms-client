@@ -1,16 +1,22 @@
 <template>
   <HeaderGuest />
-  <div class="flex justify-between mt-10 mb-10 ml-10">
+  <div class="flex justify-between mt-10 mb-10 ml-10 max-[600px]:ml-2">
     <div>
-      <div class="border-b font-light text-xl">CATEGORIES</div>
       <div
-        class="cursor-pointer text-blue-500 underline text-[14px] text-end mt-2"
+        class="border-b font-light text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
+      >
+        CATEGORIES
+      </div>
+      <div
+        class="cursor-pointer text-blue-500 underline text-[14px] max-[600px]:text-[12px] text-end mt-2"
         @click="selectCategory(null)"
       >
         View all
       </div>
 
-      <div class="mt-4 mb-4 text-[18px] max-[600px]:text-[12px]">
+      <div
+        class="mt-4 mb-4 text-[18px] max-[600px]:text-[12px] max-[768px]:text-[14px]"
+      >
         <div
           v-for="course in courseNavList"
           :key="course.icon"
@@ -27,22 +33,26 @@
               />
             </div>
 
-            {{ course.name }}
+            <p class="max-[600px]:text-[12px]">{{ course.name }}</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="flex-1 pl-10">
-      <div class="border-b font-semibold text-xl">Courses</div>
+    <div class="flex-1 pl-10 max-[600px]:pl-2">
+      <div
+        class="border-b font-semibold text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
+      >
+        Courses
+      </div>
       <div class="mt-5">
         <div
           v-for="(category, index) in courseList"
           :key="index"
-          class="md:grid md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
+          class="md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
         >
           <p
             v-if="!selectedCategory || selectedCategory === category.category"
-            class="text-xl font-semibold mb-4"
+            class="text-xl max-[600px]:text-[14px] font-semibold mb-4"
           >
             {{ category.category }}
           </p>
@@ -51,24 +61,38 @@
             v-if="!selectedCategory || selectedCategory === category.category"
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
-            class="mt-5 border mr-5 rounded-xl"
+            class="mt-5 border mr-5 rounded-xl max-[600px]:w-[200px]"
           >
             <div>
               <div class="relative">
                 <!-- Your Icon component with 'course.iconName' -->
                 <Icon
                   name="material-symbols:play-arrow"
-                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-4xl rounded-full bg-opacity-60"
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
                 />
-                <img :src="course.imageSource" class="rounded-t-xl" />
+                <img :src="course.imageSource" class="rounded-t-xl w-full" />
               </div>
-              <div class="border-t-2 px-3 h-[100px]">
+              <div
+                class="border-t-2 px-3 h-[100px] max-[600px]:h-[120px] max-[768px]:h-[140px]"
+              >
                 <div>
-                  <p class="text-xl">{{ course.title }}</p>
+                  <p
+                    class="text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
+                  >
+                    {{ course.title }}
+                  </p>
                 </div>
-                <div class="text-sm">A course by: {{ course.author }}</div>
+                <div
+                  class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                >
+                  A course by: {{ course.author }}
+                </div>
                 <div>
-                  <p class="text-sm">{{ course.description }}</p>
+                  <p
+                    class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                  >
+                    {{ course.description }}
+                  </p>
                 </div>
               </div>
               <div
@@ -79,35 +103,60 @@
                     <!-- Your Icon component with 'course.level' -->
                     <Icon
                       name="carbon:skill-level-basic"
-                      class="cursor-pointer mr-1"
-                    />Level
+                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                    />
+                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
+                      Level
+                    </p>
                   </div>
-                  <div class="font-bold">{{ course.level }}</div>
+                  <div
+                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                  >
+                    {{ course.level }}
+                  </div>
                 </div>
                 <div class="text-center">
                   <div>
                     <!-- Your Icon component with 'course.duration' -->
                     <Icon
                       name="mdi:clock-time-eleven"
-                      class="cursor-pointer mr-1"
-                    />Duration
+                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                    />
+                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
+                      Duration
+                    </p>
                   </div>
-                  <div class="font-bold">{{ course.duration }}</div>
+                  <div
+                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                  >
+                    {{ course.duration }}
+                  </div>
                 </div>
                 <div class="text-center">
                   <div>
                     <!-- Your Icon component with 'course.lessons' -->
                     <Icon
                       name="material-symbols:play-lesson"
-                      class="cursor-pointer mr-1"
-                    />Lessons
+                      class="cursor-pointer mr-1 max-[600px]:text-[12px max-[768px]:text-[14px]]"
+                    />
+                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
+                      Lessons
+                    </p>
                   </div>
-                  <div class="font-bold">{{ course.lessons }}</div>
+                  <div
+                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
+                  >
+                    {{ course.lessons }}
+                  </div>
                 </div>
               </div>
               <div class="flex justify-center border-t-2 px-3 py-2">
                 <NuxtLink to="/course">
-                  <Button> Get started </Button></NuxtLink
+                  <Button
+                    class="max-[600px]:text-[10px] max-[768px]:text-[12px]"
+                  >
+                    Get started
+                  </Button></NuxtLink
                 >
               </div>
             </div>
