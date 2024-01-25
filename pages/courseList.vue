@@ -5,10 +5,19 @@
       <div class="border-gray-500 border-b-2 font-bold text-2xl">
         CATEGORIES
       </div>
+      <div
+        class="cursor-pointer text-blue-500 underline text-[14px] text-end mt-2"
+        @click="selectCategory(null)"
+      >
+        Show all
+      </div>
       <div class="flex1 mt-5">
         <div class="flex-1 font-light border-b-2">
           <div class="justify-between mt-4 mb-4">
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Accounting & Finance')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting"
@@ -17,7 +26,10 @@
               </div>
               <div>Accounting & Finance</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Art & Crafts')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="ep:brush"
@@ -26,7 +38,10 @@
               </div>
               <div>Art & Crafts</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Beauty & Makeup')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="mdi:brush-off"
@@ -35,7 +50,10 @@
               </div>
               <div>Beauty & Makeup</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Creatives & Design')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="material-symbols:ink-pen-sharp"
@@ -44,7 +62,10 @@
               </div>
               <div>Creatives & Design</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Food & Beverage')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="ic:round-fastfood"
@@ -53,7 +74,10 @@
               </div>
               <div>Food & Beverage</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Health & Fitness')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="material-symbols:ecg-heart-outline"
@@ -62,7 +86,10 @@
               </div>
               <div>Health & Fitness</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Language & Literature')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="lucide:languages"
@@ -71,7 +98,10 @@
               </div>
               <div>Language & Literature</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Music & Theater')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="ph:music-notes-fill"
@@ -80,7 +110,10 @@
               </div>
               <div>Music & Theater</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Office Productivity')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="guidance:office"
@@ -89,7 +122,10 @@
               </div>
               <div>Office productivity</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Personal Development')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="guidance:meeting-point"
@@ -98,7 +134,10 @@
               </div>
               <div>Personal development</div>
             </div>
-            <div class="flex items-center p-4">
+            <div
+              class="flex items-center p-4 cursor-pointer"
+              @click="selectCategory('Photography & Videography')"
+            >
               <div class="bg-blue-500 p-1 mr-2 rounded-md">
                 <Icon
                   name="material-symbols:camera"
@@ -121,8 +160,15 @@
           :key="index"
           class="grid grid-cols-3 gap-2"
         >
-          <h2 class="text-2xl font-bold mb-4">{{ category.category }}</h2>
+          <p
+            v-if="!selectedCategory || selectedCategory === category.category"
+            class="text-xl font-semibold mb-4"
+          >
+            {{ category.category }}
+          </p>
+
           <div
+            v-if="!selectedCategory || selectedCategory === category.category"
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
             class="mt-5 border mr-5"
@@ -537,7 +583,13 @@ export default {
           ],
         },
       ],
+      selectedCategory: null,
     };
+  },
+  methods: {
+    selectCategory(category) {
+      this.selectedCategory = category;
+    },
   },
 };
 </script>
