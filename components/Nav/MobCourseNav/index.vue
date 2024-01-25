@@ -5,7 +5,7 @@
       :key="course.icon"
       class="hover:text-blue-500"
     >
-      <NuxtLink to="/courseList" class="cursor-pointer flex items-center">
+      <NuxtLink class="cursor-pointer flex items-center">
         <div class="p-1 mr-2 rounded-md">
           <Icon :name="course.icon" class="text-xl max-[600px]:text-[12px]" />
         </div>
@@ -24,50 +24,62 @@ export default {
         {
           icon: "streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting",
           name: "Accounting & Finance",
+          categorie: "accounting",
         },
         {
           icon: "ep:brush",
           name: "Art & Crafts",
+          categorie: "art",
         },
         {
           icon: "mdi:brush-off",
           name: "Beauty & Makeup",
+          categorie: "beauty",
         },
         {
           icon: "material-symbols:ink-pen-sharp",
           name: "Creatives & Design",
+          categorie: "creatives",
         },
         {
           icon: "ic:round-fastfood",
           name: "Food & Beverage",
+          categorie: "food",
         },
         {
           icon: "material-symbols:ecg-heart-outline",
           name: "Health & Fitness",
+          categorie: "health",
         },
         {
           icon: "streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit",
           name: "Business & Marketing",
+          categorie: "business",
         },
         {
           icon: "ph:code-bold",
           name: "IT & Development",
+          categorie: "it",
         },
         {
           icon: "lucide:languages",
           name: "Language & Literature",
+          categorie: "language",
         },
         {
           icon: "guidance:office",
           name: "Office productivity",
+          categorie: "office",
         },
         {
           icon: "guidance:meeting-point",
           name: "Personal development",
+          categorie: "personal",
         },
         {
           icon: "material-symbols:camera",
           name: "Photography & Videography",
+          categorie: "photography",
         },
       ],
     };

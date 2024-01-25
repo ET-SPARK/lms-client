@@ -9,146 +9,27 @@
       >
         View all
       </div>
-      <!-- <div class="flex1 mt-5">
-        <div class="flex-1 font-light border-b-2">
-          <div class="justify-between mt-4 mb-4">
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Accounting & Finance')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Accounting & Finance</div>
+
+      <div class="mt-4 mb-4 text-[18px] max-[600px]:text-[12px]">
+        <div
+          v-for="course in courseNavList"
+          :key="course.icon"
+          class="hover:text-blue-500"
+        >
+          <div
+            class="cursor-pointer flex items-center"
+            @click="selectCategory(course.name)"
+          >
+            <div class="p-1 mr-2 rounded-md">
+              <Icon
+                :name="course.icon"
+                class="text-xl max-[600px]:text-[12px]"
+              />
             </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Art & Crafts')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="ep:brush"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Art & Crafts</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Beauty & Makeup')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="mdi:brush-off"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Beauty & Makeup</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Creatives & Design')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="material-symbols:ink-pen-sharp"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Creatives & Design</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Food & Beverage')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="ic:round-fastfood"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Food & Beverage</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Health & Fitness')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="material-symbols:ecg-heart-outline"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Health & Fitness</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Language & Literature')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="lucide:languages"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Language & Literature</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Music & Theater')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="ph:music-notes-fill"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Music & Theater</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Office Productivity')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="guidance:office"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Office productivity</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Personal Development')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="guidance:meeting-point"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Personal development</div>
-            </div>
-            <div
-              class="flex items-center p-4 cursor-pointer"
-              @click="selectCategory('Photography & Videography')"
-            >
-              <div class="bg-blue-500 p-1 mr-2 rounded-md">
-                <Icon
-                  name="material-symbols:camera"
-                  class="cursor-pointer text-white text-2xl"
-                />
-              </div>
-              <div>Photography & Videography</div>
-            </div>
+
+            {{ course.name }}
           </div>
         </div>
-      </div> -->
-      <div>
-        <NavMobCourseNav class="text-[18px]" />
       </div>
     </div>
     <div class="flex-1 pl-10">
@@ -157,7 +38,7 @@
         <div
           v-for="(category, index) in courseList"
           :key="index"
-          class="grid grid-cols-3 gap-2"
+          class="md:grid md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
         >
           <p
             v-if="!selectedCategory || selectedCategory === category.category"
@@ -582,6 +463,68 @@ export default {
             },
             // Add more courses for Photography & Videography as needed
           ],
+        },
+      ],
+      courseNavList: [
+        {
+          icon: "streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting",
+          name: "Accounting & Finance",
+          categorie: "accounting",
+        },
+        {
+          icon: "ep:brush",
+          name: "Art & Crafts",
+          categorie: "art",
+        },
+        {
+          icon: "mdi:brush-off",
+          name: "Beauty & Makeup",
+          categorie: "beauty",
+        },
+        {
+          icon: "material-symbols:ink-pen-sharp",
+          name: "Creatives & Design",
+          categorie: "creatives",
+        },
+        {
+          icon: "ic:round-fastfood",
+          name: "Food & Beverage",
+          categorie: "food",
+        },
+        {
+          icon: "material-symbols:ecg-heart-outline",
+          name: "Health & Fitness",
+          categorie: "health",
+        },
+        {
+          icon: "streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit",
+          name: "Business & Marketing",
+          categorie: "business",
+        },
+        {
+          icon: "ph:code-bold",
+          name: "IT & Development",
+          categorie: "it",
+        },
+        {
+          icon: "lucide:languages",
+          name: "Language & Literature",
+          categorie: "language",
+        },
+        {
+          icon: "guidance:office",
+          name: "Office Productivity",
+          categorie: "office",
+        },
+        {
+          icon: "guidance:meeting-point",
+          name: "Personal Development",
+          categorie: "personal",
+        },
+        {
+          icon: "material-symbols:camera",
+          name: "Photography & Videography",
+          categorie: "photography",
         },
       ],
       selectedCategory: null,
