@@ -226,7 +226,9 @@
                 </div>
               </div>
               <div class="flex justify-center border-t-2 px-3 py-2">
-                <Button> Get started </Button>
+                <NuxtLink to="/course">
+                  <Button> Get started </Button></NuxtLink
+                >
               </div>
             </div>
           </div>
