@@ -1,14 +1,17 @@
 <template>
   <HeaderGuest />
-  <div class="flex justify-between mt-10 mb-10 ml-10 max-[600px]:ml-2">
-    <div>
+  <div
+    class="flex justify-between max-[640px]:flex-col mt-10 mb-10 ml-10 max-[600px]:ml-2 max-[600px]:mt-2"
+  >
+    <div class="max-[640px]:hidden">
       <div
         class="border-b font-light text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
       >
         CATEGORIES
       </div>
+
       <div
-        class="cursor-pointer text-blue-500 underline text-[14px] max-[600px]:text-[12px] text-end mt-2"
+        class="cursor-pointer text-blue-500 underline text-[14px] max-[600px]:text-[12px] text-end max-[600px]:mr-4 mt-2"
         @click="selectCategory(null)"
       >
         View all
@@ -38,13 +41,53 @@
         </div>
       </div>
     </div>
-    <div class="flex-1 pl-10 max-[600px]:pl-2">
+
+    <div class="hidden max-[640px]:flex max-[640px]:px-8">
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>
+            <div class="font-light text-[14px]">
+              CATEGORIES
+            </div></AccordionTrigger
+          >
+          <AccordionContent>
+            <div
+              class="cursor-pointer text-blue-500 underline text-[12px] text-end mr-4"
+              @click="selectCategory(null)"
+            >
+              View all
+            </div>
+
+            <div class="text-[12px]">
+              <div
+                v-for="course in courseNavList"
+                :key="course.icon"
+                class="hover:text-blue-500"
+              >
+                <div
+                  class="cursor-pointer flex items-center"
+                  @click="selectCategory(course.name)"
+                >
+                  <div class="p-1 mr-2 rounded-md">
+                    <Icon :name="course.icon" class="text-[12px]" />
+                  </div>
+
+                  <p class="text-[12px]">{{ course.name }}</p>
+                </div>
+              </div>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
+
+    <div class="flex-1 pl-10 max-[600px]:pl-2 max-[600px]:mt-2">
       <div
-        class="border-b font-semibold text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
+        class="border-b font-semibold text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
       >
         Courses
       </div>
-      <div class="mt-5">
+      <div class="mt-5 max-[600px]:px-8">
         <div
           v-for="(category, index) in courseList"
           :key="index"
@@ -61,7 +104,7 @@
             v-if="!selectedCategory || selectedCategory === category.category"
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
-            class="mt-5 border mr-5 rounded-xl max-[600px]:w-[200px]"
+            class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
           >
             <div>
               <div class="relative">
@@ -98,9 +141,8 @@
               <div
                 class="flex justify-between border-t-2 px-3 mt-12 items-center"
               >
-                <div class="text-center">
+                <div class="text-center w-[40px]">
                   <div>
-                    <!-- Your Icon component with 'course.level' -->
                     <Icon
                       name="carbon:skill-level-basic"
                       class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
@@ -117,7 +159,6 @@
                 </div>
                 <div class="text-center">
                   <div>
-                    <!-- Your Icon component with 'course.duration' -->
                     <Icon
                       name="mdi:clock-time-eleven"
                       class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
@@ -134,7 +175,6 @@
                 </div>
                 <div class="text-center">
                   <div>
-                    <!-- Your Icon component with 'course.lessons' -->
                     <Icon
                       name="material-symbols:play-lesson"
                       class="cursor-pointer mr-1 max-[600px]:text-[12px max-[768px]:text-[14px]]"
@@ -169,6 +209,12 @@
 </template>
 
 <script>
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 export default {
   data() {
     return {

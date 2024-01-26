@@ -2,28 +2,6 @@
   <footer
     class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t"
   >
-    <div>
-      <form action="">
-        <div class="flex justify-center items-center max-[600px]:flex-col">
-          <div>
-            <p class="max-[600px]:text-[14px]">Subscribe our Lms News</p>
-          </div>
-
-          <div class="flex w-full max-w-sm items-center gap-1.5 ml-4">
-            <Input
-              id="email"
-              type="email"
-              placeholder="Email"
-              class="text-black"
-            />
-            <Button type="submit" class="max-[600px]:text-[14px]">
-              Subscribe
-            </Button>
-          </div>
-        </div>
-      </form>
-    </div>
-
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
         <div class="mb-6 md:mb-0 ml-10 sm:ml-1">

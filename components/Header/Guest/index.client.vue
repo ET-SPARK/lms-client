@@ -175,7 +175,6 @@
 <script setup>
 import { ref } from "vue";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 
 import {
   Sheet,
@@ -188,13 +187,35 @@ const language = ref("አማ");
 const isCourse = ref(false);
 const isDarkMode = ref(false);
 
-// function to handle theme change
+// Function to handle theme change
 const toggleDarkMode = () => {
   isDarkMode.value = !isDarkMode.value;
-  const html = document.querySelector("html");
-  html.classList.toggle("dark", isDarkMode.value);
+  updateTheme(isDarkMode.value);
 };
 
+// Function to update theme
+const updateTheme = (darkMode) => {
+  const html = document.querySelector("html");
+  html.classList.toggle("dark", darkMode);
+
+  // Update localStorage based on user preference
+  localStorage.theme = darkMode ? "dark" : "light";
+};
+
+// On page load, check localStorage for theme preference
+onMounted(() => {
+  const storedTheme = localStorage.theme;
+
+  if (
+    storedTheme === "dark" ||
+    (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    isDarkMode.value = true;
+  }
+
+  // Apply the initial theme
+  updateTheme(isDarkMode.value);
+});
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
