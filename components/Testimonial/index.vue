@@ -1,13 +1,13 @@
 <template>
   <div
-    class="px-4 py-2 w-full flex items-center flex-col justify-center bg-gray-800 lg:p-8"
+    class="px-4 py-2 w-full flex items-center flex-col justify-center lg:p-8"
   >
-    <h1 class="text-gray-100">
+    <h1 class="">
       <span>What they’re saying</span>
       <br />
       <span></span>
     </h1>
-    <span class="text-gray-100 text-sm max-w-screen-md mt-4 text-center mb-8">
+    <span class="text-sm max-w-screen-md mt-4 text-center mb-8">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non volutpat
       turpis. Mauris luctus rutrum mi ut rhoncus. Integer in dignissim tortor.
     </span>

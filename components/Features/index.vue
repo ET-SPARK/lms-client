@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col py-8 px-4 md:px-8 lg:p-12">
+  <div class="w-full flex flex-col py-8 px-4 md:px-8 lg:p-12 mt-20">
     <h1 class="text-xl text-left mb-8 font-semibold md:text-2xl">
       Why Choose Us
     </h1>

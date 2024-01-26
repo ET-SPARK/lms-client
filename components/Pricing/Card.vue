@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full max-w-72 h-72 flex-1 flex flex-col mx-2 px-4 py-8 mb-2 bg-white items-center shadow-md rounded-md justify-between"
+    class="w-full max-w-72 h-72 flex-1 flex flex-col mx-2 px-4 py-8 mb-2 items-center shadow-md rounded-md justify-between border"
     v-bind:class="rootClassName"
   >
     <h2 class="text-xl font-bold text-center mb-4">
@@ -23,9 +23,7 @@
       {{ data.title }}
     </span>
 
-    <Button class="text-white text-xs py-1 px-2 border-0 bg-black">{{
-      button
-    }}</Button>
+    <Button class="text-xs py-1 px-2 border-0">{{ button }}</Button>
   </div>
 </template>
 

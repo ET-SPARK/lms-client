@@ -1,10 +1,10 @@
 <template>
   <div
-    class="bg-gray-100 w-full flex flex-col py-8 px-4 item-start lg:flex-row lg:p-12"
+    class="w-full flex flex-col py-8 px-4 item-start lg:flex-row lg:p-12 border"
   >
     <div class="flex flex-col items-start flex-1 mb-4 lg:pr-8">
       <h1 class="text-xl text-left mb-8 font-semibold">Pricing Plans</h1>
-      <span class="text-gray-500">
+      <span class="">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lorem lorem,
         malesuada in metus vitae, scelerisque accumsan ipsum.
       </span>

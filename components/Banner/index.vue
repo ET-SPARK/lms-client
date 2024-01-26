@@ -13,7 +13,7 @@
         class="flex-shrink-0 w-full mt-6 h-auto flex items-start flex-row justify-center md:justify-start"
       >
         <Button
-          class="px-4 py-2 border-gray-800 rounded bg-black text-white text-sm transition duration-300 ml-4 border-gray-500 md:px-6 md:py-4 md:text-md lg:px-8 lg:py-6 lg:text-lg"
+          class="px-4 py-2 text-sm transition duration-300 ml-4 md:px-6 md:py-4 md:text-md lg:px-8 lg:py-6 lg:text-lg"
         >
           Start Learning
         </Button>
@@ -21,7 +21,7 @@
     </div>
     <img
       alt="image"
-      src="..\..\static\images\banner_art.png"
+      src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-01.png"
       class="home-image w-full h-auto object-cover self-center rounded-md md:w-1/2 lg:w-1/3"
     />
   </div>

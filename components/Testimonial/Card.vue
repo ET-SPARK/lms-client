@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-2 px-4 flex sm:p-8 max-w-screen-xl bg-white shadow-md items-center flex-col justify-between"
+    class="py-2 px-4 flex sm:p-8 max-w-screen-xl shadow-md items-center flex-col justify-between border"
     v-bind:class="rootClassName"
   >
     <svg viewBox="0 0 950.8571428571428 1024" class="mb-2 w-8 sm:mb-4">
@@ -9,11 +9,9 @@
       ></path>
     </svg>
     <div class="flex items-center flex-col justify-between sm:px-6">
-      <span class="mb-4 text-gray-500 text-base text-center sm:mb-6">{{
-        quote
-      }}</span>
+      <span class="mb-4 text-base text-center sm:mb-6">{{ quote }}</span>
       <span class="mb-2 text-lg font-light">{{ name }}</span>
-      <span class="mb-4 text-gray-500 font-semibold uppercase md:self-center">{{
+      <span class="mb-4 font-semibold uppercase md:self-center">{{
         role
       }}</span>
       <img
