@@ -3,13 +3,18 @@
     <p class="ml-4 mb-10 uppercase font-light text-[24px] text-center">
       Grow Your Skill Set
     </p>
-    <p class="ml-4 mb-10 uppercase font-light text-[14px] text-center px-16">
+    <p
+      class="ml-4 mb-10 uppercase font-light text-[14px] text-center px-16 max-[640px]:text-[12px] max-[640px]:px-6"
+    >
       encourages continuous learning and development by expanding your expertise
       and acquiring new skills, fostering personal and professional growth.
       Embrace opportunities for education and training to stay adaptable and
       competitive in an ever-evolving landscape.
     </p>
-    <NuxtLink to="/" class="grid grid-cols-5 gap-x-2 gap-y-10 px-4">
+    <NuxtLink
+      to="/"
+      class="grid grid-cols-5 gap-x-2 gap-y-10 px-4 max-[640px]:grid-cols-1 max-[1024px]:grid-cols-4 max-[768px]:grid-cols-3"
+    >
       <div
         v-for="course in courseList"
         :key="course.title"
@@ -19,7 +24,7 @@
           <div class="absolute mt-1 right-4">
             <Badge>{{ course.badge }}</Badge>
           </div>
-          <img class="rounded-xl" :src="course.image" />
+          <img class="rounded-xl w-full" :src="course.image" />
         </div>
         <div class="h-[120px] ml-2 mr-2 border-b">
           <p class="text-sm mb-2">{{ course.category }}</p>
