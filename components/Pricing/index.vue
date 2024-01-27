@@ -1,9 +1,11 @@
 <template>
-  <div class="flex justify-evenly border-y py-10">
-    <div class="text-[32px] max-w-[200px]">
+  <div class="flex-col border-y py-10">
+    <div class="text-[32px] text-center font-bold max-[768px]:text-[24px]">
       Choose a Plan that Works for You
     </div>
-    <div class="flex">
+    <div
+      class="flex justify-center mt-5 max-[768px]:flex-col max-[768px]:mx-10"
+    >
       <div class="text-center border p-6">
         <div>
           <div class="mb-5">
