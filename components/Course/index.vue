@@ -30,7 +30,7 @@
           <p class="text-sm mb-2">{{ course.category }}</p>
           <div class="flex items-center">
             <img class="w-8 h-8 rounded-full border" :src="course.logo" />
-            <p class="text-[12px] ml-2">{{ course.title }}</p>
+            <p class="text-[12px] ml-2 font-light">{{ course.title }}</p>
           </div>
           <p class="text-sm">{{ course.description }}</p>
         </div>

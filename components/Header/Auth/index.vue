@@ -41,16 +41,6 @@
                     </div>
                   </SheetHeader>
 
-                  <!-- navigation links -->
-                  <div class="mt-2">
-                    <NuxtLink to="/">
-                      <div class="border-b-2 p-2">Assignments</div>
-                    </NuxtLink>
-                    <NuxtLink to="/">
-                      <div class="border-b-2 p-2">Discussions</div>
-                    </NuxtLink>
-                  </div>
-
                   <!-- course dropdown -->
                   <div
                     class="flex border-gray-200 border-b-2 p-2 cursor-pointer"
