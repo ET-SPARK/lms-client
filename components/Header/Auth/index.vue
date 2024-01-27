@@ -11,7 +11,7 @@
           <div>
             <Sheet>
               <SheetTrigger as-child>
-                <Button variant="outline" class="xl:hidden px-4 py-2 ml-2">
+                <Button variant="outline" class="xl:hidden py-2">
                   <!-- menu navigation for mobile and tab screen -->
                   <div class="flex">
                     <Icon

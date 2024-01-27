@@ -1,5 +1,5 @@
 <template>
-  <HeaderAuth />
+  <HeaderGuest />
 
   <Banner />
   <Features />
