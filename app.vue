@@ -1,6 +1,5 @@
 <template>
-  <div>
+  <NuxtLayout>
     <NuxtPage />
-    <FooterAuthfooter />
-  </div>
+  </NuxtLayout>
 </template>
