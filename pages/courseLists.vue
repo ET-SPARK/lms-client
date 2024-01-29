@@ -11,13 +11,6 @@
       </div>
 
       <div
-        class="cursor-pointer text-blue-500 underline text-[14px] max-[600px]:text-[12px] text-end max-[600px]:mr-4 mt-2"
-        @click="selectCategory(null)"
-      >
-        View all
-      </div>
-
-      <div
         class="mt-4 mb-4 text-[18px] max-[600px]:text-[12px] max-[768px]:text-[14px]"
       >
         <div
@@ -46,7 +39,9 @@
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>
-            <div class="font-light text-[14px]">
+            <div
+              class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
+            >
               CATEGORIES
             </div></AccordionTrigger
           >
@@ -76,9 +71,14 @@
 
     <div class="flex-1 pl-10 max-[600px]:pl-2 max-[600px]:mt-2">
       <div
-        class="border-b font-semibold text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
+        class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
       >
-        Courses
+        <template v-if="selectedCategory === null">
+          <div>course</div>
+        </template>
+        <template v-else>
+          {{ this.selectedCategory }}
+        </template>
       </div>
       <div class="mt-5 max-[600px]:px-8">
         <div
@@ -86,13 +86,6 @@
           :key="index"
           class="md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
         >
-          <p
-            v-if="!selectedCategory || selectedCategory === category.category"
-            class="text-xl max-[600px]:text-[14px] font-semibold mb-4"
-          >
-            {{ category.category }}
-          </p>
-
           <div
             v-if="!selectedCategory || selectedCategory === category.category"
             v-for="(course, courseIndex) in category.courses"
