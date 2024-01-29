@@ -17,10 +17,10 @@
           :key="testimonial.id"
           class="md:basis-1/2 lg:basis-1/3"
         >
-          <div class="p-1">
+          <div class="p-1 max-[640px]:text-[12px]">
             <Card>
               <CardContent
-                class="flex items-center flex-col justify-between sm:px-6 mt-10"
+                class="flex items-center flex-col justify-between sm:px-6 mt-10 h-[300px]"
               >
                 <span>
                   <Icon
