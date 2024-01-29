@@ -9,8 +9,17 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
 </script>
 
 <template>
@@ -25,25 +34,28 @@ import { Label } from "@/components/ui/label";
       </Button>
     </DialogTrigger>
     <DialogContent class="sm:max-w-[425px] max-[600px]:text-[12px]">
-      <DialogHeader>
-        <DialogTitle>
-          <div class="mr-2 flex items-center relative border-b p-2">
-            <Icon
-              name="material-symbols:search"
-              class="absolute left-2 cursor-pointer"
-            />
-            <div class="grid w-full max-w-sm items-center gap-1.5">
-              <Input
-                id="text"
-                type="text"
-                placeholder="Search"
-                class="border-none border-input bg-background pl-8 pr-3"
-              />
-            </div>
-          </div>
-        </DialogTitle>
-      </DialogHeader>
-      <!-- search list here -->
+      <Command>
+        <CommandInput placeholder="Type a command or search..." />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup heading="Suggestions">
+            <CommandItem value="cloud-computing"> Cloud Computing </CommandItem>
+            <CommandItem value="data-science"> Data Science </CommandItem>
+            <CommandItem value="full-stack-web-development">
+              Full Stack Web Development
+            </CommandItem>
+            <CommandItem value="machine-learning">
+              Machine Learning
+            </CommandItem>
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Settings">
+            <CommandItem value="profile"> Profile </CommandItem>
+            <CommandItem value="my-course"> My Course </CommandItem>
+            <CommandItem value="settings"> Settings </CommandItem>
+          </CommandGroup>
+        </CommandList>
+      </Command>
     </DialogContent>
   </Dialog>
 </template>
