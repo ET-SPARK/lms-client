@@ -51,13 +51,6 @@
             </div></AccordionTrigger
           >
           <AccordionContent>
-            <div
-              class="cursor-pointer text-blue-500 underline text-[12px] text-end mr-4"
-              @click="selectCategory(null)"
-            >
-              View all
-            </div>
-
             <div class="text-[12px]">
               <div
                 v-for="course in courseNavList"
