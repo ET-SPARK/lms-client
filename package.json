@@ -25,6 +25,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "embla-carousel": "^8.0.0-rc21",
+    "embla-carousel-autoplay": "^8.0.0-rc21",
     "embla-carousel-vue": "^8.0.0-rc21",
     "lucide-vue-next": "^0.303.0",
     "radix-vue": "^1.2.6",

@@ -1,55 +1,38 @@
 <template>
-  <div class="border-b pb-20">
-    <div
-      class="text-[32px] text-center font-bold max-[768px]:text-[24px] max-[640px]:text-[20px] mt-10"
-    >
-      Testimonials
-    </div>
-    <Carousel
-      class="relative mx-16 mt-4"
-      :plugins="[plugin]"
-      @mouseenter="plugin.stop"
-      @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
-    >
-      <CarouselContent>
-        <CarouselItem
-          v-for="testimonial in testimonials"
-          :key="testimonial.id"
-          class="md:basis-1/2 lg:basis-1/3"
-        >
-          <div class="p-1">
-            <Card>
-              <CardContent
-                class="flex items-center flex-col justify-between sm:px-6 mt-10"
-              >
-                <span>
-                  <Icon
-                    name="bx:bxs-quote-alt-left"
-                    class="cursor-pointer text-2xl mb-2"
-                  />
-                </span>
-                <span class="mb-4 text-base text-center sm:mb-6">{{
-                  testimonial.text
-                }}</span>
-                <span class="mb-2 text-lg font-light mt-5">{{
-                  testimonial.author
-                }}</span>
-                <span class="mb-4 font-semibold uppercase md:self-center">{{
-                  testimonial.profession
-                }}</span>
-                <img
-                  :src="testimonial.image"
-                  class="testimonial-card-image w-12 h-12 object-cover rounded-full"
-                />
-              </CardContent>
-            </Card>
-          </div>
-        </CarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  </div>
+  <Carousel
+    class="relative w-[400px] ml-20"
+    :plugins="[plugin]"
+    @mouseenter="plugin.stop"
+    @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
+  >
+    <CarouselContent>
+      <CarouselItem v-for="testimonial in testimonials" :key="testimonial.id">
+        <div class="p-1">
+          <Card>
+            <CardContent
+              class="flex items-center flex-col justify-between sm:px-6 mt-10"
+            >
+              <span class="mb-4 text-base text-center sm:mb-6">{{
+                testimonial.text
+              }}</span>
+              <span class="mb-2 text-lg font-light mt-5">{{
+                testimonial.author
+              }}</span>
+              <span class="mb-4 font-semibold uppercase md:self-center">{{
+                testimonial.profession
+              }}</span>
+              <img
+                :src="testimonial.image"
+                class="testimonial-card-image w-12 h-12 object-cover rounded-full"
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
 </template>
 
 <script setup lang="ts">

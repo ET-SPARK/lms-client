@@ -74,7 +74,7 @@
           </div>
           <p>
             <sup class="text-[38px] max-[640px]:text-[sm]">$</sup>
-            <span class="text-[68px] font-bold">99</span>
+            <span class="text-[68px] font-bold">499</span>
             <span class="text-2xl max-[640px]:text-[sm]">/mo</span>
           </p>
         </div>

@@ -21,7 +21,7 @@
     </div>
     <img
       alt="image"
-      src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-01.png"
+      src="../../static/images/landImg.png"
       class="home-image w-full h-auto object-cover self-center rounded-md md:w-1/2 lg:w-1/3"
     />
   </div>

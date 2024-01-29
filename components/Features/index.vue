@@ -16,7 +16,7 @@
       </div>
       <img
         alt="image"
-        src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?ixid=Mnw5MTMyMXwwfDF8c2VhcmNofDIzfHxtaW5pbWFsaXNtfGVufDB8fHx8MTYyNjQ0NTY1Nw&amp;ixlib=rb-1.2.1&amp;h=1000"
+        src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-isometric-01.png"
         class="w-full h-auto object-cover self-center rounded-full md:w-1/2 md:ml-16 lg:w-1/2 xl:w-1/3"
       />
     </div>

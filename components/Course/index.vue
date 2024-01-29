@@ -1,15 +1,9 @@
 <template>
-  <div class="my-10">
-    <p class="ml-4 mb-10 uppercase font-light text-[24px] text-center">
-      Grow Your Skill Set
-    </p>
+  <div class="my-10 border-b pb-10">
     <p
-      class="ml-4 mb-10 uppercase font-light text-[14px] text-center px-16 max-[640px]:text-[12px] max-[640px]:px-6"
+      class="text-[32px] text-center font-bold max-[768px]:text-[24px] max-[640px]:text-[20px] mt-10 mb-10"
     >
-      encourages continuous learning and development by expanding your expertise
-      and acquiring new skills, fostering personal and professional growth.
-      Embrace opportunities for education and training to stay adaptable and
-      competitive in an ever-evolving landscape.
+      Grow Your Skill Set
     </p>
     <NuxtLink
       to="/"
@@ -18,7 +12,7 @@
       <div
         v-for="course in courseList"
         :key="course.title"
-        class="border shadow-gray-500 shadow-md rounded-xl"
+        class="border rounded-xl"
       >
         <div class="p-2 relative">
           <div class="absolute mt-1 right-4">
@@ -36,6 +30,9 @@
         </div>
         <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
       </div>
+    </NuxtLink>
+    <NuxtLink to="/courseLists">
+      <Button class="mt-10 flex justify-end ml-4"> View all </Button>
     </NuxtLink>
   </div>
 </template>
