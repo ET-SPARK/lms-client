@@ -11,26 +11,30 @@
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
-                class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
-              />
+          <NuxtLink to="/profile">
+            <div class="flex items-center mb-2">
+              <div>
+                <Icon
+                  name="material-symbols:person-outline"
+                  class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                />
+              </div>
+              <div>Profile</div>
             </div>
-            <div>My course</div>
-          </div>
+          </NuxtLink>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="material-symbols:person-outline"
-                class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-              />
+          <NuxtLink to="/mycourse">
+            <div class="flex items-center mb-2">
+              <div>
+                <Icon
+                  name="streamline:interface-favorite-award-ribbon-reward-like-social-rating-media"
+                  class="cursor-pointer ml-1 text-xl rounded-sm mr-2"
+                />
+              </div>
+              <div>My course</div>
             </div>
-            <div>Profile</div>
-          </div>
+          </NuxtLink>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <div class="flex items-center mb-2">
