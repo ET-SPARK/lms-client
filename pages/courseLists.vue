@@ -40,7 +40,7 @@
         <AccordionItem value="item-1">
           <AccordionTrigger>
             <div
-              class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
+              class="font-light uppercase text-xl max-[600px]:text-sm max-[768px]:text-md max-[640px]:px-8"
             >
               CATEGORIES
             </div></AccordionTrigger
