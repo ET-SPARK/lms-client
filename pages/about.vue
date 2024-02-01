@@ -45,15 +45,15 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_19.jpg"
-              class="w-20 h-20 rounded-full"
+              class="w-20 h-20 border rounded-full"
             />
           </div>
           <div
-            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
+            class="text-[32px] text-start font-bold max-[768px]:text-[24px] max-[640px]:text-[20px] mt-10"
           >
             Mission
           </div>
-          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div><hr class="my-4 border-t-2 w-16" /></div>
           <div
             class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
           >
@@ -89,15 +89,15 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_15.jpg"
-              class="w-20 h-20 rounded-full"
+              class="w-20 h-20 rounded-full border"
             />
           </div>
           <div
-            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
+            class="text-[32px] text-start font-bold max-[768px]:text-[24px] max-[640px]:text-[20px] mt-10"
           >
             Vision
           </div>
-          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div><hr class="my-4 border-t-2 w-16" /></div>
           <div
             class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
           >
@@ -122,15 +122,15 @@
           <div>
             <img
               src="https://www.elegantthemes.com/layouts/wp-content/uploads/2017/12/coding-icon_16.jpg"
-              class="w-20 h-20 rounded-full"
+              class="w-20 h-20 rounded-full border"
             />
           </div>
           <div
-            class="text-[38px] font-bold text-[#7272ff] max-[630px]:text-[24px]"
+            class="text-[32px] text-start font-bold max-[768px]:text-[24px] max-[640px]:text-[20px] mt-10"
           >
             Values
           </div>
-          <div><hr class="my-4 border-t-[6px] border-[#09e1c0] w-16" /></div>
+          <div><hr class="my-4 border-t-2 w-16" /></div>
           <div
             class="font-light text-[20px] max-[1024px]:text-[16px] max-[820px]:text-[14px] max-[630px]:text-[12px]"
           >
@@ -156,11 +156,11 @@
     </div>
   </section>
   <div>
-    <div class="mt-2 pt-10 pb-10 max-[820px]:pb-20">
+    <div class="mt-2 pb-10 max-[820px]:pb-20">
       <!-- Image with Text Overlay -->
       <div class="items-center">
         <div
-          class="text-center mt-28 max-[1024px]:mt-6 max-[820px]:mt-4 text-[32px] max-[820px]:text-[24px] font-bold"
+          class="text-center mt-10 max-[1024px]:mt-6 max-[820px]:mt-4 text-[32px] max-[820px]:text-[24px] font-bold"
         >
           Products and Services
         </div>
