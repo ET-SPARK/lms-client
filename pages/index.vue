@@ -6,6 +6,7 @@
   <Pricing />
   <Testimonial />
   <Course />
+  <FAQ />
 
   <FooterAuth />
 </template>
