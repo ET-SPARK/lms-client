@@ -182,8 +182,8 @@
                     class="max-[600px]:text-[10px] max-[768px]:text-[12px]"
                   >
                     Get started
-                  </Button></NuxtLink
-                >
+                  </Button>
+                </NuxtLink>
               </div>
             </div>
           </div>

@@ -1,1 +1,5 @@
-<template>hello</template>
+<template>
+  <HeaderAuth />
+
+  <FooterAuth />
+</template>
