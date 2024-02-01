@@ -67,7 +67,7 @@ const courseNavList = [
       <NavigationMenuItem>
         <NavigationMenuTrigger class=""> Courses </NavigationMenuTrigger>
         <NavigationMenuContent>
-          <div class="text-[14px]">
+          <div class="text-[14px] pb-6">
             <div class="flex justify-between mt-4 mb-2 px-10">
               <div class="">Categories</div>
               <div class="text-sm hover:text-blue-500 underline">
@@ -94,21 +94,6 @@ const courseNavList = [
                 </NuxtLink>
               </li>
             </ul>
-
-            <div class="flex justify-between items-center p-6">
-              <div class="flex1">
-                <div>Get started</div>
-                <div class="font-light">
-                  Discover a wide range of online courses in variety <br />
-                  of fields to enhance your abilities and knowledge
-                </div>
-              </div>
-              <div>
-                <NuxtLink to="/courseLists">
-                  <Button> Get started</Button>
-                </NuxtLink>
-              </div>
-            </div>
           </div>
         </NavigationMenuContent>
       </NavigationMenuItem>
