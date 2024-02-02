@@ -8,12 +8,12 @@
           <a href="https://andinetsolutions.com/" class="flex items-center">
             <img
               src="../../../static/images/andinet_logo.jpg"
-              class="h-12 sm:h-28 me-3"
+              class="h-12 sm:h-28 me-3 rounded-full"
               alt="Andinet lms logo"
             />
             <span
               class="self-center text-2xl font-semibold whitespace-nowrap max-[600px]:text-[24px]"
-              >Andinet Lms</span
+              >Andinet LMS</span
             >
           </a>
         </div>

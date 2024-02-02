@@ -71,7 +71,7 @@ const courseNavList = [
             <div class="flex justify-between mt-4 mb-2 px-10">
               <div class="">Categories</div>
               <div class="text-sm hover:text-blue-500 underline">
-                <NuxtLink to="/courseLists"> View all </NuxtLink>
+                <NuxtLink to="/courses"> View all </NuxtLink>
               </div>
             </div>
             <ul

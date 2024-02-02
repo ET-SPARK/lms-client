@@ -9,7 +9,7 @@
     <CoursePopular />
     <CourseNew />
 
-    <NuxtLink to="/courseLists">
+    <NuxtLink to="/courses">
       <Button class="mt-20 flex justify-end ml-16 max-[640px]:text-sm">
         View all
       </Button>

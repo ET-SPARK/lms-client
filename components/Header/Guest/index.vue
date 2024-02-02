@@ -46,6 +46,9 @@
                     <NuxtLink to="/">
                       <div class="border-b-2 p-2">Home</div>
                     </NuxtLink>
+                    <NuxtLink to="/courses">
+                      <div class="border-b-2 p-2">Courses</div>
+                    </NuxtLink>
                     <NuxtLink to="/about">
                       <div class="border-b-2 p-2">About</div>
                     </NuxtLink>

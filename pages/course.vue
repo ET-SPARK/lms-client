@@ -2,9 +2,9 @@
   <HeaderAuth />
   <div class="p-2">
     <section class="flex1 w-full my-10">
-      <div>
+      <div class="lg:mr-4 md:mr-4 max-[640px]:mr-4">
         <div class="flex justify-between max-[1024px]:flex-col">
-          <div>
+          <div class="xl:mr-4">
             <!-- video player -->
             <div>
               <div class="video-section">
@@ -31,63 +31,63 @@
                   <!-- cource title -->
                   <div>
                     <p class="text-2xl font-bold max-[600px]:text-[16px]">
-                      {{ selectedTitle }} <br />
+                      {{ selectedTitle }}
+                    </p>
+                    <p class="ml-4 text-2xl font-bold max-[600px]:text-[16px]">
                       {{ selectedLabel }}
                     </p>
                   </div>
-                  <!-- profile -->
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center">
-                      <div class="mt-4">
-                        <Avatar>
-                          <AvatarImage
-                            src="https://github.com/radix-vue.png"
-                            alt="@radix-vue"
-                          />
-                          <AvatarFallback>S</AvatarFallback>
-                        </Avatar>
-                      </div>
-                      <NuxtLink to="#">
-                        <div
-                          class="ml-5 hover:text-blue-500 max-[600px]:text-[12px]"
-                        >
-                          <div>
-                            A course by <br />
-                            Abebe
-                          </div>
-                        </div>
-                      </NuxtLink>
+                </div>
+                <!-- profile -->
+                <div
+                  class="flex items-center justify-between border p-2 rounded-2xl my-4 ml-4"
+                >
+                  <div class="flex items-center">
+                    <div class="mt-4">
+                      <Avatar>
+                        <AvatarImage
+                          src="https://github.com/radix-vue.png"
+                          alt="@radix-vue"
+                        />
+                        <AvatarFallback>S</AvatarFallback>
+                      </Avatar>
                     </div>
-                    <div class="flex">
-                      <div class="mr-2">
-                        <Badge>
-                          <Icon
-                            name="bx:bxs-like"
-                            class="text-2xl max-[600px]:text-[16px]"
-                          />
-                        </Badge>
+                    <NuxtLink to="#">
+                      <div
+                        class="ml-5 hover:text-blue-500 max-[600px]:text-[12px]"
+                      >
+                        <div>Abebe</div>
                       </div>
-                      <div>
-                        <Badge>
-                          <Icon
-                            name="mdi:share"
-                            class="text-2xl max-[600px]:text-[16px]"
-                          />
-                        </Badge>
-                      </div>
-                    </div>
+                    </NuxtLink>
                   </div>
-                  <div>
-                    <p
-                      class="text-2xl font-bold mt-2 max-[600px]:text-[16px] ml-14"
-                    >
-                      About the Course
-                    </p>
+                  <div class="flex">
+                    <div class="mr-2">
+                      <Badge>
+                        <Icon
+                          name="bx:bxs-like"
+                          class="text-2xl max-[600px]:text-[16px]"
+                        />
+                      </Badge>
+                    </div>
+                    <div>
+                      <Badge>
+                        <Icon
+                          name="mdi:share"
+                          class="text-2xl max-[600px]:text-[16px]"
+                        />
+                      </Badge>
+                    </div>
                   </div>
                 </div>
+
                 <!-- course detail discription -->
-                <div class="px-4 text-justify ml-14">
+                <div class="text-justify ml-4 p-4 rounded-2xl border">
                   <div class="max-[600px]:text-[12px]">
+                    <div>
+                      <p class="text-2xl font-bold max-[600px]:text-[16px]">
+                        About the Course
+                      </p>
+                    </div>
                     <p class="mt-1">
                       Are you struggling to communicate in English? We
                       understand that it can be difficult to speak naturally in
@@ -119,7 +119,7 @@
                       speaker, our course will help you achieve your goals.
                     </p>
                   </div>
-                  <p class="text-2xl font-bold max-[600px]:text-[16px]">
+                  <p class="text-2xl font-bold max-[600px]:text-[16px] mt-4">
                     Requirements
                   </p>
                   <div class="max-[600px]:text-[12px]">
@@ -135,7 +135,7 @@
                       </li>
                     </ul>
                   </div>
-                  <p class="mt-2 text-2xl font-bold max-[600px]:text-[16px]">
+                  <p class="mt-4 text-2xl font-bold max-[600px]:text-[16px]">
                     Who is this course for?
                   </p>
                   <div class="max-[600px]:text-[12px]">
@@ -167,13 +167,15 @@
             </div>
           </div>
           <!-- course play list -->
-          <div class="px-4 w-full">
+          <div
+            class="px-4 w-full border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4"
+          >
             <div class="mb-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]"
                 >Contents</span
               >
             </div>
-            <div class="p-4">
+            <div>
               <Accordion
                 type="single"
                 class="w-full text-start items-start max-[600px]:text-[12px]"

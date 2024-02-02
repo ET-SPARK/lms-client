@@ -12,6 +12,7 @@
           :rootClassName="feature.rootClassName"
           :title="feature.title"
           :description="feature.description"
+          :icon="feature.icon"
         ></FeaturesCard>
       </div>
       <img
@@ -33,12 +34,14 @@ export default {
           title: "Diverse Course Catalog",
           description:
             "Choose from a diverse array of courses tailored to your interests",
+          icon: "material-symbols:diversity-3",
         },
         {
           rootClassName: "rootClassName2",
           title: "Expert-Guided Learning",
           description:
             "Benefit from the expertise of industry professionals and seasoned educators",
+          icon: "fluent:learning-app-24-filled",
         },
 
         {
@@ -46,6 +49,7 @@ export default {
           title: "Flexible Scheduling",
           description:
             "Learn at your own pace with 24/7 access to course materials",
+          icon: "material-symbols:auto-schedule",
         },
 
         {
@@ -53,6 +57,7 @@ export default {
           title: "Interactive Learning Experiences",
           description:
             "Immerse yourself in interactive lessons and hands-on projects",
+          icon: "ph:chalkboard-teacher-fill",
         },
       ],
     };
