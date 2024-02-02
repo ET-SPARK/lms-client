@@ -13,50 +13,62 @@ const courseNavList = [
   {
     icon: "streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting",
     name: "Accounting & Finance",
+    categorie: "accounting",
   },
   {
     icon: "ep:brush",
     name: "Art & Crafts",
+    categorie: "art",
   },
   {
     icon: "mdi:brush-off",
     name: "Beauty & Makeup",
+    categorie: "beauty",
   },
   {
     icon: "material-symbols:ink-pen-sharp",
     name: "Creatives & Design",
+    categorie: "creatives",
   },
   {
     icon: "ic:round-fastfood",
     name: "Food & Beverage",
+    categorie: "food",
   },
   {
     icon: "material-symbols:ecg-heart-outline",
     name: "Health & Fitness",
+    categorie: "health",
   },
   {
     icon: "streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit",
     name: "Business & Marketing",
+    categorie: "business",
   },
   {
     icon: "ph:code-bold",
     name: "IT & Development",
+    categorie: "it",
   },
   {
     icon: "lucide:languages",
     name: "Language & Literature",
+    categorie: "language",
   },
   {
     icon: "guidance:office",
-    name: "Office productivity",
+    name: "Office Productivity",
+    categorie: "office",
   },
   {
     icon: "guidance:meeting-point",
-    name: "Personal development",
+    name: "Personal Development",
+    categorie: "personal",
   },
   {
     icon: "material-symbols:camera",
     name: "Photography & Videography",
+    categorie: "photography",
   },
 ];
 </script>
@@ -82,15 +94,15 @@ const courseNavList = [
                 v-for="course in courseNavList"
                 :key="course.icon"
               >
-                <NuxtLink to="/">
-                  <div
-                    class="flex items-center hover:text-blue-500 cursor-pointer"
-                  >
-                    <div class="p-1 mr-2 rounded-md">
-                      <Icon :name="course.icon" class="text-2xl" />
-                    </div>
-                    <div>{{ course.name }}</div>
-                  </div>
+                <NuxtLink
+                  :to="{
+                    path: '/courses',
+                  }"
+                >
+                  <NavCourseNavList
+                    :name="course.name"
+                    :icon="course.icon"
+                  ></NavCourseNavList>
                 </NuxtLink>
               </li>
             </ul>
