@@ -2,7 +2,7 @@
   <HeaderAuth />
   <div class="border m-24 max-[640px]:m-8">
     <div class="border p-4 m-4">
-      <div>Completed Course (0)</div>
+      <div>Completed Courses (0)</div>
       <div>In Progress (1)</div>
     </div>
     <div class="text-2xl max-[640px]:text-xl font-bold mt-10 px-8">
