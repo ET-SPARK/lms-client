@@ -1,17 +1,59 @@
 <template>
   <HeaderAuth />
-  <div class="border m-24 max-[640px]:m-8 text-center">
-    <div class="text-2xl max-[640px]:text-xl font-bold mt-20">
-      Welcome to Andinet LMS!
+  <div class="border m-24 max-[640px]:m-8">
+    <div class="border p-4 m-4">
+      <div>Completed Course (0)</div>
+      <div>In Progress (1)</div>
     </div>
-    <div class="font-light mt-10">
-      It looks like you're ready to start on your learning journey. However, it
-      seems this space is empty right now. Explore our course catalog and start
-      learning.
+    <div class="text-2xl max-[640px]:text-xl font-bold mt-10 px-8">
+      Continue learning
     </div>
-    <div class="mt-20 mb-10">
-      <Button>Explore Courses</Button>
+    <div class="flex justify-between border p-4 m-4">
+      <div class="flex items-center">
+        <div>
+          <img
+            src="https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg"
+            class="w-40 h-20 mt-5"
+          />
+        </div>
+        <div class="ml-4">
+          <div class="font-light">Course | Language</div>
+          <div class="text-xl">English for career development</div>
+          <div class="flex items-center">
+            <Progress v-model="progress" class="w-3/5 h-[10px] mt-4" />
+            <div class="mt-2 ml-4">60%</div>
+          </div>
+          <div class="font-light text-sm">Overall progress</div>
+        </div>
+      </div>
+      <div class="border-l">
+        <div class="ml-4">
+          <div class="flex justify-between items-center mb-2">
+            <div>Next Up</div>
+            <div>
+              <Icon
+                name="ph:dots-three-outline-vertical-fill"
+                class="text-xl"
+              />
+            </div>
+          </div>
+          <div class="font-semibold">Introduction to Communication</div>
+          <div class="font-light text-sm">Chapter 3 | Lesson 2</div>
+        </div>
+      </div>
     </div>
   </div>
   <FooterAuth />
 </template>
+
+<script setup lang="ts">
+import { ref, watchEffect } from "vue";
+import { Progress } from "@/components/ui/progress";
+
+const progress = ref(13);
+
+watchEffect((cleanupFn) => {
+  const timer = setTimeout(() => (progress.value = 66), 500);
+  cleanupFn(() => clearTimeout(timer));
+});
+</script>
