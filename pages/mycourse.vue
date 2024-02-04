@@ -10,7 +10,11 @@
     </div>
     <div class="flex justify-between border p-4 m-4">
       <div class="flex items-center">
-        <div>
+        <div class="relative">
+          <Icon
+            name="material-symbols:play-arrow"
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-[24px] rounded-full bg-opacity-60"
+          />
           <img
             src="https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg"
             class="w-40 h-24 mt-5"
