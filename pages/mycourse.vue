@@ -13,7 +13,7 @@
         <div>
           <img
             src="https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg"
-            class="w-40 h-20 mt-5"
+            class="w-40 h-24 mt-5"
           />
         </div>
         <div class="ml-4">
