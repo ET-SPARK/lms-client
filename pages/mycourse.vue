@@ -11,8 +11,8 @@
     <div class="text-2xl max-[640px]:text-xl font-bold mt-10 px-8">
       Continue learning
     </div>
-    <div class="flex justify-between border p-4 m-4">
-      <div class="flex items-center">
+    <div class="flex justify-between border p-4 m-4 max-[640px]:flex-col">
+      <div class="flex items-center max-[640px]:flex-col">
         <div class="relative">
           <Icon
             name="material-symbols:play-arrow"
@@ -23,9 +23,11 @@
             class="w-40 h-24"
           />
         </div>
-        <div class="ml-4">
-          <div class="font-light">Course | Language</div>
-          <div class="text-xl">English for career development</div>
+        <div class="ml-4 max-[640px]:mt-2">
+          <div class="font-light max-[640px]:text-sm">Course | Language</div>
+          <div class="text-xl max-[640px]:text-[18px]">
+            English for career development
+          </div>
           <div class="flex items-center">
             <Progress v-model="progress" class="w-3/5 h-[8px]" />
             <div class="mt-2 ml-4">60%</div>
@@ -33,7 +35,9 @@
           <div class="font-light text-sm">Overall progress</div>
         </div>
       </div>
-      <div class="border-l">
+      <div
+        class="max-[640px]:border-t max-[640px]:pt-2 max-[640px]:mt-2 md:border-l lg:border-l xl:border-l 2xl:border-l"
+      >
         <div class="ml-4">
           <div class="flex justify-between items-center mb-2">
             <div>Next Up</div>
