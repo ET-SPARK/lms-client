@@ -1,6 +1,9 @@
 <template>
   <HeaderAuth />
-  <div class="border m-24 max-[640px]:m-8">
+  <div class="mx-24 mt-10 text-4xl font-bold max-[640px]:text-[26px]">
+    My Courses
+  </div>
+  <div class="border mx-24 my-10 max-[640px]:m-8">
     <div class="border p-4 m-4">
       <div>Completed Courses (0)</div>
       <div>In Progress (1)</div>
@@ -17,14 +20,14 @@
           />
           <img
             src="https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg"
-            class="w-40 h-24 mt-5"
+            class="w-40 h-24"
           />
         </div>
         <div class="ml-4">
           <div class="font-light">Course | Language</div>
           <div class="text-xl">English for career development</div>
           <div class="flex items-center">
-            <Progress v-model="progress" class="w-3/5 h-[10px] mt-4" />
+            <Progress v-model="progress" class="w-3/5 h-[8px]" />
             <div class="mt-2 ml-4">60%</div>
           </div>
           <div class="font-light text-sm">Overall progress</div>
@@ -35,10 +38,21 @@
           <div class="flex justify-between items-center mb-2">
             <div>Next Up</div>
             <div>
-              <Icon
-                name="ph:dots-three-outline-vertical-fill"
-                class="text-xl"
-              />
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Icon
+                    name="ph:dots-three-outline-vertical-fill"
+                    class="text-xl"
+                  />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Unenroll</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Rate</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
           <div class="font-semibold">Introduction to Communication</div>
@@ -51,6 +65,15 @@
 </template>
 
 <script setup lang="ts">
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
 import { ref, watchEffect } from "vue";
 import { Progress } from "@/components/ui/progress";
 
