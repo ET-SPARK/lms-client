@@ -97,7 +97,7 @@ const courseNavList = [
                 <NuxtLink
                   :to="{
                     path: '/courses',
-                    // query: { categorie: course.categorie },
+                    query: { categorie: course.categorie },
                   }"
                 >
                   <NavCourseNavList

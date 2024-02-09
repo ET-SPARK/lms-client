@@ -73,11 +73,11 @@
       <div
         class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
       >
-        <template v-if="selectedCategory === null">
+        <template v-if="!selectedCategory && !$route.query.categorie">
           <div>course</div>
         </template>
         <template v-else>
-          {{ this.selectedCategory }}
+          {{ selectedCategory || $route.query.categorie }}
         </template>
       </div>
       <div class="mt-5 max-[600px]:px-8">
@@ -87,7 +87,10 @@
           class="md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
         >
           <div
-            v-if="!selectedCategory || selectedCategory === category.category"
+            v-if="
+              !$route.query.categorie ||
+              $route.query.categorie === category.categorie
+            "
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
@@ -192,6 +195,7 @@
     </div>
   </div>
   <FooterGuest />
+  {{ console.log($route.query.categorie) }}
 </template>
 
 <script>
@@ -206,7 +210,7 @@ export default {
     return {
       courseList: [
         {
-          category: "Accounting & Finance",
+          categorie: "accounting",
           courses: [
             {
               imageSource:
@@ -266,7 +270,7 @@ export default {
           ],
         },
         {
-          category: "Art & Crafts",
+          categorie: "art",
           courses: [
             {
               imageSource:
@@ -294,7 +298,7 @@ export default {
           ],
         },
         {
-          category: "Beauty & Makeup",
+          categorie: "beauty",
           courses: [
             {
               imageSource:
@@ -322,7 +326,7 @@ export default {
           ],
         },
         {
-          category: "Creatives & Design",
+          categorie: "creatives",
           courses: [
             {
               imageSource:
@@ -350,7 +354,7 @@ export default {
           ],
         },
         {
-          category: "Food & Beverage",
+          categorie: "food",
           courses: [
             {
               imageSource:
@@ -378,7 +382,7 @@ export default {
           ],
         },
         {
-          category: "Health & Fitness",
+          categorie: "health",
           courses: [
             {
               imageSource:
@@ -406,7 +410,7 @@ export default {
           ],
         },
         {
-          category: "Language & Literature",
+          categorie: "language",
           courses: [
             {
               imageSource:
@@ -434,7 +438,7 @@ export default {
           ],
         },
         {
-          category: "Music & Theater",
+          categorie: "language",
           courses: [
             {
               imageSource:
@@ -462,7 +466,7 @@ export default {
           ],
         },
         {
-          category: "Office Productivity",
+          categorie: "personal",
           courses: [
             {
               imageSource:
@@ -490,7 +494,7 @@ export default {
           ],
         },
         {
-          category: "Personal Development",
+          categorie: "personal",
           courses: [
             {
               imageSource:
@@ -518,7 +522,7 @@ export default {
           ],
         },
         {
-          category: "Photography & Videography",
+          categorie: "photography",
           courses: [
             {
               imageSource:
