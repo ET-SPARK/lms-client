@@ -1,24 +1,3 @@
-<script setup lang="ts">
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-const showPassword = ref(false);
-
-const togglePasswordVisibility = () => {
-  showPassword.value = !showPassword.value;
-};
-</script>
-
 <template>
   <div class="z-50">
     <Dialog>
@@ -102,9 +81,39 @@ const togglePasswordVisibility = () => {
                             for="email"
                             class="text-left mr-2 text-[16px] mb-1"
                           >
-                            Verification code
                           </Label>
-                          <Input type="text" placeholder="" class="text-2xl" />
+                          <form class="" @submit="onSubmit">
+                            <FormField v-slot="{ componentField }" name="pin">
+                              <FormItem>
+                                <FormLabel>OTP Verification code</FormLabel>
+                                <FormControl>
+                                  <PinInput
+                                    id="pin-input"
+                                    placeholder="○"
+                                    class="flex gap-2 items-center mt-1"
+                                    otp
+                                    type="number"
+                                    :name="componentField.name"
+                                    @complete="handleComplete"
+                                    @update:model-value="
+                                      (arrStr) => {
+                                        setValues({
+                                          pin: arrStr.filter(Boolean),
+                                        });
+                                      }
+                                    "
+                                  >
+                                    <PinInputInput
+                                      v-for="(id, index) in 5"
+                                      :key="id"
+                                      :index="index"
+                                    />
+                                  </PinInput>
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            </FormField>
+                          </form>
                           <Label
                             for="email"
                             class="text-left mr-2 text-[16px] mb-1 mt-2"
@@ -179,3 +188,61 @@ const togglePasswordVisibility = () => {
     </Dialog>
   </div>
 </template>
+
+<script setup lang="ts">
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+const showPassword = ref(false);
+
+const togglePasswordVisibility = () => {
+  showPassword.value = !showPassword.value;
+};
+import { h } from "vue";
+import { useForm } from "vee-validate";
+import { toTypedSchema } from "@vee-validate/zod";
+import * as z from "zod";
+import { PinInput, PinInputInput } from "@/components/ui/pin-input";
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { toast } from "@/components/ui/toast";
+
+const formSchema = toTypedSchema(
+  z.object({
+    pin: z.array(z.coerce.string()).length(5, { message: "Invalid input" }),
+  })
+);
+
+const { handleSubmit, setValues } = useForm({
+  validationSchema: formSchema,
+  initialValues: {
+    pin: [],
+  },
+});
+
+const onSubmit = handleSubmit(({ pin }) => {
+  toast({
+    title: "You submitted the following values:",
+    description: h(
+      "pre",
+      { class: "mt-2 w-[340px] rounded-md bg-slate-950 p-4" },
+      h("code", { class: "text-white" }, JSON.stringify(pin.join(""), null, 2))
+    ),
+  });
+});
+
+const handleComplete = (e: string[]) => console.log(e.join(""));
+</script>
