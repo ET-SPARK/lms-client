@@ -85,7 +85,7 @@
                           <form class="" @submit="onSubmit">
                             <FormField v-slot="{ componentField }" name="pin">
                               <FormItem>
-                                <FormLabel>OTP Verification code</FormLabel>
+                                <FormLabel>OTP Code</FormLabel>
                                 <FormControl>
                                   <PinInput
                                     id="pin-input"
