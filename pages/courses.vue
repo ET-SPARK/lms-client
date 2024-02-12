@@ -77,7 +77,7 @@
           {{ $route.query.categorie }}
         </template>
         <template v-else>
-          <div>course</div>
+          <div>courses</div>
         </template>
       </div>
       <div class="mt-5 max-[600px]:px-8">
@@ -92,99 +92,48 @@
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
           >
-            <div>
-              <div class="relative">
-                <!-- Your Icon component with 'course.iconName' -->
-                <Icon
-                  name="material-symbols:play-arrow"
-                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                />
-                <img :src="course.imageSource" class="rounded-t-xl w-full" />
+            <div class="w-full">
+              <div class="p-2">
+                <div class="relative">
+                  <Badge class="absolute mt-1 right-4">{{
+                    course.badge
+                  }}</Badge>
+                  <Icon
+                    name="material-symbols:play-arrow"
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
+                  />
+                  <img class="rounded-xl w-full" :src="course.imageSource" />
+                </div>
               </div>
-              <div
-                class="border-t-2 px-3 h-[100px] max-[600px]:h-[120px] max-[768px]:h-[140px]"
-              >
-                <div>
-                  <p
-                    class="text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
-                  >
-                    {{ course.title }}
+              <div class="h-[160px] ml-2 mr-2 border-b">
+                <div class="text-[14px] mb-2 uppercase">
+                  {{ $route.query.categorie }}
+                </div>
+                <div class="flex items-center border-b pb-2">
+                  <Avatar>
+                    <AvatarImage
+                      :src="course.logo"
+                      alt="@radix-vue"
+                      class="w-4 h-4 rounded-full border"
+                    />
+                    <AvatarFallback>
+                      {{ course.author.split(" ")[0][0] }}
+                      {{ course.author.split(" ")[1][0] }}
+                    </AvatarFallback>
+                  </Avatar>
+
+                  <p class="text-sm ml-2">
+                    Course by<span class="uppercase ml-2">
+                      {{ course.author }}</span
+                    >
                   </p>
                 </div>
-                <div
-                  class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                >
-                  A course by: {{ course.author }}
-                </div>
-                <div>
-                  <p
-                    class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.description }}
-                  </p>
-                </div>
+                <p class="text-[16px] font-light mt-2">
+                  {{ course.title }}
+                </p>
+                <p class="text-sm line-clamp-2">{{ course.description }}</p>
               </div>
-              <div
-                class="flex justify-between border-t-2 px-3 mt-12 items-center"
-              >
-                <div class="text-center w-[40px]">
-                  <div>
-                    <Icon
-                      name="carbon:skill-level-basic"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Level
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.level }}
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div>
-                    <Icon
-                      name="mdi:clock-time-eleven"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Duration
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.duration }}
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div>
-                    <Icon
-                      name="material-symbols:play-lesson"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px max-[768px]:text-[14px]]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Lessons
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.lessons }}
-                  </div>
-                </div>
-              </div>
-              <div class="flex justify-center border-t-2 px-3 py-2">
-                <NuxtLink to="/course">
-                  <Button
-                    class="max-[600px]:text-[10px] max-[768px]:text-[12px]"
-                  >
-                    Get started
-                  </Button>
-                </NuxtLink>
-              </div>
+              <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
             </div>
           </div>
           <div
@@ -193,99 +142,48 @@
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
           >
-            <div>
-              <div class="relative">
-                <!-- Your Icon component with 'course.iconName' -->
-                <Icon
-                  name="material-symbols:play-arrow"
-                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-black cursor-pointer text-white text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                />
-                <img :src="course.imageSource" class="rounded-t-xl w-full" />
+            <div class="w-full">
+              <div class="p-2">
+                <div class="relative">
+                  <Badge class="absolute mt-1 right-4">{{
+                    course.badge
+                  }}</Badge>
+                  <Icon
+                    name="material-symbols:play-arrow"
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
+                  />
+                  <img class="rounded-xl w-full" :src="course.imageSource" />
+                </div>
               </div>
-              <div
-                class="border-t-2 px-3 h-[100px] max-[600px]:h-[120px] max-[768px]:h-[140px]"
-              >
-                <div>
-                  <p
-                    class="text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
-                  >
-                    {{ course.title }}
+              <div class="h-[160px] ml-2 mr-2 border-b">
+                <div class="text-[14px] mb-2 uppercase">
+                  {{ $route.query.categorie }}
+                </div>
+                <div class="flex items-center border-b pb-2">
+                  <Avatar>
+                    <AvatarImage
+                      :src="course.logo"
+                      alt="@radix-vue"
+                      class="w-4 h-4 rounded-full border"
+                    />
+                    <AvatarFallback>
+                      {{ course.author.split(" ")[0][0] }}
+                      {{ course.author.split(" ")[1][0] }}
+                    </AvatarFallback>
+                  </Avatar>
+
+                  <p class="text-sm ml-2">
+                    Course by<span class="uppercase ml-2">
+                      {{ course.author }}</span
+                    >
                   </p>
                 </div>
-                <div
-                  class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                >
-                  A course by: {{ course.author }}
-                </div>
-                <div>
-                  <p
-                    class="text-sm max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.description }}
-                  </p>
-                </div>
+                <p class="text-[16px] font-light mt-2">
+                  {{ course.title }}
+                </p>
+                <p class="text-sm line-clamp-2">{{ course.description }}</p>
               </div>
-              <div
-                class="flex justify-between border-t-2 px-3 mt-12 items-center"
-              >
-                <div class="text-center w-[40px]">
-                  <div>
-                    <Icon
-                      name="carbon:skill-level-basic"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Level
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.level }}
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div>
-                    <Icon
-                      name="mdi:clock-time-eleven"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Duration
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.duration }}
-                  </div>
-                </div>
-                <div class="text-center">
-                  <div>
-                    <Icon
-                      name="material-symbols:play-lesson"
-                      class="cursor-pointer mr-1 max-[600px]:text-[12px max-[768px]:text-[14px]]"
-                    />
-                    <p class="max-[600px]:text-[12px] max-[768px]:text-[14px]">
-                      Lessons
-                    </p>
-                  </div>
-                  <div
-                    class="font-bold max-[600px]:text-[12px] max-[768px]:text-[14px]"
-                  >
-                    {{ course.lessons }}
-                  </div>
-                </div>
-              </div>
-              <div class="flex justify-center border-t-2 px-3 py-2">
-                <NuxtLink to="/course">
-                  <Button
-                    class="max-[600px]:text-[10px] max-[768px]:text-[12px]"
-                  >
-                    Get started
-                  </Button>
-                </NuxtLink>
-              </div>
+              <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
             </div>
           </div>
         </div>
@@ -319,6 +217,9 @@ export default {
               level: "Beginner",
               duration: "3:00 h",
               lessons: 25,
+              reward: "Cybersecurity Certification",
+              badge: "New",
+              logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png?auto=format%2Ccompress&dpr=1&w=25&h=25&q=40",
             },
             {
               imageSource:
@@ -380,6 +281,9 @@ export default {
               level: "Intermediate",
               duration: "4:30 h",
               lessons: 30,
+              reward: "Artistic Achievement Award",
+              badge: "Masterpiece",
+              logo: "https://example.com/art-achievement-logo.png",
             },
             {
               imageSource:
