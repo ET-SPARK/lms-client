@@ -20,7 +20,7 @@
         >
           <div
             class="cursor-pointer flex items-center"
-            @click="selectCategory(course.name)"
+            @click="selectCategory(course.categorie)"
           >
             <div class="p-1 mr-2 rounded-md">
               <Icon
@@ -54,7 +54,7 @@
               >
                 <div
                   class="cursor-pointer flex items-center"
-                  @click="selectCategory(course.name)"
+                  @click="selectCategory(course.categorie)"
                 >
                   <div class="p-1 mr-2 rounded-md">
                     <Icon :name="course.icon" class="text-[12px]" />
@@ -87,10 +87,7 @@
           class="md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
         >
           <div
-            v-if="
-              !$route.query.categorie ||
-              $route.query.categorie === category.categorie
-            "
+            v-if="$route.query.categorie == category.categorie"
             v-for="(course, courseIndex) in category.courses"
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
@@ -617,7 +614,11 @@ export default {
   },
   methods: {
     selectCategory(category) {
+      // Set selectedCategory
       this.selectedCategory = category;
+
+      // Set $route.query.categorie to the selected category
+      this.$router.push({ query: { categorie: category } });
     },
   },
 };
