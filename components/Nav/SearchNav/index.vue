@@ -20,6 +20,69 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+
+const courseNavList = [
+  {
+    icon: "streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting",
+    name: "Accounting & Finance",
+    categorie: "accounting",
+  },
+  {
+    icon: "ep:brush",
+    name: "Art & Crafts",
+    categorie: "art",
+  },
+  {
+    icon: "mdi:brush-off",
+    name: "Beauty & Makeup",
+    categorie: "beauty",
+  },
+  {
+    icon: "material-symbols:ink-pen-sharp",
+    name: "Creatives & Design",
+    categorie: "creatives",
+  },
+  {
+    icon: "ic:round-fastfood",
+    name: "Food & Beverage",
+    categorie: "food",
+  },
+  {
+    icon: "material-symbols:ecg-heart-outline",
+    name: "Health & Fitness",
+    categorie: "health",
+  },
+  {
+    icon: "streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit",
+    name: "Business & Marketing",
+    categorie: "business",
+  },
+  {
+    icon: "ph:code-bold",
+    name: "IT & Development",
+    categorie: "it",
+  },
+  {
+    icon: "lucide:languages",
+    name: "Language & Literature",
+    categorie: "language",
+  },
+  {
+    icon: "guidance:office",
+    name: "Office Productivity",
+    categorie: "office",
+  },
+  {
+    icon: "guidance:meeting-point",
+    name: "Personal Development",
+    categorie: "personal",
+  },
+  {
+    icon: "material-symbols:camera",
+    name: "Photography & Videography",
+    categorie: "photography",
+  },
+];
 </script>
 
 <template>
@@ -39,20 +102,22 @@ import {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
-            <CommandItem value="cloud-computing"> Cloud Computing </CommandItem>
-            <CommandItem value="data-science"> Data Science </CommandItem>
-            <CommandItem value="full-stack-web-development">
-              Full Stack Web Development
+            <!-- Use v-for directly on CommandItem -->
+            <CommandItem
+              v-for="course in courseNavList"
+              :key="course.categorie"
+              :value="course.categorie"
+            >
+              <NuxtLink
+                class="cursor-pointer flex items-center"
+                :to="{
+                  path: '/courses',
+                  query: { categorie: course.categorie },
+                }"
+              >
+                <DialogClose> {{ course.name }}</DialogClose>
+              </NuxtLink>
             </CommandItem>
-            <CommandItem value="machine-learning">
-              Machine Learning
-            </CommandItem>
-          </CommandGroup>
-          <CommandSeparator />
-          <CommandGroup heading="Settings">
-            <CommandItem value="profile"> Profile </CommandItem>
-            <CommandItem value="my-course"> My Course </CommandItem>
-            <CommandItem value="settings"> Settings </CommandItem>
           </CommandGroup>
         </CommandList>
       </Command>
