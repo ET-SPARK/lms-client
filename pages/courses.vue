@@ -92,49 +92,55 @@
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
           >
-            <div class="w-full">
-              <div class="p-2">
-                <div class="relative">
-                  <Badge class="absolute mt-1 right-4">{{
-                    course.badge
-                  }}</Badge>
-                  <Icon
-                    name="material-symbols:play-arrow"
-                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                  />
-                  <img class="rounded-xl w-full" :src="course.imageSource" />
-                </div>
-              </div>
-              <div class="h-[160px] ml-2 mr-2 border-b">
-                <div class="text-[14px] mb-2 uppercase">
-                  {{ $route.query.categorie }}
-                </div>
-                <div class="flex items-center border-b pb-2">
-                  <Avatar>
-                    <AvatarImage
-                      :src="course.logo"
-                      alt="@radix-vue"
-                      class="w-4 h-4 rounded-full border"
+            <NuxtLink
+              :to="{
+                path: `course/${course.title.toLowerCase().replace(/ /g, '-')}`,
+              }"
+            >
+              <div class="w-full">
+                <div class="p-2">
+                  <div class="relative">
+                    <Badge class="absolute mt-1 right-4">{{
+                      course.badge
+                    }}</Badge>
+                    <Icon
+                      name="material-symbols:play-arrow"
+                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
                     />
-                    <AvatarFallback>
-                      {{ course.author.split(" ")[0][0] }}
-                      {{ course.author.split(" ")[1][0] }}
-                    </AvatarFallback>
-                  </Avatar>
-
-                  <p class="text-sm ml-2">
-                    Course by<span class="uppercase ml-2">
-                      {{ course.author }}</span
-                    >
-                  </p>
+                    <img class="rounded-xl w-full" :src="course.imageSource" />
+                  </div>
                 </div>
-                <p class="text-[16px] font-light mt-2">
-                  {{ course.title }}
-                </p>
-                <p class="text-sm line-clamp-2">{{ course.description }}</p>
+                <div class="h-[160px] ml-2 mr-2 border-b">
+                  <div class="text-[14px] mb-2 uppercase">
+                    {{ $route.query.categorie }}
+                  </div>
+                  <div class="flex items-center border-b pb-2">
+                    <Avatar>
+                      <AvatarImage
+                        :src="course.logo"
+                        alt="@radix-vue"
+                        class="w-4 h-4 rounded-full border"
+                      />
+                      <AvatarFallback>
+                        {{ course.author.split(" ")[0][0] }}
+                        {{ course.author.split(" ")[1][0] }}
+                      </AvatarFallback>
+                    </Avatar>
+
+                    <p class="text-sm ml-2">
+                      Course by<span class="uppercase ml-2">
+                        {{ course.author }}</span
+                      >
+                    </p>
+                  </div>
+                  <p class="text-[16px] font-light mt-2">
+                    {{ course.title }}
+                  </p>
+                  <p class="text-sm line-clamp-2">{{ course.description }}</p>
+                </div>
+                <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
               </div>
-              <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
-            </div>
+            </NuxtLink>
           </div>
           <div
             v-if="$route.query.categorie == null"
@@ -142,56 +148,61 @@
             :key="courseIndex"
             class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
           >
-            <div class="w-full">
-              <div class="p-2">
-                <div class="relative">
-                  <Badge class="absolute mt-1 right-4">{{
-                    course.badge
-                  }}</Badge>
-                  <Icon
-                    name="material-symbols:play-arrow"
-                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                  />
-                  <img class="rounded-xl w-full" :src="course.imageSource" />
-                </div>
-              </div>
-              <div class="h-[160px] ml-2 mr-2 border-b">
-                <div class="text-[14px] mb-2 uppercase">
-                  {{ $route.query.categorie }}
-                </div>
-                <div class="flex items-center border-b pb-2">
-                  <Avatar>
-                    <AvatarImage
-                      :src="course.logo"
-                      alt="@radix-vue"
-                      class="w-4 h-4 rounded-full border"
+            <NuxtLink
+              :to="{
+                path: `course/${course.title.toLowerCase().replace(/ /g, '-')}`,
+              }"
+            >
+              <div class="w-full">
+                <div class="p-2">
+                  <div class="relative">
+                    <Badge class="absolute mt-1 right-4">{{
+                      course.badge
+                    }}</Badge>
+                    <Icon
+                      name="material-symbols:play-arrow"
+                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
                     />
-                    <AvatarFallback>
-                      {{ course.author.split(" ")[0][0] }}
-                      {{ course.author.split(" ")[1][0] }}
-                    </AvatarFallback>
-                  </Avatar>
-
-                  <p class="text-sm ml-2">
-                    Course by<span class="uppercase ml-2">
-                      {{ course.author }}</span
-                    >
-                  </p>
+                    <img class="rounded-xl w-full" :src="course.imageSource" />
+                  </div>
                 </div>
-                <p class="text-[16px] font-light mt-2">
-                  {{ course.title }}
-                </p>
-                <p class="text-sm line-clamp-2">{{ course.description }}</p>
+                <div class="h-[160px] ml-2 mr-2 border-b">
+                  <div class="text-[14px] mb-2 uppercase">
+                    {{ $route.query.categorie }}
+                  </div>
+                  <div class="flex items-center border-b pb-2">
+                    <Avatar>
+                      <AvatarImage
+                        :src="course.logo"
+                        alt="@radix-vue"
+                        class="w-4 h-4 rounded-full border"
+                      />
+                      <AvatarFallback>
+                        {{ course.author.split(" ")[0][0] }}
+                        {{ course.author.split(" ")[1][0] }}
+                      </AvatarFallback>
+                    </Avatar>
+
+                    <p class="text-sm ml-2">
+                      Course by<span class="uppercase ml-2">
+                        {{ course.author }}</span
+                      >
+                    </p>
+                  </div>
+                  <p class="text-[16px] font-light mt-2">
+                    {{ course.title }}
+                  </p>
+                  <p class="text-sm line-clamp-2">{{ course.description }}</p>
+                </div>
+                <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
               </div>
-              <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
-            </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
     </div>
   </div>
   <FooterGuest />
-  {{ console.log($route.query.categorie) }}
 </template>
 
 <script>
