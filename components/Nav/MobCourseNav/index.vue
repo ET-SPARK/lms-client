@@ -5,7 +5,13 @@
       :key="course.icon"
       class="hover:text-blue-500"
     >
-      <NuxtLink class="cursor-pointer flex items-center">
+      <NuxtLink
+        class="cursor-pointer flex items-center"
+        :to="{
+          path: '/courses',
+          query: { categorie: course.categorie },
+        }"
+      >
         <div class="p-1 mr-2 rounded-md">
           <Icon :name="course.icon" class="text-xl max-[600px]:text-[12px]" />
         </div>

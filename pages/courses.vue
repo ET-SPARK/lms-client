@@ -73,11 +73,11 @@
       <div
         class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
       >
-        <template v-if="selectedCategory === null">
-          <div>course</div>
+        <template v-if="this.$route.query.categorie != null">
+          {{ $route.query.categorie }}
         </template>
         <template v-else>
-          {{ this.selectedCategory }}
+          <div>course</div>
         </template>
       </div>
       <div class="mt-5 max-[600px]:px-8">
@@ -715,10 +715,7 @@ export default {
   },
   methods: {
     selectCategory(category) {
-      // Set selectedCategory
       this.selectedCategory = category;
-
-      // Set $route.query.categorie to the selected category
       this.$router.push({ query: { categorie: category } });
     },
   },
