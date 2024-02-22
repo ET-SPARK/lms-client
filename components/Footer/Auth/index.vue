@@ -2,7 +2,7 @@
 
 <template>
   <footer
-    class="dark:bg-background text-center w-full overflow-x-auto border-t"
+    class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t"
   >
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
