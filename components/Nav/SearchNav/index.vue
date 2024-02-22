@@ -83,6 +83,14 @@ const courseNavList = [
     categorie: "photography",
   },
 ];
+
+const SearchCourseName = ref("");
+const filteredCourses = computed(() => {
+  const search = SearchCourseName.value.toLowerCase();
+  return courseNavList.filter((course) =>
+    course.name.toLowerCase().includes(search)
+  );
+});
 </script>
 
 <template>
@@ -96,17 +104,22 @@ const courseNavList = [
         Search for anything
       </Button>
     </DialogTrigger>
-    <DialogContent class="sm:max-w-[425px] max-[600px]:text-[12px]">
+    <DialogContent
+      class="sm:w-[425px] lg:max-w-[800px] max-[600px]:text-[12px]"
+    >
       <Command>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput
+          placeholder="Type a command or search..."
+          v-model="SearchCourseName"
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             <!-- Use v-for directly on CommandItem -->
             <CommandItem
-              v-for="course in courseNavList"
-              :key="course.categorie"
-              :value="course.categorie"
+              v-for="course in filteredCourses"
+              :key="course.name"
+              :value="course.name"
             >
               <NuxtLink
                 class="cursor-pointer flex items-center"

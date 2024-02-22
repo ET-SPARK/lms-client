@@ -87,10 +87,10 @@ const courseNavList = [
               </div>
             </div>
             <ul
-              class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] border-t-2"
+              class="grid w-[400px] gap-3 p-4 md:w-[600px] md:grid-cols-3 lg:w-[800px] border-t-2"
             >
               <li
-                class="cursor-pointer"
+                class="cursor-pointer border-b"
                 v-for="course in courseNavList"
                 :key="course.icon"
               >
