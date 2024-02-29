@@ -33,6 +33,56 @@
           </div>
         </div>
       </div>
+
+      <div>
+        <div class="flex justify-between items-center">
+          <div>Filter by Level</div>
+          <div class="cursor-pointer" @click="handleFilter">
+            <Icon
+              name="material-symbols:filter-alt-off-rounded"
+              class="text-2xl"
+            />
+          </div>
+        </div>
+        <div class="flex-col">
+          <div class="flex items-center space-x-2 py-2">
+            <Checkbox id="terms" />
+            <label
+              for="terms"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              All
+            </label>
+          </div>
+          <div class="flex items-center space-x-2 py-2">
+            <Checkbox id="terms" v-model="beginner" />
+            <label
+              for="terms"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Beginner
+            </label>
+          </div>
+          <div class="flex items-center space-x-2 py-2">
+            <Checkbox id="terms" v-model="intermediate" />
+            <label
+              for="terms"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Intermediate
+            </label>
+          </div>
+          <div class="flex items-center space-x-2 py-2">
+            <Checkbox id="terms" v-model="advanced" />
+            <label
+              for="terms"
+              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Advanced
+            </label>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="hidden max-[640px]:flex max-[640px]:px-8">
@@ -128,9 +178,10 @@
                     </Avatar>
 
                     <p class="text-sm ml-2">
-                      Course by<span class="uppercase ml-2">
-                        {{ course.author }}</span
-                      >
+                      Course by
+                      <span class="uppercase ml-2">
+                        {{ course.author }}
+                      </span>
                     </p>
                   </div>
                   <p class="text-[16px] font-light mt-2">
@@ -192,7 +243,35 @@
                   <p class="text-[16px] font-light mt-2">
                     {{ course.title }}
                   </p>
-                  <p class="text-sm line-clamp-2">{{ course.description }}</p>
+                  <p class="text-sm line-clamp-2 h-[50px]">
+                    {{ course.description }}
+                  </p>
+                  <div class="flex justify-between py-2 border-t text-sm">
+                    <div class="items-center flex">
+                      <div>
+                        <Icon
+                          name="carbon:skill-level-intermediate"
+                          class="mr-2 mb-1"
+                        />
+                      </div>
+                      <div>{{ course.level }}</div>
+                    </div>
+                    <div class="items-center flex">
+                      <div>
+                        <Icon
+                          name="material-symbols:play-lesson-sharp"
+                          class="mr-2 mb-1"
+                        />
+                      </div>
+                      <div>{{ course.lessons }}</div>
+                    </div>
+                    <div class="items-center flex">
+                      <div>
+                        <Icon name="material-symbols:alarm" class="mr-2 mb-1" />
+                      </div>
+                      <div>{{ course.duration }}</div>
+                    </div>
+                  </div>
                 </div>
                 <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
               </div>
@@ -242,6 +321,7 @@ export default {
               level: "Advanced",
               duration: "6:30 h",
               lessons: 40,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -252,6 +332,7 @@ export default {
               level: "Beginner",
               duration: "2:30 h",
               lessons: 20,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -263,6 +344,7 @@ export default {
               level: "Advanced",
               duration: "5:00 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -274,6 +356,7 @@ export default {
               level: "Advanced",
               duration: "5:00 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
 
             // Add more courses for Accounting & Finance as needed
@@ -295,6 +378,7 @@ export default {
               reward: "Artistic Achievement Award",
               badge: "Masterpiece",
               logo: "https://example.com/art-achievement-logo.png",
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -306,6 +390,7 @@ export default {
               level: "Advanced",
               duration: "8:00 h",
               lessons: 55,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Art & Crafts as needed
           ],
@@ -323,6 +408,7 @@ export default {
               level: "Beginner",
               duration: "2:30 h",
               lessons: 20,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -334,6 +420,7 @@ export default {
               level: "Advanced",
               duration: "5:00 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Beauty & Makeup as needed
           ],
@@ -351,6 +438,7 @@ export default {
               level: "Intermediate",
               duration: "4:00 h",
               lessons: 30,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -362,6 +450,7 @@ export default {
               level: "Advanced",
               duration: "6:30 h",
               lessons: 45,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Creatives & Design as needed
           ],
@@ -379,6 +468,7 @@ export default {
               level: "Intermediate",
               duration: "5:00 h",
               lessons: 40,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -390,6 +480,7 @@ export default {
               level: "Advanced",
               duration: "7:00 h",
               lessons: 50,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Food & Beverage as needed
           ],
@@ -407,6 +498,7 @@ export default {
               level: "Beginner",
               duration: "3:00 h",
               lessons: 25,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -418,6 +510,7 @@ export default {
               level: "Advanced",
               duration: "5:30 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Health & Fitness as needed
           ],
@@ -435,6 +528,7 @@ export default {
               level: "Intermediate",
               duration: "4:30 h",
               lessons: 30,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -446,6 +540,7 @@ export default {
               level: "Advanced",
               duration: "6:00 h",
               lessons: 40,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Language & Literature as needed
           ],
@@ -463,6 +558,7 @@ export default {
               level: "Beginner",
               duration: "3:30 h",
               lessons: 28,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -474,6 +570,7 @@ export default {
               level: "Intermediate",
               duration: "5:30 h",
               lessons: 45,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Music & Theater as needed
           ],
@@ -491,6 +588,7 @@ export default {
               level: "Intermediate",
               duration: "4:00 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -502,6 +600,7 @@ export default {
               level: "Advanced",
               duration: "6:30 h",
               lessons: 50,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Office Productivity as needed
           ],
@@ -519,6 +618,7 @@ export default {
               level: "Intermediate",
               duration: "3:30 h",
               lessons: 30,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -530,6 +630,7 @@ export default {
               level: "Advanced",
               duration: "5:30 h",
               lessons: 40,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Personal Development as needed
           ],
@@ -547,6 +648,7 @@ export default {
               level: "Beginner",
               duration: "3:00 h",
               lessons: 25,
+              reward: "Cybersecurity Certification",
             },
             {
               imageSource:
@@ -558,6 +660,7 @@ export default {
               level: "Intermediate",
               duration: "5:00 h",
               lessons: 35,
+              reward: "Cybersecurity Certification",
             },
             // Add more courses for Photography & Videography as needed
           ],
@@ -633,6 +736,7 @@ export default {
       this.selectedCategory = category;
       this.$router.push({ query: { categorie: category } });
     },
+    handleFilter() {},
   },
 };
 </script>
