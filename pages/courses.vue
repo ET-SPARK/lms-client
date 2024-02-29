@@ -1,742 +1,223 @@
 <template>
   <HeaderGuest />
-  <div
-    class="flex justify-between max-[640px]:flex-col mt-10 mb-10 ml-10 max-[600px]:ml-2 max-[600px]:mt-2"
-  >
-    <div class="max-[640px]:hidden">
-      <div
-        class="border-b font-light text-xl max-[600px]:text-[14px] max-[768px]:text-[16px]"
-      >
-        CATEGORIES
+  <div class="grid grid-cols-2 items-center">
+    <div class="w-[300px]">
+      <div class="mb-4 text-end">
+        <Button class="px-6 py-4 text-xl font-light">
+          <Icon name="material-symbols:filter-alt-off-rounded" class="mr-4" />
+          Filter
+        </Button>
       </div>
-
-      <div
-        class="mt-4 mb-4 text-[18px] max-[600px]:text-[12px] max-[768px]:text-[14px]"
-      >
-        <div
-          v-for="course in courseNavList"
-          :key="course.icon"
-          class="hover:text-blue-500"
-        >
-          <div
-            class="cursor-pointer flex items-center"
-            @click="selectCategory(course.categorie)"
-          >
-            <div class="p-1 mr-2 rounded-md">
-              <Icon
-                :name="course.icon"
-                class="text-xl max-[600px]:text-[12px]"
-              />
-            </div>
-
-            <p class="max-[600px]:text-[12px]">{{ course.name }}</p>
-          </div>
-        </div>
-      </div>
-
       <div>
-        <div class="flex justify-between items-center">
-          <div>Filter by Level</div>
-          <div class="cursor-pointer" @click="handleFilter">
-            <Icon
-              name="material-symbols:filter-alt-off-rounded"
-              class="text-2xl"
-            />
-          </div>
-        </div>
-        <div class="flex-col">
-          <div class="flex items-center space-x-2 py-2">
-            <Checkbox id="terms" />
-            <label
-              for="terms"
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              All
-            </label>
-          </div>
-          <div class="flex items-center space-x-2 py-2">
-            <Checkbox id="terms" v-model="beginner" />
-            <label
-              for="terms"
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              Beginner
-            </label>
-          </div>
-          <div class="flex items-center space-x-2 py-2">
-            <Checkbox id="terms" v-model="intermediate" />
-            <label
-              for="terms"
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              Intermediate
-            </label>
-          </div>
-          <div class="flex items-center space-x-2 py-2">
-            <Checkbox id="terms" v-model="advanced" />
-            <label
-              for="terms"
-              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-            >
-              Advanced
-            </label>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="hidden max-[640px]:flex max-[640px]:px-8">
-      <Accordion type="single" collapsible>
-        <AccordionItem value="item-1">
-          <AccordionTrigger>
-            <div
-              class="font-light uppercase text-xl max-[600px]:text-sm max-[768px]:text-md max-[640px]:px-8"
-            >
-              CATEGORIES
-            </div></AccordionTrigger
-          >
-          <AccordionContent>
-            <div class="text-[12px]">
-              <div
-                v-for="course in courseNavList"
-                :key="course.icon"
-                class="hover:text-blue-500"
+        <div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger
+                class="justify-start hover:no-underline py-1 text-xl"
+                >Category</AccordionTrigger
               >
+              <AccordionContent>
                 <div
-                  class="cursor-pointer flex items-center"
-                  @click="selectCategory(course.categorie)"
+                  class="flex items-center space-x-2 my-2"
+                  v-for="item in courseCategories"
+                  :key="item.categorie"
                 >
-                  <div class="p-1 mr-2 rounded-md">
-                    <Icon :name="course.icon" class="text-[12px]" />
-                  </div>
-
-                  <p class="text-[12px]">{{ course.name }}</p>
+                  <Checkbox id="terms" />
+                  <label
+                    for="terms"
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {{ item.name }}
+                  </label>
                 </div>
-              </div>
-            </div>
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-
-    <div class="flex-1 pl-10 max-[600px]:pl-2 max-[600px]:mt-2">
-      <div
-        class="border-b font-light uppercase text-xl max-[600px]:text-[14px] max-[768px]:text-[16px] max-[640px]:px-8"
-      >
-        <template v-if="this.$route.query.categorie != null">
-          {{ $route.query.categorie }}
-        </template>
-        <template v-else>
-          <div>courses</div>
-        </template>
-      </div>
-      <div class="mt-5 max-[600px]:px-8">
-        <div
-          v-for="(category, index) in courseList"
-          :key="index"
-          class="md:grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 sm:grid-cols-1"
-        >
-          <div
-            v-if="$route.query.categorie == category.categorie"
-            v-for="(course, courseIndex) in category.courses"
-            :key="courseIndex"
-            class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
-          >
-            <NuxtLink
-              :to="{
-                path: `course/${course.title.toLowerCase().replace(/ /g, '-')}`,
-              }"
-            >
-              <div class="w-full">
-                <div class="p-2">
-                  <div class="relative">
-                    <Badge class="absolute mt-1 right-4">{{
-                      course.badge
-                    }}</Badge>
-                    <Icon
-                      name="material-symbols:play-arrow"
-                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                    />
-                    <img class="rounded-xl w-full" :src="course.imageSource" />
-                  </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+        <div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger
+                class="justify-start hover:no-underline py-1 text-xl"
+                >Video Duration</AccordionTrigger
+              >
+              <AccordionContent>
+                <div
+                  class="flex items-center space-x-2 my-2"
+                  v-for="item in courseDuration"
+                  :key="item.duration"
+                >
+                  <Checkbox id="terms" />
+                  <label
+                    for="terms"
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {{ item.duration }}
+                  </label>
                 </div>
-                <div class="h-[160px] ml-2 mr-2 border-b">
-                  <div class="text-[14px] mb-2 uppercase">
-                    {{ $route.query.categorie }}
-                  </div>
-                  <div class="flex items-center border-b pb-2">
-                    <Avatar>
-                      <AvatarImage
-                        :src="course.logo"
-                        alt="@radix-vue"
-                        class="w-4 h-4 rounded-full border"
-                      />
-                      <AvatarFallback>
-                        {{ course.author.split(" ")[0][0] }}
-                        {{ course.author.split(" ")[1][0] }}
-                      </AvatarFallback>
-                    </Avatar>
-
-                    <p class="text-sm ml-2">
-                      Course by
-                      <span class="uppercase ml-2">
-                        {{ course.author }}
-                      </span>
-                    </p>
-                  </div>
-                  <p class="text-[16px] font-light mt-2">
-                    {{ course.title }}
-                  </p>
-                  <p class="text-sm line-clamp-2">{{ course.description }}</p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
+        <div>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="item-1">
+              <AccordionTrigger
+                class="justify-start hover:no-underline py-1 text-xl"
+                >Level</AccordionTrigger
+              >
+              <AccordionContent>
+                <div
+                  class="flex items-center space-x-2 my-2"
+                  v-for="item in courseLevel"
+                  :key="item.level"
+                >
+                  <Checkbox id="terms" />
+                  <label
+                    for="terms"
+                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                  >
+                    {{ item.level }}
+                  </label>
                 </div>
-                <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
-              </div>
-            </NuxtLink>
-          </div>
-          <div
-            v-if="$route.query.categorie == null"
-            v-for="(course, courseIndex) in category.courses"
-            :key="courseIndex"
-            class="mt-5 border mr-5 rounded-xl max-[600px]:w-full"
-          >
-            <NuxtLink
-              :to="{
-                path: `course/${course.title.toLowerCase().replace(/ /g, '-')}`,
-              }"
-            >
-              <div class="w-full">
-                <div class="p-2">
-                  <div class="relative">
-                    <Badge class="absolute mt-1 right-4">{{
-                      course.badge
-                    }}</Badge>
-                    <Icon
-                      name="material-symbols:play-arrow"
-                      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background text-4xl rounded-full bg-opacity-60 max-[600px]:text-[18px]"
-                    />
-                    <img class="rounded-xl w-full" :src="course.imageSource" />
-                  </div>
-                </div>
-                <div class="h-[160px] ml-2 mr-2 border-b">
-                  <div class="text-[14px] mb-2 uppercase">
-                    {{ $route.query.categorie }}
-                  </div>
-                  <div class="flex items-center border-b pb-2">
-                    <Avatar>
-                      <AvatarImage
-                        :src="course.logo"
-                        alt="@radix-vue"
-                        class="w-4 h-4 rounded-full border"
-                      />
-                      <AvatarFallback>
-                        {{ course.author.split(" ")[0][0] }}
-                        {{ course.author.split(" ")[1][0] }}
-                      </AvatarFallback>
-                    </Avatar>
-
-                    <p class="text-sm ml-2">
-                      Course by<span class="uppercase ml-2">
-                        {{ course.author }}</span
-                      >
-                    </p>
-                  </div>
-                  <p class="text-[16px] font-light mt-2">
-                    {{ course.title }}
-                  </p>
-                  <p class="text-sm line-clamp-2 h-[50px]">
-                    {{ course.description }}
-                  </p>
-                  <div class="flex justify-between py-2 border-t text-sm">
-                    <div class="items-center flex">
-                      <div>
-                        <Icon
-                          name="carbon:skill-level-intermediate"
-                          class="mr-2 mb-1"
-                        />
-                      </div>
-                      <div>{{ course.level }}</div>
-                    </div>
-                    <div class="items-center flex">
-                      <div>
-                        <Icon
-                          name="material-symbols:play-lesson-sharp"
-                          class="mr-2 mb-1"
-                        />
-                      </div>
-                      <div>{{ course.lessons }}</div>
-                    </div>
-                    <div class="items-center flex">
-                      <div>
-                        <Icon name="material-symbols:alarm" class="mr-2 mb-1" />
-                      </div>
-                      <div>{{ course.duration }}</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
-              </div>
-            </NuxtLink>
-          </div>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </div>
+    </div>
+    <div class="h-full">
+      <div class="font-semibold text-end text-md">"" results</div>
+      <div>course part</div>
     </div>
   </div>
   <FooterGuest />
 </template>
 
-<script>
+<script setup lang="ts">
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-export default {
-  data() {
-    return {
-      courseList: [
-        {
-          categorie: "accounting",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Financial Accounting Basics",
-              author: "John Smith",
-              description: "Learn the fundamentals of financial accounting.",
-              level: "Beginner",
-              duration: "3:00 h",
-              lessons: 25,
-              reward: "Cybersecurity Certification",
-              badge: "New",
-              logo: "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/b4/5cb90bb92f420b99bf323a0356f451/Icon.png?auto=format%2Ccompress&dpr=1&w=25&h=25&q=40",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Advanced Investment Strategies",
-              author: "Emily Johnson",
-              description:
-                "Explore advanced investment techniques and strategies.",
-              level: "Advanced",
-              duration: "6:30 h",
-              lessons: 40,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Introduction to Financial Management",
-              author: "Alice Johnson",
-              description: "Learn the basics of financial management.",
-              level: "Beginner",
-              duration: "2:30 h",
-              lessons: 20,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Advanced Corporate Finance",
-              author: "Robert Davis",
-              description:
-                "Delve into advanced concepts of corporate finance and decision-making.",
-              level: "Advanced",
-              duration: "5:00 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Advanced Corporate Finance",
-              author: "Robert Davis",
-              description:
-                "Delve into advanced concepts of corporate finance and decision-making.",
-              level: "Advanced",
-              duration: "5:00 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-
-            // Add more courses for Accounting & Finance as needed
-          ],
-        },
-        {
-          categorie: "art",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Oil Painting Mastery",
-              author: "Alicia Turner",
-              description:
-                "Master the art of oil painting with hands-on techniques.",
-              level: "Intermediate",
-              duration: "4:30 h",
-              lessons: 30,
-              reward: "Artistic Achievement Award",
-              badge: "Masterpiece",
-              logo: "https://example.com/art-achievement-logo.png",
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Sculpture Techniques",
-              author: "Michael Davis",
-              description:
-                "Learn various sculpture techniques from basics to advanced.",
-              level: "Advanced",
-              duration: "8:00 h",
-              lessons: 55,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Art & Crafts as needed
-          ],
-        },
-        {
-          categorie: "beauty",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Makeup Artistry Basics",
-              author: "Sophia Rodriguez",
-              description:
-                "Discover the basics of makeup artistry and beauty techniques.",
-              level: "Beginner",
-              duration: "2:30 h",
-              lessons: 20,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Advanced Skincare Routines",
-              author: "Daniel Lee",
-              description:
-                "Learn advanced skincare routines and beauty tips for different skin types.",
-              level: "Advanced",
-              duration: "5:00 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Beauty & Makeup as needed
-          ],
-        },
-        {
-          categorie: "creatives",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Graphic Design Fundamentals",
-              author: "Eva Thompson",
-              description:
-                "Master the basics of graphic design and visual communication.",
-              level: "Intermediate",
-              duration: "4:00 h",
-              lessons: 30,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "UI/UX Design Principles",
-              author: "Christopher White",
-              description:
-                "Explore the principles of user interface and user experience design.",
-              level: "Advanced",
-              duration: "6:30 h",
-              lessons: 45,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Creatives & Design as needed
-          ],
-        },
-        {
-          categorie: "food",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Culinary Arts: From Basics to Gourmet",
-              author: "Isabella Martin",
-              description:
-                "Learn culinary arts from the basics to gourmet cooking techniques.",
-              level: "Intermediate",
-              duration: "5:00 h",
-              lessons: 40,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Beverage Mixology Masterclass",
-              author: "David Johnson",
-              description:
-                "Master the art of creating delightful beverages with mixology techniques.",
-              level: "Advanced",
-              duration: "7:00 h",
-              lessons: 50,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Food & Beverage as needed
-          ],
-        },
-        {
-          categorie: "health",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Fitness for Beginners",
-              author: "Jessica Miller",
-              description:
-                "Start your fitness journey with basic exercises and healthy habits.",
-              level: "Beginner",
-              duration: "3:00 h",
-              lessons: 25,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Advanced Yoga and Meditation",
-              author: "Ryan Carter",
-              description:
-                "Explore advanced yoga poses and meditation techniques for mental and physical well-being.",
-              level: "Advanced",
-              duration: "5:30 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Health & Fitness as needed
-          ],
-        },
-        {
-          categorie: "language",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Spanish Language Mastery",
-              author: "Isabella Hernandez",
-              description:
-                "Master the Spanish language with comprehensive lessons and practice exercises.",
-              level: "Intermediate",
-              duration: "4:30 h",
-              lessons: 30,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Classic Literature Appreciation",
-              author: "Andrew Thompson",
-              description:
-                "Explore classic literature from different genres and time periods.",
-              level: "Advanced",
-              duration: "6:00 h",
-              lessons: 40,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Language & Literature as needed
-          ],
-        },
-        {
-          categorie: "language",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Introduction to Music Theory",
-              author: "Sophie Davis",
-              description:
-                "Learn the fundamentals of music theory and notation.",
-              level: "Beginner",
-              duration: "3:30 h",
-              lessons: 28,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Acting Techniques for Stage and Screen",
-              author: "Michael Johnson",
-              description:
-                "Explore acting techniques for both stage and screen performances.",
-              level: "Intermediate",
-              duration: "5:30 h",
-              lessons: 45,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Music & Theater as needed
-          ],
-        },
-        {
-          categorie: "personal",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Mastering Microsoft Office",
-              author: "Emily White",
-              description:
-                "Become proficient in using Microsoft Office applications for enhanced productivity.",
-              level: "Intermediate",
-              duration: "4:00 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Effective Time Management",
-              author: "David Miller",
-              description:
-                "Learn time management strategies and techniques for increased efficiency.",
-              level: "Advanced",
-              duration: "6:30 h",
-              lessons: 50,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Office Productivity as needed
-          ],
-        },
-        {
-          categorie: "personal",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Goal Setting and Achievement",
-              author: "Sophia Anderson",
-              description:
-                "Set and achieve meaningful personal and professional goals.",
-              level: "Intermediate",
-              duration: "3:30 h",
-              lessons: 30,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Mindfulness and Stress Reduction",
-              author: "Daniel Smith",
-              description:
-                "Practice mindfulness techniques for stress reduction and improved well-being.",
-              level: "Advanced",
-              duration: "5:30 h",
-              lessons: 40,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Personal Development as needed
-          ],
-        },
-        {
-          categorie: "photography",
-          courses: [
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Digital Photography Basics",
-              author: "Emma Davis",
-              description:
-                "Learn the basics of digital photography, camera settings, and composition.",
-              level: "Beginner",
-              duration: "3:00 h",
-              lessons: 25,
-              reward: "Cybersecurity Certification",
-            },
-            {
-              imageSource:
-                "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
-              title: "Cinematic Videography Techniques",
-              author: "Alexandra Johnson",
-              description:
-                "Explore cinematic videography techniques for creating compelling videos.",
-              level: "Intermediate",
-              duration: "5:00 h",
-              lessons: 35,
-              reward: "Cybersecurity Certification",
-            },
-            // Add more courses for Photography & Videography as needed
-          ],
-        },
-      ],
-      courseNavList: [
-        {
-          icon: "streamline:money-cash-bill-1-billing-bills-payment-finance-cash-currency-money-accounting",
-          name: "Accounting & Finance",
-          categorie: "accounting",
-        },
-        {
-          icon: "ep:brush",
-          name: "Art & Crafts",
-          categorie: "art",
-        },
-        {
-          icon: "mdi:brush-off",
-          name: "Beauty & Makeup",
-          categorie: "beauty",
-        },
-        {
-          icon: "material-symbols:ink-pen-sharp",
-          name: "Creatives & Design",
-          categorie: "creatives",
-        },
-        {
-          icon: "ic:round-fastfood",
-          name: "Food & Beverage",
-          categorie: "food",
-        },
-        {
-          icon: "material-symbols:ecg-heart-outline",
-          name: "Health & Fitness",
-          categorie: "health",
-        },
-        {
-          icon: "streamline:interface-share-mega-phone-1-bullhorn-loud-megaphone-share-speaker-transmit",
-          name: "Business & Marketing",
-          categorie: "business",
-        },
-        {
-          icon: "ph:code-bold",
-          name: "IT & Development",
-          categorie: "it",
-        },
-        {
-          icon: "lucide:languages",
-          name: "Language & Literature",
-          categorie: "language",
-        },
-        {
-          icon: "guidance:office",
-          name: "Office Productivity",
-          categorie: "office",
-        },
-        {
-          icon: "guidance:meeting-point",
-          name: "Personal Development",
-          categorie: "personal",
-        },
-        {
-          icon: "material-symbols:camera",
-          name: "Photography & Videography",
-          categorie: "photography",
-        },
-      ],
-      selectedCategory: null,
-    };
+const course = [
+  {
+    courseId: "c001",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Introduction to Vue.js",
+    lecturer: "John Doe",
+    description: "Learn the basics of Vue.js framework.",
+    level: "beginner",
+    duration: "4:00 h",
+    lessons: 12,
+    badge: "New",
   },
-  methods: {
-    selectCategory(category) {
-      this.selectedCategory = category;
-      this.$router.push({ query: { categorie: category } });
-    },
-    handleFilter() {},
+  {
+    courseId: "c002",
+    category: "Business",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Business Analytics",
+    lecturer: "Alice Johnson",
+    description: "Explore the world of business analytics.",
+    level: "intermediate",
+    duration: "5:30 h",
+    lessons: 15,
+    badge: "Intermediate Badge",
   },
-};
+  {
+    courseId: "c003",
+    category: "Design",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Graphic Design Fundamentals",
+    lecturer: "Eva Martinez",
+    description: "Master the fundamentals of graphic design.",
+    level: "advanced",
+    duration: "6:45 h",
+    lessons: 20,
+    badge: "Advanced Badge",
+  },
+];
+const courseCategories = [
+  {
+    name: "Accounting & Finance",
+    categorie: "accounting",
+  },
+  {
+    name: "Art & Crafts",
+    categorie: "art",
+  },
+  {
+    name: "Beauty & Makeup",
+    categorie: "beauty",
+  },
+  {
+    name: "Creatives & Design",
+    categorie: "creatives",
+  },
+  {
+    name: "Food & Beverage",
+    categorie: "food",
+  },
+  {
+    name: "Health & Fitness",
+    categorie: "health",
+  },
+  {
+    name: "Business & Marketing",
+    categorie: "business",
+  },
+  {
+    name: "IT & Development",
+    categorie: "it",
+  },
+  {
+    name: "Language & Literature",
+    categorie: "language",
+  },
+  {
+    name: "Office Productivity",
+    categorie: "office",
+  },
+  {
+    name: "Personal Development",
+    categorie: "personal",
+  },
+  {
+    name: "Photography & Videography",
+    categorie: "photography",
+  },
+];
+const courseDuration = [
+  {
+    duration: "0-1 Hour",
+  },
+  {
+    duration: "1-3 Hours",
+  },
+  {
+    duration: "3-6 Hours",
+  },
+  {
+    duration: "6-18 Hours",
+  },
+  {
+    duration: "18+ Hours",
+  },
+];
+const courseLevel = [
+  {
+    level: "Beginner",
+  },
+  {
+    level: "Intermediates",
+  },
+  {
+    level: "Advanced",
+  },
+];
 </script>
