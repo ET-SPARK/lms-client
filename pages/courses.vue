@@ -214,14 +214,17 @@
                 <div class="ml-4 max-[640px]:text-sm">
                   <div class="font-bold">{{ items.title }}</div>
                   <div
-                    class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2"
+                    class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2 text-sm"
                   >
                     {{ items.description }}
                   </div>
                   <div class="font-light">{{ items.lecturer }}</div>
-                  <div class="font-light">
-                    {{ items.duration }} total hours
-                    {{ items.lessons }} lectures
+                  <div class="font-light text-sm">
+                    <Icon name="ph:dot-duotone" class="" />{{ items.duration }}
+                    total hours
+                    <Icon name="ph:dot-duotone" class="" />{{ items.lessons }}
+                    lectures
+                    <Icon name="ph:dot-duotone" class="" />
                     {{ items.level }}
                   </div>
                   <div>
