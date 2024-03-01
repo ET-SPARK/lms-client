@@ -1,7 +1,7 @@
 <template>
   <HeaderGuest />
-  <div class="grid grid-cols-2 items-center">
-    <div class="w-[300px]">
+  <div class="flex p-4 max-[820px]:flex-col">
+    <div class="w-[400px] max-[820px]:hidden">
       <div class="mb-4 text-end">
         <Button class="px-6 py-4 text-xl font-light">
           <Icon name="material-symbols:filter-alt-off-rounded" class="mr-4" />
@@ -86,15 +86,179 @@
         </div>
       </div>
     </div>
-    <div class="h-full">
+
+    <div class="flex min-[1024px]:hidden">
+      <div class="mb-4 text-end">
+        <Sheet>
+          <SheetTrigger>
+            <Button class="px-6 py-4 text-xl font-light">
+              <Icon
+                name="material-symbols:filter-alt-off-rounded"
+                class="mr-4"
+              />
+              Filter
+              <Icon
+                name="material-symbols:arrow-drop-down-circle"
+                class="ml-4"
+              /> </Button
+          ></SheetTrigger>
+          <SheetContent>
+            <SheetHeader>
+              <SheetTitle>"" results</SheetTitle>
+              <SheetDescription>
+                <div>
+                  <div>
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger
+                          class="justify-start hover:no-underline py-1 text-xl"
+                          >Category</AccordionTrigger
+                        >
+                        <AccordionContent>
+                          <div
+                            class="flex items-center space-x-2 my-2"
+                            v-for="item in courseCategories"
+                            :key="item.categorie"
+                          >
+                            <Checkbox id="terms" />
+                            <label
+                              for="terms"
+                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              {{ item.name }}
+                            </label>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                  <div>
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger
+                          class="justify-start hover:no-underline py-1 text-xl"
+                          >Video Duration</AccordionTrigger
+                        >
+                        <AccordionContent>
+                          <div
+                            class="flex items-center space-x-2 my-2"
+                            v-for="item in courseDuration"
+                            :key="item.duration"
+                          >
+                            <Checkbox id="terms" />
+                            <label
+                              for="terms"
+                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              {{ item.duration }}
+                            </label>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                  <div>
+                    <Accordion type="single" collapsible>
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger
+                          class="justify-start hover:no-underline py-1 text-xl"
+                          >Level</AccordionTrigger
+                        >
+                        <AccordionContent>
+                          <div
+                            class="flex items-center space-x-2 my-2"
+                            v-for="item in courseLevel"
+                            :key="item.level"
+                          >
+                            <Checkbox id="terms" />
+                            <label
+                              for="terms"
+                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                            >
+                              {{ item.level }}
+                            </label>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  </div>
+                </div>
+                <div class="mt-4 text-center">
+                  <Button class="px-6 py-4 text-xl font-light">
+                    <Icon
+                      name="material-symbols:filter-alt-off-rounded"
+                      class="mr-4"
+                    />
+                    Filter
+                  </Button>
+                </div>
+              </SheetDescription>
+            </SheetHeader>
+          </SheetContent>
+        </Sheet>
+      </div>
+    </div>
+    <div class="w-full ml-[100px] max-[820px]:ml-0">
       <div class="font-semibold text-end text-md">"" results</div>
-      <div>course part</div>
+      <div v-for="items in course" :key="items.courseId">
+        <HoverCard>
+          <NuxtLink to="/courseVideo">
+            <HoverCardTrigger>
+              <div class="flex border-b pb-10 pt-5">
+                <div>
+                  <img
+                    :src="items.image"
+                    class="w-[300px] h-[150px] rounded-2xl max-[640px]:w-[160px] max-[640px]:h-[100px]"
+                  />
+                </div>
+                <div class="ml-4 max-[640px]:text-sm">
+                  <div class="font-bold">{{ items.title }}</div>
+                  <div
+                    class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2"
+                  >
+                    {{ items.description }}
+                  </div>
+                  <div class="font-light">{{ items.lecturer }}</div>
+                  <div class="font-light">
+                    {{ items.duration }} total hours
+                    {{ items.lessons }} lectures
+                    {{ items.level }}
+                  </div>
+                  <div>
+                    <Badge> {{ items.badge }}</Badge>
+                  </div>
+                </div>
+              </div>
+            </HoverCardTrigger>
+            <HoverCardContent class="w-[600px] max-[1024px]:hidden">
+              <div class="p-4">
+                <div class="font-bold">What you'll Learn</div>
+                <div>{{ items.description }}</div>
+              </div>
+            </HoverCardContent>
+          </NuxtLink>
+        </HoverCard>
+      </div>
     </div>
   </div>
   <FooterGuest />
 </template>
 
 <script setup lang="ts">
+import { Badge } from "@/components/ui/badge";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
@@ -109,9 +273,10 @@ const course = [
       "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
     title: "Introduction to Vue.js",
     lecturer: "John Doe",
-    description: "Learn the basics of Vue.js framework.",
+    description:
+      "This course serves as a comprehensive introduction to the Vue.js framework, covering its foundational concepts and practical applications. Ideal for beginners, the curriculum encompasses 12 lessons, providing a solid understanding of Vue.js for web ",
     level: "beginner",
-    duration: "4:00 h",
+    duration: "4",
     lessons: 12,
     badge: "New",
   },
@@ -122,11 +287,12 @@ const course = [
       "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
     title: "Business Analytics",
     lecturer: "Alice Johnson",
-    description: "Explore the world of business analytics.",
+    description:
+      "Delve into the dynamic realm of business analytics with Alice Johnson in this intermediate-level course. Spanning 15 lessons over 5 weeks, participants will explore analytical tools and methodologies essential for making informed business decisions.",
     level: "intermediate",
-    duration: "5:30 h",
+    duration: "5",
     lessons: 15,
-    badge: "Intermediate Badge",
+    badge: "Popular",
   },
   {
     courseId: "c003",
@@ -135,11 +301,12 @@ const course = [
       "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
     title: "Graphic Design Fundamentals",
     lecturer: "Eva Martinez",
-    description: "Master the fundamentals of graphic design.",
+    description:
+      "Elevate your graphic design skills with Eva Martinez's advanced-level course. Over a span of 6 weeks and 20 lessons, participants will master the fundamental principles of graphic design, paving the way for creative excellence.",
     level: "advanced",
-    duration: "6:45 h",
+    duration: "6",
     lessons: 20,
-    badge: "Advanced Badge",
+    badge: "Bestseller",
   },
 ];
 const courseCategories = [
