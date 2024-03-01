@@ -201,46 +201,36 @@
     <div class="w-full ml-[100px] max-[820px]:ml-0">
       <div class="font-semibold text-end text-md">"" results</div>
       <div v-for="items in course" :key="items.courseId">
-        <HoverCard>
-          <NuxtLink to="/courseVideo">
-            <HoverCardTrigger>
-              <div class="flex border-b pb-10 pt-5">
-                <div>
-                  <img
-                    :src="items.image"
-                    class="w-[300px] h-[150px] rounded-2xl max-[640px]:w-[160px] max-[640px]:h-[100px]"
-                  />
-                </div>
-                <div class="ml-4 max-[640px]:text-sm">
-                  <div class="font-bold">{{ items.title }}</div>
-                  <div
-                    class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2 text-sm"
-                  >
-                    {{ items.description }}
-                  </div>
-                  <div class="font-light">{{ items.lecturer }}</div>
-                  <div class="font-light text-sm">
-                    <Icon name="ph:dot-duotone" class="" />{{ items.duration }}
-                    total hours
-                    <Icon name="ph:dot-duotone" class="" />{{ items.lessons }}
-                    lectures
-                    <Icon name="ph:dot-duotone" class="" />
-                    {{ items.level }}
-                  </div>
-                  <div>
-                    <Badge> {{ items.badge }}</Badge>
-                  </div>
-                </div>
+        <NuxtLink to="/courseVideo">
+          <div class="flex border-b pb-10 pt-5">
+            <div>
+              <img
+                :src="items.image"
+                class="w-[300px] h-[150px] rounded-2xl max-[640px]:w-[160px] max-[640px]:h-[100px]"
+              />
+            </div>
+            <div class="ml-4 max-[640px]:text-sm">
+              <div class="font-bold">{{ items.title }}</div>
+              <div
+                class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2 text-sm"
+              >
+                {{ items.description }}
               </div>
-            </HoverCardTrigger>
-            <HoverCardContent class="w-[600px] max-[1024px]:hidden">
-              <div class="p-4">
-                <div class="font-bold">What you'll Learn</div>
-                <div>{{ items.description }}</div>
+              <div class="font-light">{{ items.lecturer }}</div>
+              <div class="font-light text-sm">
+                <Icon name="ph:dot-duotone" class="" />{{ items.duration }}
+                total hours
+                <Icon name="ph:dot-duotone" class="" />{{ items.lessons }}
+                lectures
+                <Icon name="ph:dot-duotone" class="" />
+                {{ items.level }}
               </div>
-            </HoverCardContent>
-          </NuxtLink>
-        </HoverCard>
+              <div>
+                <Badge> {{ items.badge }}</Badge>
+              </div>
+            </div>
+          </div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -249,11 +239,6 @@
 
 <script setup lang="ts">
 import { Badge } from "@/components/ui/badge";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 import {
   Sheet,
   SheetContent,
