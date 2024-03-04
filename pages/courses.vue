@@ -272,7 +272,7 @@ const course = [
     courseId: "c002",
     category: "Business",
     image:
-      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
     title: "Business Analytics",
     lecturer: "Alice Johnson",
     description:
@@ -286,7 +286,7 @@ const course = [
     courseId: "c003",
     category: "Design",
     image:
-      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+      "https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/embed-carousel/Online%20Learning%20-%20Header%20Image.jpg.webp",
     title: "Graphic Design Fundamentals",
     lecturer: "Eva Martinez",
     description:
