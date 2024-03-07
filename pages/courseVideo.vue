@@ -212,6 +212,20 @@
                         </div>
                       </li>
                     </ul>
+
+                    <Dialog>
+                      <DialogTrigger>
+                        <Button>Take a Quiz</Button></DialogTrigger
+                      >
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>{{ item.title }} Quiz</DialogTitle>
+                          <DialogDescription>
+                            <Quiz />
+                          </DialogDescription>
+                        </DialogHeader>
+                      </DialogContent>
+                    </Dialog>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -225,6 +239,15 @@
 </template>
 
 <script setup lang="ts">
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import {
   Accordion,
   AccordionContent,
