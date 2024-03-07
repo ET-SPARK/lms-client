@@ -18,14 +18,15 @@
         </label>
       </li>
     </ul>
-    <Button @click="checkAnswer">Next</Button>
+    <Button @click="checkAnswer">{{ isLastQuestion ? "Done" : "Next" }}</Button>
   </div>
   <div v-else>
     <div class="font-bold text-2xl">Quiz Completed!</div>
     <p class="font-bold text-2xl">Your score: {{ score }}/3</p>
+    <div v-if="score === 3">You are successfully Passed the quize!</div>
+    <div v-else>Failed!</div>
     <div class="mt-10">
-      <Button v-if="score === 3">Done</Button>
-      <Button v-else>Try Again</Button>
+      <Button v-if="score !== 3" @click="resetQuiz">Try Again</Button>
     </div>
   </div>
 </template>
@@ -68,4 +69,16 @@ const checkAnswer = () => {
     currentQuestion.value = null;
   }
 };
+
+const resetQuiz = () => {
+  currentQuestionIndex.value = 0;
+  selectedAnswer.value = null;
+  score.value = 0;
+  currentQuestion.value = questions[currentQuestionIndex.value];
+};
+
+const isLastQuestion = ref(false);
+watchEffect(() => {
+  isLastQuestion.value = currentQuestionIndex.value === questions.length - 1;
+});
 </script>

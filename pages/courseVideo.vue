@@ -224,6 +224,11 @@
                             <Quiz />
                           </DialogDescription>
                         </DialogHeader>
+                        <DialogClose>
+                          <DialogFooter>
+                            <Button>Close the quiz</Button>
+                          </DialogFooter>
+                        </DialogClose>
                       </DialogContent>
                     </Dialog>
                   </AccordionContent>
