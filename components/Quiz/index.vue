@@ -2,14 +2,19 @@
 <template>
   <div>
     <div v-if="currentQuestion">
-      <h2>{{ currentQuestion.question }}</h2>
+      <div class="flex-col items-center">
+        <div class="font-light text-end">
+          {{ currentQuestionIndex + 1 }} / {{ questions.length }}
+        </div>
+        <div class="font-bold">{{ currentQuestion.question }}</div>
+      </div>
       <ul>
         <li v-for="(option, index) in currentQuestion.options" :key="index">
           <label
             class="flex mt-4 border p-2 mb-4"
-            :class="{ 'bg-green-200': isOptionSelected(option) }"
+            :class="{ 'bg-green-200': isOptionSelected(index) }"
           >
-            <input type="radio" :value="option" v-model="selectedAnswer" />
+            <input type="radio" :value="index" v-model="selectedAnswer" />
             <div class="font-bold ml-2">{{ option }}</div>
           </label>
         </li>
@@ -23,15 +28,11 @@
     <div v-else>
       <h2>Quiz Completed!</h2>
       <p>Your score: {{ score }}/3</p>
-
-      <!-- Display the appropriate button based on the score -->
-      <Button v-if="score === 3" class="mr-2">Done</Button>
-      <Button v-else @click="resetQuiz">Try Again</Button>
-    </div>
-
-    <!-- Display the current question index -->
-    <div class="font-bold text-2xl ml-10">
-      {{ currentQuestionIndex + 1 }}/ {{ questions.length }}
+      <div v-if="score === 3">You are successfully Passed the quize!</div>
+      <div v-else>Failed!</div>
+      <Button v-if="score !== 3" @click="resetQuiz" class="mr-2"
+        >Try Again</Button
+      >
     </div>
   </div>
 </template>
@@ -41,17 +42,17 @@ const questions = [
   {
     question: "What is the capital of France?",
     options: ["Paris", "Berlin", "Madrid", "Rome"],
-    correctAnswer: 0,
+    correctAnswers: [0],
   },
   {
     question: "Which planet is known as the Red Planet?",
     options: ["Earth", "Mars", "Jupiter", "Venus"],
-    correctAnswer: 1,
+    correctAnswers: [1],
   },
   {
     question: "What is the largest mammal on Earth?",
     options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
-    correctAnswer: 1,
+    correctAnswers: [1],
   },
 ];
 
@@ -86,11 +87,10 @@ const resetQuiz = () => {
 
 const isLastQuestion = ref(false);
 
-const isOptionSelected = (option) => {
-  return selectedAnswer.value === option;
+const isOptionSelected = (index) => {
+  return selectedAnswer.value === index;
 };
 
-// Watch for changes in currentQuestionIndex and update isLastQuestion accordingly
 watchEffect(() => {
   isLastQuestion.value = currentQuestionIndex.value === questions.length - 1;
 });
