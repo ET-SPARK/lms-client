@@ -6,7 +6,7 @@ import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
   <Menubar>
     <MenubarMenu>
       <MenubarTrigger>
-        <NuxtLink to="/">Home</NuxtLink>
+        <NuxtLink to="/home">Home</NuxtLink>
       </MenubarTrigger>
     </MenubarMenu>
     <MenubarMenu>
