@@ -83,11 +83,6 @@
                   >
                     <NavMobCourseNav />
                   </div>
-
-                  <div class="mt-4 flex justify-around">
-                    <AuthSignup />
-                    <AuthLogin />
-                  </div>
                 </SheetContent>
               </div>
             </Sheet>
@@ -128,16 +123,6 @@
       <!-- signup, login, theme and language part -->
       <div>
         <div class="flex mb-1">
-          <!-- Auth part -->
-          <div class="xl:flex lg:hidden md:hidden sm: hidden">
-            <div>
-              <AuthSignup />
-            </div>
-            <div>
-              <AuthLogin />
-            </div>
-          </div>
-
           <!-- used to change language -->
           <div class="">
             <Button
@@ -148,6 +133,7 @@
               {{ language }}
             </Button>
           </div>
+
           <!-- used to change the theme -->
           <div class="ml-2">
             <DropdownMenu>
@@ -184,6 +170,7 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { Button } from "@/components/ui/button";
 
 import {
@@ -203,7 +190,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const colorMode = useColorMode();
-
 // function to handle language change
 const toggleStateLanguage = () => {
   language.value = language.value === "አማ" ? "En" : "አማ";
