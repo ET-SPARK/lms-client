@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/tailwind.css"],
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "shadcn-nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "shadcn-nuxt", "@nuxtjs/color-mode"],
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -14,6 +14,10 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+  colorMode: {
+    classSuffix: ''
+  }
+  
   // postcss: {
   //   plugins: {
   //     tailwindcss: {},

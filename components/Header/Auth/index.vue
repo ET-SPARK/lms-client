@@ -1,7 +1,6 @@
 <template>
   <header
-    class="py-1 sticky top-0 shadow-xl z-50 bg-white border border-b"
-    :class="{ 'dark:bg-background': isDarkMode }"
+    class="py-1 sticky top-0 shadow-xl z-50 bg-background border border-b"
   >
     <div class="container flex items-center justify-between">
       <!-- left side header -->
@@ -138,23 +137,33 @@
             </Button>
           </div>
           <!-- used to change the theme -->
-          <div>
-            <Button
-              class="ml-2 max-[600px]:text-[12px]"
-              :class="{ dark: isDarkMode }"
-              @click="toggleDarkMode"
-            >
-              <Icon
-                v-if="isDarkMode"
-                name="material-symbols:light-mode-outline"
-                class="bg-#212F3D cursor-pointer text-[20px] max-[600px]:text-[12px]"
-              />
-              <Icon
-                v-else
-                name="ph:moon-stars-light"
-                class="bg-#212F3D cursor-pointer text-[20px] max-[600px]:text-[12px]"
-              />
-            </Button>
+          <div class="ml-2">
+            <DropdownMenu>
+              <DropdownMenuTrigger as-child>
+                <Button variant="outline">
+                  <Icon
+                    :name="
+                      colorMode.preference === 'light'
+                        ? 'ph:moon-stars-light'
+                        : 'material-symbols:light-mode-outline'
+                    "
+                    class="cursor-pointer text-[20px] max-[600px]:text-[12px]"
+                  />
+                  <span class="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem @click="colorMode.preference = 'light'">
+                  Light
+                </DropdownMenuItem>
+                <DropdownMenuItem @click="colorMode.preference = 'dark'">
+                  Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem @click="colorMode.preference = 'system'">
+                  System
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </div>
       </div>
@@ -175,37 +184,14 @@ import {
 
 const language = ref("አማ");
 const isCourse = ref(false);
-const isDarkMode = ref(false);
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-// Function to handle theme change
-const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value;
-  updateTheme(isDarkMode.value);
-};
-
-// Function to update theme
-const updateTheme = (darkMode) => {
-  const html = document.querySelector("html");
-  html.classList.toggle("dark", darkMode);
-
-  // Update localStorage based on user preference
-  localStorage.theme = darkMode ? "dark" : "light";
-};
-
-// On page load, check localStorage for theme preference
-onMounted(() => {
-  const storedTheme = localStorage.theme;
-
-  if (
-    storedTheme === "dark" ||
-    (!storedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
-  ) {
-    isDarkMode.value = true;
-  }
-
-  // Apply the initial theme
-  updateTheme(isDarkMode.value);
-});
+const colorMode = useColorMode();
 
 // function to handle language change
 const toggleStateLanguage = () => {
