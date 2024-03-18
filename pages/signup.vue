@@ -1,3 +1,4 @@
 <template>
+  <HeaderGuest />
   <AuthSignup />
 </template>
