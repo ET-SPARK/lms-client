@@ -238,6 +238,6 @@
       </div>
     </div>
   </div>
-  <FooterGuest />
+  <Footer />
 </template>
 <script setup lang="ts"></script>

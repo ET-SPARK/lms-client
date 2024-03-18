@@ -52,5 +52,5 @@ const accordionItems = [
       </AccordionItem>
     </Accordion>
   </div>
-  <FooterGuest />
+  <Footer />
 </template>

@@ -9,62 +9,14 @@
         <div class="mb-6 md:mb-0 ml-10 sm:ml-1">
           <a href="https://andinetsolutions.com/" class="flex items-center">
             <img
-              src="../../../static/images/andinet_logo.jpg"
+              src="../../static/images/andinet_logo.jpg"
               class="h-12 sm:h-28 me-3 rounded-full"
               alt="Andinet lms logo"
             />
             <span class="self-center text-2xl font-semibold whitespace-nowrap"
-              >Andinet LMS</span
-            >
+              >Andinet Academy
+            </span>
           </a>
-        </div>
-        <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-          <div>
-            <h2 class="mb-6 text-sm font-semibold uppercase">HELP CENTER</h2>
-            <ul class="font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Contact Us</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Help</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">FAQs</a>
-              </li>
-              <li>
-                <a href="#" class="hover:underline"> customer support</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold uppercase">Follow us</h2>
-            <ul class="font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Youtube</a>
-              </li>
-              <li class="mb-4">
-                <a
-                  href="https://www.linkedin.com/in/andinet-buisness-group-436ab7258/?originalSubdomain=et"
-                  class="hover:underline"
-                  >Linkedin</a
-                >
-              </li>
-              <li>
-                <a href="#" class="hover:underline">Blogs</a>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="mb-6 text-sm font-semibold uppercase">Legal</h2>
-            <ul class="font-medium">
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
       <hr

@@ -1,4 +1,4 @@
 <template>
   <Banner />
-  <FooterAuth />
+  <Footer />
 </template>

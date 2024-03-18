@@ -65,7 +65,7 @@
       </div>
     </div>
   </div>
-  <FooterAuth />
+  <Footer />
 </template>
 
 <script setup lang="ts">

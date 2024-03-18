@@ -15,36 +15,38 @@
           :key="course.id"
           class="md:basis-1/2 lg:basis-1/3"
         >
-          <div class="p-1 max-[640px]:text-[12px]">
-            <Card>
-              <CardContent
-                class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
-              >
-                <div class="w-full">
-                  <div class="p-2 relative">
-                    <div class="absolute mt-1 right-4">
-                      <Badge>{{ course.badge }}</Badge>
+          <NuxtLink to="/courseDetail">
+            <div class="p-1 max-[640px]:text-[12px]">
+              <Card>
+                <CardContent
+                  class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
+                >
+                  <div class="w-full">
+                    <div class="p-2 relative">
+                      <div class="absolute mt-1 right-4">
+                        <Badge>{{ course.badge }}</Badge>
+                      </div>
+                      <img class="rounded-xl w-full" :src="course.image" />
                     </div>
-                    <img class="rounded-xl w-full" :src="course.image" />
-                  </div>
-                  <div class="h-[120px] ml-2 mr-2 border-b">
-                    <p class="text-sm mb-2">{{ course.category }}</p>
-                    <div class="flex items-center">
-                      <img
-                        class="w-8 h-8 rounded-full border"
-                        :src="course.logo"
-                      />
-                      <p class="text-[12px] ml-2 font-light">
-                        {{ course.title }}
-                      </p>
+                    <div class="h-[120px] ml-2 mr-2 border-b">
+                      <p class="text-sm mb-2">{{ course.category }}</p>
+                      <div class="flex items-center">
+                        <img
+                          class="w-8 h-8 rounded-full border"
+                          :src="course.logo"
+                        />
+                        <p class="text-[12px] ml-2 font-light">
+                          {{ course.title }}
+                        </p>
+                      </div>
+                      <p class="text-sm">{{ course.description }}</p>
                     </div>
-                    <p class="text-sm">{{ course.description }}</p>
+                    <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
                   </div>
-                  <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </div>
+          </NuxtLink>
         </CarouselItem>
       </CarouselContent>
       <CarouselPrevious />
@@ -184,4 +186,5 @@ const courseLists = [
   },
 ];
 </script>
-import type { Course } from "#build/components";
+import type { Course } from "#build/components";import type { NuxtLink } from
+"#build/components";

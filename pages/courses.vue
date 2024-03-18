@@ -201,7 +201,7 @@
     <div class="w-full ml-[100px] max-[820px]:ml-0">
       <div class="font-semibold text-end text-md">"" results</div>
       <div v-for="items in course" :key="items.courseId">
-        <NuxtLink to="/courseVideo">
+        <NuxtLink to="/courseDetail">
           <div class="flex border-b pb-10 pt-5">
             <div>
               <img
@@ -234,7 +234,7 @@
       </div>
     </div>
   </div>
-  <FooterGuest />
+  <Footer />
 </template>
 
 <script setup lang="ts">

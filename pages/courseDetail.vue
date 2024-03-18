@@ -170,10 +170,13 @@
           <div
             class="px-4 w-full border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4"
           >
+            <div class="text-center border-b p-4">
+              <Button class="w-full">Buy Course</Button>
+            </div>
             <div class="mb-4">
-              <span class="font-bold text-2xl max-[600px]:text-[16px]"
-                >Contents</span
-              >
+              <span class="font-bold text-2xl max-[600px]:text-[16px]">
+                Contents
+              </span>
             </div>
             <div>
               <Accordion
@@ -212,25 +215,6 @@
                         </div>
                       </li>
                     </ul>
-
-                    <Dialog>
-                      <DialogTrigger>
-                        <Button>Take a Quiz</Button></DialogTrigger
-                      >
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle>{{ item.title }} Quiz</DialogTitle>
-                          <DialogDescription>
-                            <Quiz />
-                          </DialogDescription>
-                        </DialogHeader>
-                        <DialogClose>
-                          <DialogFooter>
-                            <Button>Close the quiz</Button>
-                          </DialogFooter>
-                        </DialogClose>
-                      </DialogContent>
-                    </Dialog>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -244,15 +228,6 @@
 </template>
 
 <script setup lang="ts">
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import {
   Accordion,
   AccordionContent,
@@ -324,12 +299,7 @@ const accordionItems = [
 const selectedValue = ref(
   "https://www.youtube.com/embed/yYF2Vf1Gc14?si=o4MaabEp_FWPTcMn"
 );
-const selectedTitle = ref("Unit 1: Introduction to English language");
-const selectedLabel = ref("Lesson 1: Why learn English");
-
-const handleItemClick = (value: string, label: string, title: string) => {
-  selectedValue.value = value;
-  selectedLabel.value = label;
-  selectedTitle.value = title;
-};
+const selectedTitle = ref("Introduction to English language");
 </script>
+import type { Button } from "#build/components"; import type { Course } from
+"#build/components";

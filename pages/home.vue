@@ -4,5 +4,5 @@
   <Testimonial />
   <Features />
   <FAQ />
-  <FooterAuth />
+  <Footer />
 </template>
