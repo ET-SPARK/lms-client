@@ -1,5 +1,5 @@
 <template>
-  <HeaderAuth />
+  <Header />
   <div class="mx-24 mt-10 text-4xl font-bold max-[640px]:text-[26px]">
     My Courses
   </div>

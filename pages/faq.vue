@@ -31,7 +31,7 @@ const accordionItems = [
 </script>
 
 <template>
-  <HeaderGuest />
+  <Header />
   <div class="m-10 border p-10">
     <div class="mb-4 text-4xl font-bold max-[640px]:text-[26px]">FAQ</div>
     <Accordion

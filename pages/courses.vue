@@ -1,5 +1,5 @@
 <template>
-  <HeaderGuest />
+  <Header />
   <div class="flex p-4 max-[820px]:flex-col">
     <div class="w-[400px] max-[820px]:hidden">
       <div class="mb-4 text-end">

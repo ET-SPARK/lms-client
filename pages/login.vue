@@ -1,4 +1,4 @@
 <template>
-  <HeaderGuest />
+  <Header />
   <AuthLogin />
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <HeaderGuest />
+  <Header />
   <div class="flex justify-evenly max-[630px]:flex-col max-[630px]:px-8">
     <div>
       <div class="mt-16 max-[630px]:mt-4 border-b">
