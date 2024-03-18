@@ -26,10 +26,10 @@
                     <div class="flex items-center">
                       <!-- logo -->
                       <div class="flex">
-                        <NuxtLink to="/" class="mr-2">
+                        <NuxtLink to="/home" class="mr-2">
                           <img
                             class="w-10 h-10 cursor-pointer rounded-full"
-                            src="../../../static/homeimage/andinet_logo.jpg"
+                            src="../../static/homeimage/andinet_logo.jpg"
                           />
                         </NuxtLink>
                       </div>
@@ -39,6 +39,22 @@
                       </div>
                     </div>
                   </SheetHeader>
+
+                  <!-- navigation links -->
+                  <div>
+                    <NuxtLink to="/home">
+                      <div class="border-b-2 p-2">Home</div>
+                    </NuxtLink>
+                    <NuxtLink to="/courses">
+                      <div class="border-b-2 p-2">Courses</div>
+                    </NuxtLink>
+                    <NuxtLink to="/about">
+                      <div class="border-b-2 p-2">About</div>
+                    </NuxtLink>
+                    <NuxtLink to="/contact">
+                      <div class="border-b-2 p-2">Contact</div>
+                    </NuxtLink>
+                  </div>
 
                   <!-- course dropdown -->
                   <div
@@ -68,6 +84,13 @@
                     <NavMobCourseNav />
                   </div>
 
+                  <!-- navigation part -->
+                  <div class="xl:flex lg:hidden md:hidden sm: hidden">
+                    <div>
+                      <NavGuestMenu />
+                    </div>
+                  </div>
+
                   <div class="mt-4 flex items-center">
                     <!-- language change button -->
                     <div class="flex">
@@ -91,10 +114,10 @@
           <div
             class="flex items-center max-[1280px]:hidden max-[1024px]:hidden max-[768px]:hidden max-[640px]:hidden"
           >
-            <NuxtLink to="/" class="">
+            <NuxtLink to="/home" class="">
               <img
                 class="w-10 h-10 cursor-pointer rounded-full"
-                src="../../../static/homeimage/andinet_logo.jpg"
+                src="../../static/homeimage/andinet_logo.jpg"
               />
             </NuxtLink>
           </div>
@@ -112,10 +135,11 @@
           </div>
         </div>
       </div>
+
       <!-- navigation part -->
       <div class="xl:flex lg:hidden md:hidden sm: hidden">
         <div>
-          <NavAuthMenu />
+          <NavGuestMenu />
         </div>
       </div>
 

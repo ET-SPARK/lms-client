@@ -70,15 +70,17 @@
           </div>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="clarity:sign-out-line"
-                class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-              />
+          <NuxtLink to="/">
+            <div class="flex items-center mb-2">
+              <div>
+                <Icon
+                  name="clarity:sign-out-line"
+                  class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                />
+              </div>
+              <div>Log out</div>
             </div>
-            <div>Log out</div>
-          </div>
+          </NuxtLink>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
@@ -96,3 +98,4 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 </script>
+import type { NuxtLink } from "#build/components";

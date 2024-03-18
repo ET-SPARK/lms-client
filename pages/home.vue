@@ -1,9 +1,8 @@
 <template>
-  <HeaderGuest />
-  <Features />
-  <Pricing />
-  <Testimonial />
+  <Header />
   <Course />
+  <Testimonial />
+  <Features />
   <FAQ />
   <FooterAuth />
 </template>

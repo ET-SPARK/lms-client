@@ -1,6 +1,6 @@
 <template>
   <p class="text-xl font-bold my-4 ml-16 max-[640px]:text-sm">
-    Most Popular Certificates
+    Most Popular Course
   </p>
   <NuxtLink to="/">
     <Carousel
@@ -184,3 +184,4 @@ const courseLists = [
   },
 ];
 </script>
+import type { Course } from "#build/components";
