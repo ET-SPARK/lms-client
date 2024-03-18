@@ -171,7 +171,7 @@
             class="px-4 w-full border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4"
           >
             <div class="text-center border-b p-4">
-              <Button class="w-full">Buy Course</Button>
+              <Payment />
             </div>
             <div class="mb-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]">
