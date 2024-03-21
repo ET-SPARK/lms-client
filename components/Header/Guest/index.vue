@@ -1,6 +1,16 @@
 <template>
   <header class="py-1 sticky top-0 shadow-xl z-50 bg-background border-b">
-    <div class="container flex items-center justify-end">
+    <div class="container flex items-center justify-between">
+      <NuxtLink to="/" class="flex items-center">
+        <div class="mr-2">
+          <img
+            class="w-10 h-10 cursor-pointer rounded-full"
+            src="../../../static/homeimage/andinet_logo.jpg"
+          />
+        </div>
+        <div class="font-bold">Andinet Academy</div>
+      </NuxtLink>
+
       <!-- Profile and language part -->
       <div>
         <div class="flex mb-1 items-center">
