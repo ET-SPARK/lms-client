@@ -2,12 +2,6 @@
   <Header />
   <div class="flex p-4 max-[820px]:flex-col">
     <div class="w-[400px] max-[820px]:hidden">
-      <div class="mb-4 text-end">
-        <Button class="px-6 py-4 text-xl font-light">
-          <Icon name="material-symbols:filter-alt-off-rounded" class="mr-4" />
-          Filter
-        </Button>
-      </div>
       <div>
         <div>
           <Accordion type="single" collapsible>
@@ -19,15 +13,16 @@
               <AccordionContent>
                 <div
                   class="flex items-center space-x-2 my-2"
-                  v-for="item in courseCategories"
-                  :key="item.categorie"
+                  v-for="category in categories"
+                  :key="category"
                 >
-                  <Checkbox id="terms" />
-                  <label
-                    for="terms"
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {{ item.name }}
+                  <label>
+                    <input
+                      type="checkbox"
+                      :value="category"
+                      v-model="selectedCategories"
+                    />
+                    {{ category }}
                   </label>
                 </div>
               </AccordionContent>
@@ -44,15 +39,16 @@
               <AccordionContent>
                 <div
                   class="flex items-center space-x-2 my-2"
-                  v-for="item in courseLevel"
-                  :key="item.level"
+                  v-for="level in levels"
+                  :key="level"
                 >
-                  <Checkbox id="terms" />
-                  <label
-                    for="terms"
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {{ item.level }}
+                  <label>
+                    <input
+                      type="checkbox"
+                      :value="level"
+                      v-model="selectedLevels"
+                    />
+                    {{ level }}
                   </label>
                 </div>
               </AccordionContent>
@@ -79,7 +75,7 @@
           ></SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle>"" results</SheetTitle>
+              <SheetTitle> {{ filteredCourses.length }} results</SheetTitle>
               <SheetDescription>
                 <div>
                   <div>
@@ -92,15 +88,16 @@
                         <AccordionContent>
                           <div
                             class="flex items-center space-x-2 my-2"
-                            v-for="item in courseCategories"
-                            :key="item.categorie"
+                            v-for="category in categories"
+                            :key="category"
                           >
-                            <Checkbox id="terms" />
-                            <label
-                              for="terms"
-                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                              {{ item.name }}
+                            <label>
+                              <input
+                                type="checkbox"
+                                :value="category"
+                                v-model="selectedCategories"
+                              />
+                              {{ category }}
                             </label>
                           </div>
                         </AccordionContent>
@@ -117,30 +114,22 @@
                         <AccordionContent>
                           <div
                             class="flex items-center space-x-2 my-2"
-                            v-for="item in courseLevel"
-                            :key="item.level"
+                            v-for="level in levels"
+                            :key="level"
                           >
-                            <Checkbox id="terms" />
-                            <label
-                              for="terms"
-                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                              {{ item.level }}
+                            <label>
+                              <input
+                                type="checkbox"
+                                :value="level"
+                                v-model="selectedLevels"
+                              />
+                              {{ level }}
                             </label>
                           </div>
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
                   </div>
-                </div>
-                <div class="mt-4 text-center">
-                  <Button class="px-6 py-4 text-xl font-light">
-                    <Icon
-                      name="material-symbols:filter-alt-off-rounded"
-                      class="mr-4"
-                    />
-                    Filter
-                  </Button>
                 </div>
               </SheetDescription>
             </SheetHeader>
@@ -149,8 +138,10 @@
       </div>
     </div>
     <div class="w-full ml-[100px] max-[820px]:ml-0">
-      <div class="font-semibold text-end text-md">"" results</div>
-      <div v-for="items in course" :key="items.courseId">
+      <div class="font-semibold text-end text-md">
+        {{ filteredCourses.length }} results
+      </div>
+      <div v-for="items in filteredCourses" :key="items.courseId">
         <NuxtLink to="/courseDetail">
           <div class="flex border-b pb-10 pt-5">
             <div>
@@ -188,6 +179,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from "vue";
 import { Badge } from "@/components/ui/badge";
 import {
   Sheet,
@@ -203,7 +195,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-const course = [
+
+// Sample data
+const courses = ref([
   {
     courseId: "c001",
     category: "IT",
@@ -212,7 +206,7 @@ const course = [
     title: "Introduction to Vue.js",
     lecturer: "John Doe",
     description:
-      "This course serves as a comprehensive introduction to the Vue.js framework, covering its foundational concepts and practical applications. Ideal for beginners, the curriculum encompasses 12 lessons, providing a solid understanding of Vue.js for web ",
+      "This course serves as a comprehensive introduction to the Vue.js framework, covering its foundational concepts and practical applications. Ideal for beginners, the curriculum encompasses 12 lessons, providing a solid understanding of Vue.js for web development.",
     level: "beginner",
     duration: "4",
     lessons: 12,
@@ -246,66 +240,260 @@ const course = [
     lessons: 20,
     badge: "Bestseller",
   },
-];
-const courseCategories = [
   {
-    name: "Accounting & Finance",
-    categorie: "accounting",
+    courseId: "c004",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Advanced JavaScript Programming",
+    lecturer: "Jane Smith",
+    description:
+      "A comprehensive course covering advanced JavaScript topics such as closures, asynchronous programming, and functional programming concepts.",
+    level: "advanced",
+    duration: "8",
+    lessons: 24,
+    badge: "Bestseller",
   },
   {
-    name: "Art & Crafts",
-    categorie: "art",
+    courseId: "c005",
+    category: "Business",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Strategic Management",
+    lecturer: "Michael Johnson",
+    description:
+      "An advanced course focusing on strategic management principles and techniques essential for business leaders and executives.",
+    level: "advanced",
+    duration: "10",
+    lessons: 30,
+    badge: "Bestseller",
   },
   {
-    name: "Beauty & Makeup",
-    categorie: "beauty",
+    courseId: "c006",
+    category: "Design",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Advanced Typography",
+    lecturer: "Sophia Lee",
+    description:
+      "Dive deep into the art of typography with this advanced-level course covering advanced typographic principles and techniques.",
+    level: "advanced",
+    duration: "6",
+    lessons: 18,
+    badge: "Bestseller",
   },
   {
-    name: "Creatives & Design",
-    categorie: "creatives",
+    courseId: "c007",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Machine Learning Fundamentals",
+    lecturer: "Andrew Ng",
+    description:
+      "A beginner-friendly course introducing the foundational concepts of machine learning, including supervised and unsupervised learning algorithms.",
+    level: "beginner",
+    duration: "6",
+    lessons: 18,
+    badge: "New",
   },
   {
-    name: "Food & Beverage",
-    categorie: "food",
+    courseId: "c008",
+    category: "Business",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Financial Accounting Basics",
+    lecturer: "David Johnson",
+    description:
+      "A beginner-level course covering the basic principles and techniques of financial accounting essential for understanding financial statements and reports.",
+    level: "beginner",
+    duration: "4",
+    lessons: 12,
+    badge: "New",
   },
   {
-    name: "Health & Fitness",
-    categorie: "health",
+    courseId: "c009",
+    category: "Design",
+    image:
+      "https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/embed-carousel/Online%20Learning%20-%20Header%20Image.jpg.webp",
+    title: "Introduction to User Experience Design",
+    lecturer: "Sarah Williams",
+    description:
+      "An introductory course exploring the principles and methodologies of user experience (UX) design, including user research and prototyping techniques.",
+    level: "beginner",
+    duration: "5",
+    lessons: 15,
+    badge: "New",
   },
   {
-    name: "Business & Marketing",
-    categorie: "business",
+    courseId: "c010",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Data Structures and Algorithms",
+    lecturer: "Mark Brown",
+    description:
+      "A comprehensive course covering essential data structures and algorithms concepts, including arrays, linked lists, sorting algorithms, and search algorithms.",
+    level: "intermediate",
+    duration: "8",
+    lessons: 24,
+    badge: "Popular",
   },
   {
-    name: "IT & Development",
-    categorie: "it",
+    courseId: "c011",
+    category: "Business",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Marketing Strategies",
+    lecturer: "Emily Adams",
+    description:
+      "An intermediate-level course focusing on advanced marketing strategies, including digital marketing, social media marketing, and content marketing techniques.",
+    level: "intermediate",
+    duration: "6",
+    lessons: 18,
+    badge: "Popular",
   },
   {
-    name: "Language & Literature",
-    categorie: "language",
+    courseId: "c012",
+    category: "Design",
+    image:
+      "https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/embed-carousel/Online%20Learning%20-%20Header%20Image.jpg.webp",
+    title: "Advanced Web Design",
+    lecturer: "Chris Wilson",
+    description:
+      "An intermediate-level course covering advanced web design techniques, including responsive design, CSS frameworks, and front-end optimization strategies.",
+    level: "intermediate",
+    duration: "7",
+    lessons: 21,
+    badge: "Popular",
   },
   {
-    name: "Office Productivity",
-    categorie: "office",
+    courseId: "c013",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Full-Stack Web Development",
+    lecturer: "Rachel Miller",
+    description:
+      "An advanced-level course covering full-stack web development concepts, including front-end frameworks, back-end development, and database management.",
+    level: "advanced",
+    duration: "10",
+    lessons: 30,
+    badge: "Bestseller",
   },
   {
-    name: "Personal Development",
-    categorie: "personal",
+    courseId: "c014",
+    category: "Business",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Leadership and Management",
+    lecturer: "Alex Clark",
+    description:
+      "An advanced-level course focusing on leadership and management principles, including strategic leadership, team management, and organizational behavior.",
+    level: "advanced",
+    duration: "8",
+    lessons: 24,
+    badge: "Bestseller",
   },
   {
-    name: "Photography & Videography",
-    categorie: "photography",
+    courseId: "c015",
+    category: "Design",
+    image:
+      "https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/embed-carousel/Online%20Learning%20-%20Header%20Image.jpg.webp",
+    title: "Advanced Motion Graphics",
+    lecturer: "Daniel Roberts",
+    description:
+      "An advanced-level course exploring advanced motion graphics techniques, including animation principles, visual effects, and 3D animation software.",
+    level: "advanced",
+    duration: "9",
+    lessons: 27,
+    badge: "Bestseller",
   },
-];
-const courseLevel = [
   {
-    level: "Beginner",
+    courseId: "c016",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Cybersecurity Fundamentals",
+    lecturer: "Sarah Johnson",
+    description:
+      "A beginner-friendly course introducing the fundamental concepts of cybersecurity, including network security, encryption techniques, and risk management.",
+    level: "beginner",
+    duration: "5",
+    lessons: 15,
+    badge: "New",
   },
   {
-    level: "Intermediates",
+    courseId: "c017",
+    category: "Business",
+    image:
+      "https://info.ehl.edu/hubfs/Blog-EHL-Insights/Blog-Header-EHL-Insights/advantage%20online%20learning.jpeg",
+    title: "Strategic Planning",
+    lecturer: "Jessica Brown",
+    description:
+      "An intermediate-level course focusing on strategic planning processes and frameworks, including SWOT analysis, goal setting, and action planning.",
+    level: "intermediate",
+    duration: "7",
+    lessons: 21,
+    badge: "Popular",
   },
   {
-    level: "Advanced",
+    courseId: "c018",
+    category: "Design",
+    image:
+      "https://www.topuniversities.com/sites/default/files/styles/articles_inline/public/embed-carousel/Online%20Learning%20-%20Header%20Image.jpg.webp",
+    title: "Advanced Illustration Techniques",
+    lecturer: "Michael Lee",
+    description:
+      "An intermediate-level course exploring advanced illustration techniques, including digital illustration software, character design, and illustration styles.",
+    level: "intermediate",
+    duration: "6",
+    lessons: 18,
+    badge: "Popular",
   },
-];
+  {
+    courseId: "c019",
+    category: "IT",
+    image:
+      "https://www.cypherlearning.com/hubfs/Imported_Blog_Media/A-teachers-guide-to-becoming-an-online-course-creator.jpg",
+    title: "Cloud Computing Essentials",
+    lecturer: "Emily Wilson",
+    description:
+      "An advanced-level course covering cloud computing essentials, including cloud architecture, deployment models, and cloud security.",
+    level: "advanced",
+    duration: "8",
+    lessons: 24,
+    badge: "Bestseller",
+  },
+]);
+
+// Get unique categories from courses
+const categories = computed(() => [
+  ...new Set(courses.value.map((course) => course.category)),
+]);
+
+// Get unique levels from courses
+const levels = computed(() => [
+  ...new Set(courses.value.map((course) => course.level)),
+]);
+
+// Selected categories for filtering
+const selectedCategories = ref([]);
+
+// Selected levels for filtering
+const selectedLevels = ref([]);
+
+// Function to apply filter
+const applyFilter = () => {
+  // Perform filtering only when the button is clicked
+  return courses.value.filter(
+    (course) =>
+      (selectedCategories.value.length === 0 ||
+        selectedCategories.value.includes(course.category)) &&
+      (selectedLevels.value.length === 0 ||
+        selectedLevels.value.includes(course.level))
+  );
+};
+
+// Computed property for filtered courses
+const filteredCourses = computed(() => applyFilter());
 </script>

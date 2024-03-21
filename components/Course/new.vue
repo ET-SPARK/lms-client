@@ -1,6 +1,5 @@
 <template>
   <p class="text-xl font-bold my-4 ml-16 max-[640px]:text-sm">New Courses</p>
-
   <Carousel
     class="relative mx-16 mt-4"
     :plugins="[plugin]"
