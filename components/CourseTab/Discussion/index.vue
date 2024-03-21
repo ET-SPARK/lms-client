@@ -1,22 +1,36 @@
 <template>
-  <div class="px-4 mt-4 border mx-4 rounded-xl py-4" v-for="item in discussion">
-    <div class="flex items-center">
-      <Avatar class="rounded-full">
-        <AvatarFallback>
-          {{ item.studentName.split(" ")[0][0] }}
-          {{ item.studentName.split(" ").pop()[0] }}</AvatarFallback
-        >
-      </Avatar>
-      <div class="font-bold text-sm ml-2">{{ item.studentName }}</div>
+  <div>
+    <div
+      class="px-4 mt-4 border mx-4 rounded-xl py-4"
+      v-for="(item, index) in visibleMessages"
+      :key="index"
+    >
+      <div class="flex items-center">
+        <Avatar class="rounded-full">
+          <AvatarFallback>
+            {{ item.studentName.split(" ")[0][0] }}
+            {{ item.studentName.split(" ").pop()[0] }}
+          </AvatarFallback>
+        </Avatar>
+        <div class="font-bold text-sm ml-2">{{ item.studentName }}</div>
+      </div>
+      <div>
+        <div class="font-light text-sm">{{ item.message }}</div>
+      </div>
     </div>
-    <div>
-      <div class="font-light text-sm">{{ item.message }}</div>
+    <div v-if="discussion.length > 5" class="px-4 mt-4 mx-4">
+      <button v-if="!showAll" @click="showAllMessages" class="text-blue-500">
+        View More
+      </button>
+      <button v-else @click="showLessMessages" class="text-blue-500">
+        View Less
+      </button>
     </div>
-  </div>
-  <div class="px-4 sticky bottom-0 my-4 w-full">
-    <div class="relative">
-      <Icon name="bi:send-fill" class="absolute right-2 text-2xl top-2" />
-      <Textarea placeholder="Type your message here." />
+    <div class="px-4 sticky bottom-0 my-4 w-full">
+      <div class="relative">
+        <Icon name="bi:send-fill" class="absolute right-2 text-2xl top-2" />
+        <Textarea placeholder="Type your message here." />
+      </div>
     </div>
   </div>
 </template>
@@ -76,4 +90,16 @@ const discussion = [
       "Joined web dev course. HTML, CSS, JS are mind-blowing! Instructors are great. Excited to craft websites!",
   },
 ];
+const visibleMessages = ref(discussion.slice(0, 5));
+const showAll = ref(false);
+
+function showAllMessages() {
+  visibleMessages.value = discussion;
+  showAll.value = true;
+}
+
+function showLessMessages() {
+  visibleMessages.value = discussion.slice(0, 5);
+  showAll.value = false;
+}
 </script>
