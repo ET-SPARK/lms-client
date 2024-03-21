@@ -26,16 +26,15 @@
                     <div class="flex items-center">
                       <!-- logo -->
                       <div class="flex">
-                        <NuxtLink to="/home" class="mr-2">
-                          <img
-                            class="w-10 h-10 cursor-pointer rounded-full"
-                            src="../../static/homeimage/andinet_logo.jpg"
-                          />
+                        <NuxtLink to="/" class="flex items-center">
+                          <div class="mr-2">
+                            <img
+                              class="w-10 h-10 cursor-pointer rounded-full"
+                              src="../../static/homeimage/andinet_logo.jpg"
+                            />
+                          </div>
+                          <div class="font-bold">Andinet Academy</div>
                         </NuxtLink>
-                      </div>
-                      <!-- serach box -->
-                      <div class="items-center flex mt-4 mb-2 justify-start">
-                        <NavSearchNav />
                       </div>
                     </div>
                   </SheetHeader>
@@ -57,34 +56,6 @@
                     <NuxtLink to="/contact">
                       <div class="border-b-2 p-2">Contact</div>
                     </NuxtLink>
-                  </div>
-
-                  <!-- course dropdown -->
-                  <div
-                    class="flex border-gray-200 border-b-2 p-2 cursor-pointer"
-                    @click="toggleDropdownCourese"
-                  >
-                    <div class="cursor-pointe">Courses</div>
-                    <div>
-                      <Icon
-                        v-if="isCourse"
-                        name="material-symbols:arrow-drop-up"
-                        class="cursor-pointer text-2xl"
-                      />
-                      <Icon
-                        v-else
-                        name="material-symbols:arrow-drop-down"
-                        class="cursor-pointer text-2xl"
-                      />
-                    </div>
-                  </div>
-
-                  <!-- show all Categories course  -->
-                  <div
-                    class="flex-1 font-light mt-4 text-[10px]"
-                    v-if="isCourse"
-                  >
-                    <NavMobCourseNav />
                   </div>
 
                   <!-- navigation part -->
@@ -117,24 +88,15 @@
           <div
             class="flex items-center max-[1280px]:hidden max-[1024px]:hidden max-[768px]:hidden max-[640px]:hidden"
           >
-            <NuxtLink to="/home" class="">
-              <img
-                class="w-10 h-10 cursor-pointer rounded-full"
-                src="../../static/homeimage/andinet_logo.jpg"
-              />
+            <NuxtLink to="/" class="flex items-center">
+              <div class="mr-2">
+                <img
+                  class="w-10 h-10 cursor-pointer rounded-full"
+                  src="../../static/homeimage/andinet_logo.jpg"
+                />
+              </div>
+              <div class="font-bold">Andinet Academy</div>
             </NuxtLink>
-          </div>
-
-          <!-- on hover show list of course  -->
-          <div class="ml-2 xl:flex lg:flex md:flex sm: hidden">
-            <NavCourseNav />
-          </div>
-
-          <!-- serach input box -->
-          <div
-            class="ml-2 flex items-center relative xl:flex lg:flex md:flex sm: hidden"
-          >
-            <NavSearchNav />
           </div>
         </div>
       </div>

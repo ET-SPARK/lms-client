@@ -138,6 +138,23 @@
       </div>
     </div>
     <div class="w-full ml-[100px] max-[820px]:ml-0">
+      <div class="relative w-full max-w-sm items-center my-4">
+        <Input
+          id="search"
+          type="text"
+          placeholder="Search course title"
+          class="pl-10"
+          v-model="searchQuery"
+        />
+        <span
+          class="absolute start-0 inset-y-0 flex items-center justify-center px-2"
+        >
+          <Icon
+            name="ic:baseline-search"
+            class="size-6 text-muted-foreground"
+          />
+        </span>
+      </div>
       <div class="font-semibold text-end text-md">
         {{ filteredCourses.length }} results
       </div>
@@ -482,16 +499,40 @@ const selectedCategories = ref([]);
 // Selected levels for filtering
 const selectedLevels = ref([]);
 
+// Search query
+const searchQuery = ref("");
+
 // Function to apply filter
 const applyFilter = () => {
-  // Perform filtering only when the button is clicked
-  return courses.value.filter(
-    (course) =>
-      (selectedCategories.value.length === 0 ||
-        selectedCategories.value.includes(course.category)) &&
-      (selectedLevels.value.length === 0 ||
-        selectedLevels.value.includes(course.level))
-  );
+  // Perform filtering
+  let filtered = courses.value;
+
+  // Filter by selected categories
+  if (selectedCategories.value.length > 0) {
+    filtered = filtered.filter((course) =>
+      selectedCategories.value.includes(course.category)
+    );
+  }
+
+  // Filter by selected levels
+  if (selectedLevels.value.length > 0) {
+    filtered = filtered.filter((course) =>
+      selectedLevels.value.includes(course.level)
+    );
+  }
+
+  // Filter by search query
+  if (searchQuery.value.trim() !== "") {
+    const search = searchQuery.value.trim().toLowerCase();
+    filtered = filtered.filter(
+      (course) =>
+        course.title.toLowerCase().includes(search) ||
+        course.description.toLowerCase().includes(search) ||
+        course.lecturer.toLowerCase().includes(search)
+    );
+  }
+
+  return filtered;
 };
 
 // Computed property for filtered courses

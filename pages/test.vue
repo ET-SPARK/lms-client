@@ -15,8 +15,10 @@
         {{ level }}
       </label>
     </div>
-    <button @click="applyFilter">Apply Filter</button>
-    <ul>
+    <div></div>
+    <p v-if="filteredCourses.length === 0">No courses found.</p>
+    <p v-else>Number of filtered results: {{ filteredCourses.length }}</p>
+    <ul v-if="filteredCourses.length > 0">
       <li v-for="course in filteredCourses" :key="course.courseId">
         <img :src="course.image" alt="Course Image" />
         <h3>{{ course.title }}</h3>
@@ -96,16 +98,40 @@ const selectedCategories = ref([]);
 // Selected levels for filtering
 const selectedLevels = ref([]);
 
+// Search query
+const searchQuery = ref("");
+
 // Function to apply filter
 const applyFilter = () => {
-  // Perform filtering only when the button is clicked
-  return courses.value.filter(
-    (course) =>
-      (selectedCategories.value.length === 0 ||
-        selectedCategories.value.includes(course.category)) &&
-      (selectedLevels.value.length === 0 ||
-        selectedLevels.value.includes(course.level))
-  );
+  // Perform filtering
+  let filtered = courses.value;
+
+  // Filter by selected categories
+  if (selectedCategories.value.length > 0) {
+    filtered = filtered.filter((course) =>
+      selectedCategories.value.includes(course.category)
+    );
+  }
+
+  // Filter by selected levels
+  if (selectedLevels.value.length > 0) {
+    filtered = filtered.filter((course) =>
+      selectedLevels.value.includes(course.level)
+    );
+  }
+
+  // Filter by search query
+  if (searchQuery.value.trim() !== "") {
+    const search = searchQuery.value.trim().toLowerCase();
+    filtered = filtered.filter(
+      (course) =>
+        course.title.toLowerCase().includes(search) ||
+        course.description.toLowerCase().includes(search) ||
+        course.lecturer.toLowerCase().includes(search)
+    );
+  }
+
+  return filtered;
 };
 
 // Computed property for filtered courses
