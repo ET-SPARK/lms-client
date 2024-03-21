@@ -53,9 +53,7 @@
                   <DropdownMenuContent>
                     <DropdownMenuItem>Unenroll</DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Share</DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>Rate</DropdownMenuItem>
+                    <DropdownMenuItem>Get Certificate</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </div>

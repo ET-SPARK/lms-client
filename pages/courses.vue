@@ -39,31 +39,6 @@
             <AccordionItem value="item-1">
               <AccordionTrigger
                 class="justify-start hover:no-underline py-1 text-xl"
-                >Video Duration</AccordionTrigger
-              >
-              <AccordionContent>
-                <div
-                  class="flex items-center space-x-2 my-2"
-                  v-for="item in courseDuration"
-                  :key="item.duration"
-                >
-                  <Checkbox id="terms" />
-                  <label
-                    for="terms"
-                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    {{ item.duration }}
-                  </label>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
-        <div>
-          <Accordion type="single" collapsible>
-            <AccordionItem value="item-1">
-              <AccordionTrigger
-                class="justify-start hover:no-underline py-1 text-xl"
                 >Level</AccordionTrigger
               >
               <AccordionContent>
@@ -126,31 +101,6 @@
                               class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                             >
                               {{ item.name }}
-                            </label>
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
-                    </Accordion>
-                  </div>
-                  <div>
-                    <Accordion type="single" collapsible>
-                      <AccordionItem value="item-1">
-                        <AccordionTrigger
-                          class="justify-start hover:no-underline py-1 text-xl"
-                          >Video Duration</AccordionTrigger
-                        >
-                        <AccordionContent>
-                          <div
-                            class="flex items-center space-x-2 my-2"
-                            v-for="item in courseDuration"
-                            :key="item.duration"
-                          >
-                            <Checkbox id="terms" />
-                            <label
-                              for="terms"
-                              class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            >
-                              {{ item.duration }}
                             </label>
                           </div>
                         </AccordionContent>
@@ -345,23 +295,6 @@ const courseCategories = [
   {
     name: "Photography & Videography",
     categorie: "photography",
-  },
-];
-const courseDuration = [
-  {
-    duration: "0-1 Hour",
-  },
-  {
-    duration: "1-3 Hours",
-  },
-  {
-    duration: "3-6 Hours",
-  },
-  {
-    duration: "6-18 Hours",
-  },
-  {
-    duration: "18+ Hours",
   },
 ];
 const courseLevel = [

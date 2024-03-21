@@ -1,5 +1,5 @@
 <template>
-  <Tabs default-value="account" class="w-full">
+  <Tabs default-value="about" class="w-full">
     <TabsList>
       <TabsTrigger value="about"> About </TabsTrigger>
       <TabsTrigger value="discussion"> Discussion </TabsTrigger>

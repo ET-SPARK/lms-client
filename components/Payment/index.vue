@@ -46,7 +46,9 @@ import { Button } from "@/components/ui/button";
           <div class="mt-4">
             <div class="text-sm">
               If you have any payment issues, please
-              <span class="hover:underline">Contact us</span>
+              <NuxtLink to="/contact"
+                ><span class="hover:underline">Contact us</span></NuxtLink
+              >
             </div>
           </div>
         </DialogDescription>
@@ -56,7 +58,9 @@ import { Button } from "@/components/ui/button";
         <div class="flex-col justify-center items-center">
           <div>
             <DialogClose>
-              <Button class="w-full">Enroll Now</Button></DialogClose
+              <Button class="w-full">
+                <NuxtLink to="/mycourse"> Enroll Now </NuxtLink>
+              </Button></DialogClose
             >
           </div>
         </div>

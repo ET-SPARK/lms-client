@@ -1,56 +1,55 @@
 <template>
   <p class="text-xl font-bold my-4 ml-16 max-[640px]:text-sm">New Courses</p>
-  <NuxtLink to="/">
-    <Carousel
-      class="relative mx-16 mt-4"
-      :plugins="[plugin]"
-      @mouseenter="plugin.stop"
-      @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
-    >
-      <CarouselContent>
-        <CarouselItem
-          v-for="course in courseLists"
-          :key="course.id"
-          class="md:basis-1/2 lg:basis-1/3"
-        >
-          <NuxtLink to="/courseDetail">
-            <div class="p-1 max-[640px]:text-[12px]">
-              <Card>
-                <CardContent
-                  class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
-                >
-                  <div class="w-full">
-                    <div class="p-2 relative">
-                      <div class="absolute mt-1 right-4">
-                        <Badge>{{ course.badge }}</Badge>
-                      </div>
-                      <img class="rounded-xl w-full" :src="course.image" />
+
+  <Carousel
+    class="relative mx-16 mt-4"
+    :plugins="[plugin]"
+    @mouseenter="plugin.stop"
+    @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
+  >
+    <CarouselContent>
+      <CarouselItem
+        v-for="course in courseLists"
+        :key="course.id"
+        class="md:basis-1/2 lg:basis-1/3"
+      >
+        <NuxtLink to="/courseDetail">
+          <div class="p-1 max-[640px]:text-[12px]">
+            <Card>
+              <CardContent
+                class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
+              >
+                <div class="w-full">
+                  <div class="p-2 relative">
+                    <div class="absolute mt-1 right-4">
+                      <Badge>{{ course.badge }}</Badge>
                     </div>
-                    <div class="h-[120px] ml-2 mr-2 border-b">
-                      <p class="text-sm mb-2">{{ course.category }}</p>
-                      <div class="flex items-center">
-                        <img
-                          class="w-8 h-8 rounded-full border"
-                          :src="course.logo"
-                        />
-                        <p class="text-[12px] ml-2 font-light">
-                          {{ course.title }}
-                        </p>
-                      </div>
-                      <p class="text-sm">{{ course.description }}</p>
-                    </div>
-                    <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
+                    <img class="rounded-xl w-full" :src="course.image" />
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-          </NuxtLink>
-        </CarouselItem>
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
-  </NuxtLink>
+                  <div class="h-[120px] ml-2 mr-2 border-b">
+                    <p class="text-sm mb-2">{{ course.category }}</p>
+                    <div class="flex items-center">
+                      <img
+                        class="w-8 h-8 rounded-full border"
+                        :src="course.logo"
+                      />
+                      <p class="text-[12px] ml-2 font-light">
+                        {{ course.title }}
+                      </p>
+                    </div>
+                    <p class="text-sm">{{ course.description }}</p>
+                  </div>
+                  <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </NuxtLink>
+      </CarouselItem>
+    </CarouselContent>
+    <CarouselPrevious />
+    <CarouselNext />
+  </Carousel>
 </template>
 
 <script setup lang="ts">

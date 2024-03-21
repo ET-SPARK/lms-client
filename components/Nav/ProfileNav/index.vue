@@ -23,6 +23,7 @@
             </div>
           </NuxtLink>
         </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <DropdownMenuItem>
           <NuxtLink to="/mycourse">
             <div class="flex items-center mb-2">
@@ -36,39 +37,21 @@
             </div>
           </NuxtLink>
         </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="material-symbols:circle-notifications-outline"
-                class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-              />
+          <NuxtLink to="/messages">
+            <div class="flex items-center mb-2">
+              <div>
+                <Icon
+                  name="material-symbols:android-messages-outline"
+                  class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
+                />
+              </div>
+              <div>Messages</div>
             </div>
-            <div>Notifications</div>
-          </div>
+          </NuxtLink>
         </DropdownMenuItem>
-        <DropdownMenuItem
-          ><div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="material-symbols:android-messages-outline"
-                class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-              />
-            </div>
-            <div>Messages</div>
-          </div>
-        </DropdownMenuItem>
-        <DropdownMenuItem>
-          <div class="flex items-center mb-2">
-            <div>
-              <Icon
-                name="material-symbols:settings"
-                class="cursor-pointer ml-1 mr-2 text-xl rounded-sm"
-              />
-            </div>
-            <div>Settings</div>
-          </div>
-        </DropdownMenuItem>
+        <DropdownMenuSeparator />
         <DropdownMenuItem>
           <NuxtLink to="/">
             <div class="flex items-center mb-2">

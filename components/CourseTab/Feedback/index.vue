@@ -74,10 +74,4 @@ export default {
 .rating input:checked ~ label {
   color: #f90;
 }
-
-textarea {
-  width: 100%;
-  height: 100px;
-  margin-top: 10px;
-}
 </style>
