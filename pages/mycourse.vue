@@ -53,6 +53,8 @@
                   <DropdownMenuContent>
                     <DropdownMenuItem>Unenroll</DropdownMenuItem>
                     <DropdownMenuSeparator />
+                    <DropdownMenuItem>Progress</DropdownMenuItem>
+                    <DropdownMenuSeparator />
                     <DropdownMenuItem>Get Certificate</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -100,10 +102,6 @@
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>Unenroll</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Share</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Rate</DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
@@ -135,3 +133,4 @@ watchEffect((cleanupFn) => {
   cleanupFn(() => clearTimeout(timer));
 });
 </script>
+import type { Progress } from "#build/components";
