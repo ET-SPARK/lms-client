@@ -26,7 +26,7 @@
                     <div class="flex items-center">
                       <!-- logo -->
                       <div class="flex">
-                        <NuxtLink to="/" class="flex items-center">
+                        <NuxtLink to="/home" class="flex items-center">
                           <div class="mr-2">
                             <img
                               class="w-10 h-10 cursor-pointer rounded-full"
@@ -88,7 +88,7 @@
           <div
             class="flex items-center max-[1280px]:hidden max-[1024px]:hidden max-[768px]:hidden max-[640px]:hidden"
           >
-            <NuxtLink to="/" class="flex items-center">
+            <NuxtLink to="/home" class="flex items-center">
               <div class="mr-2">
                 <img
                   class="w-10 h-10 cursor-pointer rounded-full"
