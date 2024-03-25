@@ -2,6 +2,11 @@
   <HeaderGuest />
   <div class="flex p-4 max-[820px]:flex-col">
     <div class="w-[400px] max-[820px]:hidden">
+      <Button class="px-6 py-4 text-xl font-light">
+        <Icon name="material-symbols:filter-alt-off-rounded" class="mr-4" />
+        Filtering option
+        <Icon name="material-symbols:arrow-drop-down-circle" class="ml-4" />
+      </Button>
       <div>
         <div>
           <Accordion type="single" collapsible>
