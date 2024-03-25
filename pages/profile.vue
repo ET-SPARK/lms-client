@@ -1,5 +1,5 @@
 <template>
-  <HeaderAuth />
+  <Header />
   <div class="border m-10">
     <div class="p-8">
       <div class="mb-4 text-4xl font-bold max-[640px]:text-[26px]">Profile</div>

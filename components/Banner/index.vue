@@ -3,17 +3,19 @@
     <img
       alt="image"
       src="../../static/images/studentImg.webp"
-      class="home-image w-full h-auto object-cover self-center rounded-full border-8 border-b-background border-t-background mr-10 max-[640px]:mt-10 max-[640px]:mr-0 md:w-1/2 lg:w-1/3"
+      class="home-image w-full h-auto object-cover self-center rounded-full border-8 border-b-background border-t-background mr-10 max-[640px]:mt-10 max-[640px]:mr-0 md:w-1/4 max-[640px]:w-2/3 lg:w-1/3 rotate-circle"
     />
     <div
       class="w-full flex flex-col mt-4 items-center md:justify-center md:items-start max-w-4xl mx-auto"
     >
-      <h1 class="mb-2 text-xl text-center font-semibold md:text-xl lg:text-2xl">
-        Unlock Your Potential with Lifelong Learning
-      </h1>
-      <h2 class="text-lg font-light mb-2 md:text-xl">
+      <div class="mb-2 text-xl text-center font-semibold max-[640px]:text-sm">
+        <span class="typing-animation"
+          >Unlock Your Potential with Lifelong Learning</span
+        >
+      </div>
+      <div class="text-lg font-light mb-2 md:text-xl">
         Join Our Community Today!
-      </h2>
+      </div>
       <div
         class="flex-shrink-0 w-full mt-6 h-auto flex items-start flex-row justify-center md:justify-start"
       >
@@ -33,4 +35,38 @@
     </div>
   </div>
 </template>
-import type { NuxtLink } from '#build/components';
+
+<style>
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate-circle {
+  animation: rotateCircle 60s linear infinite; /* Adjust the duration and timing function as needed */
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid; /* Adjust border as needed */
+  display: inline-block;
+  animation: typing 15s steps(40, end) infinite; /* Adjust duration and steps as needed */
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+</style>
