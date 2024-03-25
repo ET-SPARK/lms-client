@@ -80,7 +80,7 @@
           ></SheetTrigger>
           <SheetContent>
             <SheetHeader>
-              <SheetTitle> {{ filteredCourses.length }} results</SheetTitle>
+              <SheetTitle> {{ filteredCourses.length }} courses</SheetTitle>
               <SheetDescription>
                 <div>
                   <div>
@@ -160,8 +160,8 @@
           />
         </span>
       </div>
-      <div class="font-semibold text-end text-md">
-        {{ filteredCourses.length }} results
+      <div class="font-semibold text-md">
+        {{ filteredCourses.length }} courses
       </div>
       <div v-for="items in filteredCourses" :key="items.courseId">
         <NuxtLink to="/courseDetail">
