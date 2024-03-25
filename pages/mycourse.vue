@@ -33,7 +33,7 @@
               <Progress v-model="progress" class="w-3/5 h-[8px]" />
               <div class="mt-2 ml-4">60%</div>
             </div>
-            <div class="font-light text-sm">Course: <Badge>Active</Badge></div>
+            <div class="font-light text-sm">Course: <Badge>Paid</Badge></div>
           </div>
         </div>
         <div
@@ -83,7 +83,7 @@
           <div class="text-xl max-[640px]:text-[18px]">
             English for career development
           </div>
-          <div class="font-light text-sm">Course: <Badge>Inactive</Badge></div>
+          <div class="font-light text-sm">Course: <Badge>pending </Badge></div>
         </div>
       </div>
       <div
@@ -91,7 +91,7 @@
       >
         <div class="ml-4 max-[820px]:ml-0">
           <div class="flex justify-between items-center mb-2">
-            <div>Next Up</div>
+            <div><Payment /></div>
             <div>
               <DropdownMenu>
                 <DropdownMenuTrigger>

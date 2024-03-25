@@ -171,7 +171,9 @@
             class="px-4 w-full border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4"
           >
             <div class="text-center border-b p-4">
-              <Payment />
+              <Button class="w-full"
+                ><NuxtLink to="/signup">Buy Course</NuxtLink></Button
+              >
             </div>
             <div class="mb-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]">
