@@ -1,4 +1,4 @@
 <template>
-  <HeaderGuest />
+  <HeaderLandding />
   <AuthSignup />
 </template>

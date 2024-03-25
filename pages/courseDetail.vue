@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <HeaderGuest />
   <div class="p-2">
     <section class="flex1 w-full my-10">
       <div class="lg:mr-4 md:mr-4 max-[640px]:mr-4">

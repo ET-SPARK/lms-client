@@ -104,7 +104,7 @@
       <!-- navigation part -->
       <div class="xl:flex lg:hidden md:hidden sm: hidden">
         <div>
-          <NavGuestMenu />
+          <NavAuthMenu />
         </div>
       </div>
 

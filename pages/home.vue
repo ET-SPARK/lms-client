@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <HeaderGuest />
   <Course />
   <Testimonial />
   <Features />

@@ -15,6 +15,11 @@ import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
       >
     </MenubarMenu>
     <MenubarMenu>
+      <MenubarTrigger>
+        <NuxtLink to="/mycourse">My Courses</NuxtLink></MenubarTrigger
+      >
+    </MenubarMenu>
+    <MenubarMenu>
       <MenubarTrigger><NuxtLink to="/about">About</NuxtLink></MenubarTrigger>
     </MenubarMenu>
     <MenubarMenu>

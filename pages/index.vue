@@ -1,5 +1,5 @@
 <template>
-  <HeaderGuest />
+  <HeaderLandding />
   <Banner />
   <Footer />
 </template>
