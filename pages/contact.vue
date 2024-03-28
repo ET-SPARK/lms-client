@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <HeaderGuest />
 
   <div class="">
     <div

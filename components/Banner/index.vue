@@ -19,7 +19,7 @@
       <div
         class="flex-shrink-0 w-full mt-6 h-auto flex items-start flex-row justify-center md:justify-start"
       >
-        <NuxtLink to="/login">
+        <NuxtLink to="/home">
           <Button
             class="px-4 py-2 text-sm transition duration-300 ml-4 md:px-6 md:py-4 md:text-md lg:px-8 lg:py-6 lg:text-lg"
           >
