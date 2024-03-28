@@ -129,8 +129,7 @@ import { Progress } from "@/components/ui/progress";
 const progress = ref(13);
 
 watchEffect((cleanupFn) => {
-  const timer = setTimeout(() => (progress.value = 66), 500);
+  const timer = setTimeout(() => (progress.value = 60), 500);
   cleanupFn(() => clearTimeout(timer));
 });
 </script>
-import type { Progress } from "#build/components";

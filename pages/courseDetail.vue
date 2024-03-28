@@ -171,8 +171,8 @@
             class="px-4 w-full border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4"
           >
             <div class="text-center border-b p-4">
-              <Button class="w-full"
-                ><NuxtLink to="/signup">Buy Course</NuxtLink></Button
+              <NuxtLink to="/signup">
+                <Button class="w-full">Buy Course</Button></NuxtLink
               >
             </div>
             <div class="mb-4">
