@@ -2,7 +2,7 @@
 
 <template>
   <footer
-    class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t"
+    class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t-2"
   >
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div class="md:flex md:justify-between">
@@ -31,46 +31,108 @@
         </span>
         <div class="flex justify-between py-8 mt-2">
           <div>
-            <Icon
-              name="tabler:brand-facebook"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger
+                  ><Icon
+                    name="tabler:brand-facebook"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                /></TooltipTrigger>
+                <TooltipContent>
+                  <p>facebook</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="tabler:brand-instagram"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="tabler:brand-instagram"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Instagram</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="pajamas:twitter"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="tabler:brand-tiktok"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>TikTok</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="tabler:brand-telegram"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="pajamas:twitter"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>X (Twitter)</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="tabler:brand-youtube"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="tabler:brand-telegram"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Telegram</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="tabler:brand-linkedin"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="tabler:brand-youtube"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>YouTube</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
           <div>
-            <Icon
-              name="tabler:brand-tiktok"
-              class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-            />
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Icon
+                    name="tabler:brand-linkedin"
+                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>LinkedIn</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
         </div>
       </div>
@@ -78,20 +140,12 @@
   </footer>
 </template>
 
-<style>
-@media (max-width: 640px) {
-  .footer {
-    height: 200px; /* Adjust the height as needed */
-  }
-}
-</style>
-
-<script>
-export default {
-  data() {
-    return {
-      currentYear: new Date().getFullYear(),
-    };
-  },
-};
+<script setup lang="ts">
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+const currentYear = ref(new Date().getFullYear());
 </script>
