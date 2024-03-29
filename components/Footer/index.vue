@@ -1,5 +1,3 @@
-//fotter for users that have loged in
-
 <template>
   <footer
     class="dark:bg-background absolute bottom-0-0 pt-6 text-center w-full overflow-x-auto border-t-2"
