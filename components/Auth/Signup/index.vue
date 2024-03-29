@@ -100,7 +100,7 @@ const togglePasswordVisibility = () => {
       <div class="flex justify-center items-center mt-4">
         <NuxtLink to="/mycourse">
           <Button type="submit" class="mb-2">
-            <div class="flexs">SignUp</div>
+            <div class="flexs">Sign up</div>
           </Button>
         </NuxtLink>
       </div>
