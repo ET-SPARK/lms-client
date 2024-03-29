@@ -30,106 +30,16 @@
           >. All Rights Reserved.
         </span>
         <div class="flex justify-between py-8 mt-2">
-          <div>
+          <div v-for="item in socialMediaIcons">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger
                   ><Icon
-                    name="tabler:brand-facebook"
+                    :name="item.name"
                     class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
                 /></TooltipTrigger>
                 <TooltipContent>
-                  <p>facebook</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="tabler:brand-instagram"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Instagram</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="tabler:brand-tiktok"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>TikTok</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="pajamas:twitter"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>X (Twitter)</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="tabler:brand-telegram"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>Telegram</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="tabler:brand-youtube"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>YouTube</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </div>
-          <div>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Icon
-                    name="tabler:brand-linkedin"
-                    class="bg-#212F3D cursor-pointer ml-3 text-3xl max-[600px]:text-[16px]"
-                  />
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>LinkedIn</p>
+                  <p>{{ item.tooltipContent }}</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -148,4 +58,35 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 const currentYear = ref(new Date().getFullYear());
+
+const socialMediaIcons = [
+  {
+    name: "tabler:brand-facebook",
+    tooltipContent: "Facebook",
+  },
+  {
+    name: "tabler:brand-instagram",
+    tooltipContent: "Instagram",
+  },
+  {
+    name: "tabler:brand-tiktok",
+    tooltipContent: "TikTok",
+  },
+  {
+    name: "pajamas:twitter",
+    tooltipContent: "X (Twitter)",
+  },
+  {
+    name: "tabler:brand-telegram",
+    tooltipContent: "Telegram",
+  },
+  {
+    name: "tabler:brand-youtube",
+    tooltipContent: "YouTube",
+  },
+  {
+    name: "tabler:brand-linkedin",
+    tooltipContent: "LinkedIn",
+  },
+];
 </script>
