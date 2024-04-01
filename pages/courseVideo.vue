@@ -94,13 +94,13 @@
             <div>
               <div class="font-bold mb-2">Course Progress</div>
               <div>
-                <div>
-                  <Progress v-model="progress" class="h-[8px]" />
+                <div class="">
+                  <Progress v-model="progress" class="h-[10px]" />
                   <div class="text-[12px]">24/32 Lessons</div>
                 </div>
               </div>
-              <div>
-                <Progress v-model="pointprogress" class="h-[8px]" />
+              <div class="mt-2">
+                <Progress v-model="pointprogress" class="h-[10px]" />
                 <div class="text-[12px]">50/100 point</div>
               </div>
             </div>
@@ -124,7 +124,7 @@
                   <AccordionTrigger class="hover:no-underline">{{
                     item.title
                   }}</AccordionTrigger>
-                  <AccordionContent>
+                  <AccordionContent class="border p-2 mb-2 rounded-xl">
                     <!-- Add a nested loop to iterate over content items -->
                     <ul>
                       <li
