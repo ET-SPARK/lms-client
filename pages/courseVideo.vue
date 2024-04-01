@@ -270,16 +270,16 @@ const handleItemClick = (value: string, label: string, title: string) => {
 import { ref, watchEffect } from "vue";
 import { Progress } from "@/components/ui/progress";
 
-const progress = ref(13);
-const pointprogress = ref(13);
+const progress = ref(0);
+const pointprogress = ref(0);
 
 watchEffect((cleanupFn) => {
-  const timer = setTimeout(() => (progress.value = 75), 500);
+  const timer = setTimeout(() => (progress.value = 75), 2000);
   cleanupFn(() => clearTimeout(timer));
 });
 
 watchEffect((cleanupFn) => {
-  const pointTimer = setTimeout(() => (pointprogress.value = 50), 500);
+  const pointTimer = setTimeout(() => (pointprogress.value = 50), 2000);
   cleanupFn(() => clearTimeout(pointTimer));
 });
 </script>
