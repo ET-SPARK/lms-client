@@ -168,18 +168,22 @@ watchEffect((cleanupFn) => {
       </span>
     </div>
     <div v-for="items in filteredCourses" :key="items.courseId">
-      <NuxtLink to="/courseDetail">
-        <div class="flex border-b pb-10 pt-5">
+      <NuxtLink to="/courseVideo">
+        <div
+          class="flex border-b pb-10 pt-5 items-center max-[640px]:flex-col max-[640px]:pb-4"
+        >
           <div>
             <img
               :src="items.image"
-              class="w-[300px] h-[150px] rounded-2xl max-[640px]:w-[160px] max-[640px]:h-[100px]"
+              class="w-[360px] rounded-xl max-[640px]:w-[300px]"
             />
           </div>
-          <div class="ml-4 max-[640px]:text-sm">
+          <div
+            class="ml-4 max-[640px]:ml-0 max-[640px]:mt-2 max-[640px]:text-sm"
+          >
             <div class="font-bold">{{ items.title }}</div>
             <div
-              class="max-w-[600px] max-[640px]:max-w-[200px] text-start line-clamp-2 text-sm"
+              class="max-w-[600px] max-[640px]:max-w-full text-start line-clamp-2 text-sm"
             >
               {{ items.description }}
             </div>
@@ -189,6 +193,18 @@ watchEffect((cleanupFn) => {
             </div>
             <div>
               <Badge> {{ items.status }}</Badge>
+            </div>
+            <div class="mt-2">
+              <div>
+                <div class="">
+                  <Progress v-model="progress" class="h-[10px]" />
+                  <div class="text-[12px]">24/32 Lessons</div>
+                </div>
+              </div>
+              <div class="mt-2">
+                <Progress v-model="pointprogress" class="h-[10px]" />
+                <div class="text-[12px]">50/100 point</div>
+              </div>
             </div>
           </div>
         </div>
