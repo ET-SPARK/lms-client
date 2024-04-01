@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <Header />
   <div class="mx-24 mt-10 text-4xl font-bold max-[640px]:text-[26px]">
     My Courses
@@ -132,4 +132,17 @@ watchEffect((cleanupFn) => {
   const timer = setTimeout(() => (progress.value = 60), 500);
   cleanupFn(() => clearTimeout(timer));
 });
-</script>
+</script> -->
+
+<template>
+  <Header />
+  <div class="py-4 px-8 border-b">
+    <div class="flex">
+      <div><Button>All Course</Button></div>
+      <div class="ml-2"><Button>In Progress</Button></div>
+      <div class="ml-2"><Button>Not Yet Started</Button></div>
+      <div class="ml-2"><Button>Completed</Button></div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts"></script>
