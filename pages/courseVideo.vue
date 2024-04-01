@@ -96,7 +96,7 @@
               <div>
                 <div class="">
                   <Progress v-model="progress" class="h-[10px]" />
-                  <div class="text-[12px]">24/32 Lessons</div>
+                  <div class="text-[12px]">60% Completed</div>
                 </div>
               </div>
               <div class="mt-2">
