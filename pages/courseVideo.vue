@@ -91,7 +91,20 @@
           <div
             class="px-4 border ml-2 rounded-2xl max-[1024px]:mt-4 max-[768px]:mt-4 max-[640px]:mt-4 w-1/3 max-[1024px]:w-full"
           >
-            <div class="mb-4">
+            <div>
+              <div class="font-bold mb-2">Course Progress</div>
+              <div>
+                <div>
+                  <Progress v-model="progress" class="h-[8px]" />
+                  <div class="text-[12px]">24/32 Lessons</div>
+                </div>
+              </div>
+              <div>
+                <Progress v-model="pointprogress" class="h-[8px]" />
+                <div class="text-[12px]">50/100 point</div>
+              </div>
+            </div>
+            <div class="mt-4">
               <span class="font-bold text-2xl max-[600px]:text-[16px]"
                 >Contents</span
               >
@@ -253,4 +266,20 @@ const handleItemClick = (value: string, label: string, title: string) => {
   selectedLabel.value = label;
   selectedTitle.value = title;
 };
+
+import { ref, watchEffect } from "vue";
+import { Progress } from "@/components/ui/progress";
+
+const progress = ref(13);
+const pointprogress = ref(13);
+
+watchEffect((cleanupFn) => {
+  const timer = setTimeout(() => (progress.value = 75), 500);
+  cleanupFn(() => clearTimeout(timer));
+});
+
+watchEffect((cleanupFn) => {
+  const pointTimer = setTimeout(() => (pointprogress.value = 50), 500);
+  cleanupFn(() => clearTimeout(pointTimer));
+});
 </script>
