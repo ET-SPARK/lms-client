@@ -9,11 +9,9 @@ const togglePasswordVisibility = () => {
 </script>
 
 <template>
-  <div
-    class="border rounded-xl flex max-[820px]:flex-col m-4 px-8 max-[820px]:px-2"
-  >
+  <div class="border rounded-xl flex max-[820px]:flex-col m-4">
     <div
-      class="border-r w-1/2 max-[820px]:w-full max-[820px]:border-b max-[820px]:border-r-0 py-8 flex-col items-center justify-center"
+      class="bg-secondary px-8 max-[820px]:px-2 border-r w-1/2 max-[820px]:w-full max-[820px]:border-b max-[820px]:border-r-0 py-8 flex-col items-center justify-center"
     >
       <div class="flex items-center">
         <div>
@@ -39,7 +37,9 @@ const togglePasswordVisibility = () => {
         />
       </div>
     </div>
-    <div class="py-8 w-1/2 max-[820px]:w-full pl-4 max-[820px]:pl-0">
+    <div
+      class="py-8 w-1/2 max-[820px]:w-full pl-4 max-[820px]:pl-0 px-8 max-[820px]:px-2"
+    >
       <div class="text-2xl font-bold text-center max-[640px]:text-lg">
         Log in
       </div>

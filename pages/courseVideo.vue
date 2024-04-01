@@ -120,11 +120,15 @@
                   v-for="item in accordionItems"
                   :key="item.value"
                   :value="item.value"
+                  class="border-b-0"
                 >
-                  <AccordionTrigger class="hover:no-underline">{{
-                    item.title
-                  }}</AccordionTrigger>
-                  <AccordionContent class="border p-2 mb-2 rounded-xl">
+                  <AccordionTrigger
+                    class="hover:no-underline mb-2 bg-secondary p-2 rounded-xl"
+                    >{{ item.title }}</AccordionTrigger
+                  >
+                  <AccordionContent
+                    class="border p-2 mb-2 rounded-xl bg-secondary"
+                  >
                     <!-- Add a nested loop to iterate over content items -->
                     <ul>
                       <li
