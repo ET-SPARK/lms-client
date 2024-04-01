@@ -136,7 +136,7 @@ watchEffect((cleanupFn) => {
 
 <template>
   <Header />
-  <div class="py-4 px-8 border-b">
+  <div class="py-4 px-8 border-b max-[640px]:hidden">
     <div class="flex">
       <div><Button @click="filterCourses('All')">All Course</Button></div>
       <div class="ml-2">
@@ -150,6 +150,48 @@ watchEffect((cleanupFn) => {
       <div class="ml-2">
         <Button @click="filterCourses('Completed')">Completed</Button>
       </div>
+    </div>
+  </div>
+  <div class="flex min-[640px]:hidden">
+    <div class="mb-4 text-end">
+      <Sheet>
+        <SheetTrigger class="py-4 px-8">
+          <Button class="px-6 py-4 text-xl font-light">
+            <Icon name="material-symbols:filter-alt-off-rounded" class="mr-4" />
+            Filter my courses
+            <Icon
+              name="material-symbols:arrow-drop-down-circle"
+              class="ml-4"
+            /> </Button
+        ></SheetTrigger>
+        <SheetContent>
+          <SheetHeader>
+            <SheetTitle class="text-start border-b font-bold"
+              >Filter courses</SheetTitle
+            >
+            <SheetDescription class="pt-4">
+              <div class="flex-col text-start">
+                <div class="ml-2 mb-2 border-b pb-2">
+                  <Button @click="filterCourses('All')">All Course</Button>
+                </div>
+                <div class="ml-2 mb-2 border-b pb-2">
+                  <Button @click="filterCourses('In Progress')"
+                    >In Progress</Button
+                  >
+                </div>
+                <div class="ml-2 mb-2 border-b pb-2">
+                  <Button @click="filterCourses('Not Yet Started')"
+                    >Not Yet Started</Button
+                  >
+                </div>
+                <div class="ml-2 mb-2 border-b pb-2">
+                  <Button @click="filterCourses('Completed')">Completed</Button>
+                </div>
+              </div>
+            </SheetDescription>
+          </SheetHeader>
+        </SheetContent>
+      </Sheet>
     </div>
   </div>
   <div class="py-4 px-8">
@@ -175,36 +217,53 @@ watchEffect((cleanupFn) => {
           <div>
             <img
               :src="items.image"
-              class="w-[360px] rounded-xl max-[640px]:w-[300px]"
+              class="w-[360px] rounded-xl max-[360px]:w-[300px] max-[640px]:w-[380px]"
             />
           </div>
-          <div
-            class="ml-4 max-[640px]:ml-0 max-[640px]:mt-2 max-[640px]:text-sm"
-          >
-            <div class="font-bold">{{ items.title }}</div>
+          <div class="flex mt-2">
             <div
-              class="max-w-[600px] max-[640px]:max-w-full text-start line-clamp-2 text-sm"
+              class="ml-4 max-[640px]:ml-0 max-[640px]:mt-2 max-[640px]:text-sm"
             >
-              {{ items.description }}
-            </div>
-            <div class="font-light">
-              <span class="text-sm mr-2 font-light">Course by</span
-              >{{ items.lecturer }}
-            </div>
-            <div>
-              <Badge> {{ items.status }}</Badge>
-            </div>
-            <div class="mt-2">
+              <div class="font-bold">{{ items.title }}</div>
+              <div
+                class="max-w-[600px] max-[640px]:max-w-full text-start line-clamp-2 text-sm"
+              >
+                {{ items.description }}
+              </div>
+              <div class="font-light">
+                <span class="text-sm mr-2 font-light">Course by</span
+                >{{ items.lecturer }}
+              </div>
               <div>
-                <div class="">
-                  <Progress v-model="progress" class="h-[10px]" />
-                  <div class="text-[12px]">24/32 Lessons</div>
-                </div>
+                <Badge> {{ items.status }}</Badge>
               </div>
               <div class="mt-2">
-                <Progress v-model="pointprogress" class="h-[10px]" />
-                <div class="text-[12px]">50/100 point</div>
+                <div>
+                  <div class="">
+                    <Progress v-model="progress" class="h-[10px]" />
+                    <div class="text-[12px]">24/32 Lessons</div>
+                  </div>
+                </div>
+                <div class="mt-2">
+                  <Progress v-model="pointprogress" class="h-[10px]" />
+                  <div class="text-[12px]">50/100 point</div>
+                </div>
               </div>
+            </div>
+            <div>
+              <DropdownMenu>
+                <DropdownMenuTrigger>
+                  <Icon
+                    name="ph:dots-three-outline-vertical-fill"
+                    class="text-xl"
+                  />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem>Unenroll</DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem>Get Certificate</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
