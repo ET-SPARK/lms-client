@@ -210,23 +210,27 @@ watchEffect((cleanupFn) => {
       </span>
     </div>
     <div v-for="items in filteredCourses" :key="items.courseId">
-      <NuxtLink to="/courseVideo">
-        <div
-          class="flex border-b pb-10 pt-5 items-center max-[640px]:flex-col max-[640px]:pb-4"
+      <div
+        class="flex justify-between border-b pb-10 pt-5 max-[640px]:flex-col max-[640px]:pb-4"
+      >
+        <NuxtLink
+          :to="
+            items.status === 'Not Yet Started' ? '/mycourse' : '/courseVideo'
+          "
         >
-          <div>
-            <img
-              :src="items.image"
-              class="w-[360px] rounded-xl max-[360px]:w-[300px] max-[640px]:w-[380px]"
-            />
-          </div>
-          <div class="flex mt-2">
+          <div class="flex items-center">
+            <div>
+              <img
+                :src="items.image"
+                class="w-[360px] rounded-xl max-[360px]:w-[300px] max-[640px]:w-[380px]"
+              />
+            </div>
             <div
               class="ml-4 max-[640px]:ml-0 max-[640px]:mt-2 max-[640px]:text-sm"
             >
               <div class="font-bold">{{ items.title }}</div>
               <div
-                class="max-w-[600px] max-[640px]:max-w-full text-start line-clamp-2 text-sm"
+                class="max-w-[640px] max-[640px]:max-w-full text-start line-clamp-2 text-sm"
               >
                 {{ items.description }}
               </div>
@@ -237,37 +241,47 @@ watchEffect((cleanupFn) => {
               <div>
                 <Badge> {{ items.status }}</Badge>
               </div>
-              <div class="mt-2">
+
+              <div class="mt-2" v-if="items.status == 'Not Yet Started'">
+                <Payment />
+              </div>
+              <div class="mt-2" v-else>
                 <div>
                   <div class="">
-                    <Progress v-model="progress" class="h-[10px]" />
-                    <div class="text-[12px]">24/32 Lessons</div>
+                    <Progress v-model="items.progress" class="h-[10px]" />
+                    <div class="text-[12px]">
+                      {{ items.progress }}% Completed
+                    </div>
                   </div>
                 </div>
                 <div class="mt-2">
-                  <Progress v-model="pointprogress" class="h-[10px]" />
-                  <div class="text-[12px]">50/100 point</div>
+                  <Progress v-model="items.pointprogress" class="h-[10px]" />
+                  <div class="text-[12px]">
+                    {{ items.pointprogress }}/100 point
+                  </div>
                 </div>
               </div>
             </div>
-            <div>
-              <DropdownMenu>
-                <DropdownMenuTrigger>
-                  <Icon
-                    name="ph:dots-three-outline-vertical-fill"
-                    class="text-xl"
-                  />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent>
-                  <DropdownMenuItem>Unenroll</DropdownMenuItem>
-                  <DropdownMenuSeparator />
-                  <DropdownMenuItem>Get Certificate</DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </div>
           </div>
+        </NuxtLink>
+        <div class="">
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Icon
+                name="ph:dots-three-outline-vertical-fill"
+                class="text-xl"
+              />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Unenroll</DropdownMenuItem>
+              <DropdownMenuSeparator v-if="items.status == 'Completed'" />
+              <DropdownMenuItem v-if="items.status == 'Completed'"
+                >Get Certificate</DropdownMenuItem
+              >
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-      </NuxtLink>
+      </div>
     </div>
   </div>
 </template>
@@ -275,9 +289,6 @@ watchEffect((cleanupFn) => {
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { Progress } from "@/components/ui/progress";
-
-const progress = ref(0);
-const pointprogress = ref(0);
 
 const courses = ref([
   {
@@ -294,6 +305,8 @@ const courses = ref([
     lessons: 12,
     badge: "New",
     status: "In Progress",
+    progress: 60,
+    pointprogress: 50,
   },
   {
     courseId: "c002",
@@ -309,6 +322,8 @@ const courses = ref([
     lessons: 15,
     badge: "Popular",
     status: "Not Yet Started",
+    progress: 0,
+    pointprogress: 0,
   },
   {
     courseId: "c003",
@@ -324,6 +339,8 @@ const courses = ref([
     lessons: 20,
     badge: "Bestseller",
     status: "In Progress",
+    progress: 60,
+    pointprogress: 50,
   },
   {
     courseId: "c004",
@@ -339,6 +356,8 @@ const courses = ref([
     lessons: 24,
     badge: "Bestseller",
     status: "In Progress",
+    progress: 60,
+    pointprogress: 50,
   },
   {
     courseId: "c005",
@@ -354,6 +373,8 @@ const courses = ref([
     lessons: 30,
     badge: "Bestseller",
     status: "Completed",
+    progress: 100,
+    pointprogress: 70,
   },
   {
     courseId: "c006",
@@ -369,6 +390,8 @@ const courses = ref([
     lessons: 18,
     badge: "Bestseller",
     status: "In Progress",
+    progress: 60,
+    pointprogress: 50,
   },
   {
     courseId: "c007",
@@ -384,6 +407,8 @@ const courses = ref([
     lessons: 18,
     badge: "New",
     status: "In Progress",
+    progress: 60,
+    pointprogress: 50,
   },
   {
     courseId: "c008",
@@ -399,6 +424,8 @@ const courses = ref([
     lessons: 12,
     badge: "New",
     status: "Not Yet Started",
+    progress: 0,
+    pointprogress: 0,
   },
   {
     courseId: "c009",
@@ -414,6 +441,8 @@ const courses = ref([
     lessons: 15,
     badge: "New",
     status: "Completed",
+    progress: 100,
+    pointprogress: 100,
   },
 ]);
 
@@ -435,13 +464,7 @@ const filterCourses = (status: string) => {
   statusFilter.value = status;
 };
 
-watchEffect((cleanupFn) => {
-  const timer = setTimeout(() => (progress.value = 75), 2000);
-  cleanupFn(() => clearTimeout(timer));
-});
-
-watchEffect((cleanupFn) => {
-  const pointTimer = setTimeout(() => (pointprogress.value = 50), 2000);
-  cleanupFn(() => clearTimeout(pointTimer));
-});
+const calculateProgress = (progress: number, totalLessons: number) => {
+  return Math.min(Math.round((progress / totalLessons) * 100), 100);
+};
 </script>

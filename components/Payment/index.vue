@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 
 <template>
   <Dialog>
-    <DialogTrigger class="w-full">
+    <DialogTrigger>
       <Button class="w-full">Buy Course</Button>
     </DialogTrigger>
     <DialogContent>
