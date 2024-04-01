@@ -11,7 +11,7 @@ const togglePasswordVisibility = () => {
 <template>
   <div class="border rounded-xl flex max-[820px]:flex-col m-4">
     <div
-      class="bg-secondary px-8 max-[820px]:px-2 border-r w-1/2 max-[820px]:w-full max-[820px]:border-b max-[820px]:border-r-0 py-8 flex-col items-center justify-center"
+      class="bg-secondary rounded-xl px-8 max-[820px]:px-2 border-r w-1/2 max-[820px]:w-full max-[820px]:border-b max-[820px]:border-r-0 py-8 flex-col items-center justify-center"
     >
       <div class="flex items-center">
         <div>
