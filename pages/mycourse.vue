@@ -210,15 +210,13 @@ watchEffect((cleanupFn) => {
       </span>
     </div>
     <div v-for="items in filteredCourses" :key="items.courseId">
-      <div
-        class="flex justify-between border-b pb-10 pt-5 max-[640px]:flex-col max-[640px]:pb-4"
-      >
+      <div class="flex justify-between border-b pb-10 pt-5 max-[640px]:pb-4">
         <NuxtLink
           :to="
             items.status === 'Not Yet Started' ? '/mycourse' : '/courseVideo'
           "
         >
-          <div class="flex items-center">
+          <div class="flex items-center max-[640px]:flex-col">
             <div>
               <img
                 :src="items.image"
@@ -264,7 +262,7 @@ watchEffect((cleanupFn) => {
             </div>
           </div>
         </NuxtLink>
-        <div class="">
+        <div class="max-[640px]:ml-4">
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Icon

@@ -10,8 +10,8 @@
     >
       <div class="mb-2 text-2xl text-center font-semibold max-[640px]:text-sm">
         <span class="typing-animation">
-          Unlock Your Potential with Lifelong Learning</span
-        >
+          Unlock Your Potential with Lifelong Learning
+        </span>
       </div>
       <div class="text-lg font-light mb-2 md:text-xl">
         Join Our Community Today!
