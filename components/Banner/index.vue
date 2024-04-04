@@ -8,9 +8,9 @@
     <div
       class="w-full flex flex-col mt-4 items-center md:justify-center md:items-start max-w-4xl mx-auto"
     >
-      <div class="mb-2 text-xl text-center font-semibold max-[640px]:text-sm">
-        <span class="typing-animation"
-          >Unlock Your Potential with Lifelong Learning</span
+      <div class="mb-2 text-2xl text-center font-semibold max-[640px]:text-sm">
+        <span class="typing-animation">
+          Unlock Your Potential with Lifelong Learning</span
         >
       </div>
       <div class="text-lg font-light mb-2 md:text-xl">
@@ -52,6 +52,7 @@
 
 .typing-animation {
   overflow: hidden;
+  padding: 8px;
   white-space: nowrap;
   border-right: 2px solid; /* Adjust border as needed */
   display: inline-block;
