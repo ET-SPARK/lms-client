@@ -146,6 +146,12 @@
                             )
                           "
                         >
+                          <Checkbox
+                            id="terms"
+                            v-if="contentItem.completed === 'true'"
+                            :checked="true"
+                          />
+                          <Checkbox id="terms" v-else :checked="false" />
                           {{ contentItem.label }}
                         </div>
                       </li>
@@ -210,14 +216,17 @@ const accordionItems = [
       {
         value: "https://www.youtube.com/embed/tIwnRkmHNvc?si=VGHhTUQS-4PA1-HX",
         label: "Lesson 1: Why learn English",
+        completed: "true",
       },
       {
         value: "https://www.youtube.com/embed/SaBH_huiJSM?si=i9jforwwyN0DHLdt",
         label: "Lesson 2: English Language Basics Part 1",
+        completed: "true",
       },
       {
         value: "https://www.youtube.com/embed/cB7vltnJsOw?si=PpjSDeBEd2DvTEtS",
         label: "Lesson 3: English Language Basics Part 2",
+        completed: "true",
       },
     ],
   },
@@ -228,14 +237,17 @@ const accordionItems = [
       {
         value: "https://www.youtube.com/embed/xT0qms5poA8?si=SrAumfu7XLeH03dQ",
         label: "Lesson 1: Why learn English",
+        completed: "true",
       },
       {
         value: "https://www.youtube.com/embed/ZqO0rrKbKO4?si=8k29Eix3NoDEfm6p",
         label: "Lesson 2: English Language Basics Part 1",
+        completed: "true",
       },
       {
         value: "https://www.youtube.com/embed/rB6mnJTUppg?si=_gE6STxD-cRdJugo",
         label: "Lesson 3: English Language Basics Part 2",
+        completed: "false",
       },
     ],
   },
@@ -246,14 +258,17 @@ const accordionItems = [
       {
         value: "https://www.youtube.com/embed/kjR-3_ctBMA?si=4E2Jg6i1ifv8KTEz",
         label: "Lesson 1: How to ask for and give directions in English",
+        completed: "false",
       },
       {
         value: "https://www.youtube.com/embed/kjR-3_ctBMA?si=27SRf5oDq0OhxDGM",
         label: "Lesson 2: How to order food in English",
+        completed: "false",
       },
       {
         value: "https://www.youtube.com/embed/h-Np7dmvw0U?si=LRSOEJY13RcaJH96",
         label: "Lesson 3: How to talk about hobbies and interests",
+        completed: "false",
       },
     ],
   },
