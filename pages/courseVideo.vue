@@ -96,7 +96,7 @@
               <div>
                 <div class="">
                   <Progress v-model="progress" class="h-[10px]" />
-                  <div class="text-[12px]">60% Completed</div>
+                  <div class="text-[12px]">{{ progress }}% Completed</div>
                 </div>
               </div>
               <div class="mt-2">
@@ -105,9 +105,9 @@
               </div>
             </div>
             <div class="mt-4">
-              <span class="font-bold text-2xl max-[600px]:text-[16px]"
-                >Contents</span
-              >
+              <span class="font-bold text-2xl max-[600px]:text-[16px]">
+                Contents
+              </span>
             </div>
             <div>
               <Accordion
@@ -242,7 +242,7 @@ const accordionItems = [
       {
         value: "https://www.youtube.com/embed/ZqO0rrKbKO4?si=8k29Eix3NoDEfm6p",
         label: "Lesson 2: English Language Basics Part 1",
-        completed: "true",
+        completed: "false",
       },
       {
         value: "https://www.youtube.com/embed/rB6mnJTUppg?si=_gE6STxD-cRdJugo",
@@ -292,9 +292,22 @@ import { Progress } from "@/components/ui/progress";
 const progress = ref(0);
 const pointprogress = ref(0);
 
-watchEffect((cleanupFn) => {
-  const timer = setTimeout(() => (progress.value = 75), 2000);
-  cleanupFn(() => clearTimeout(timer));
+// Calculate progress based on completion status of each item
+watchEffect(() => {
+  let completedCount = 0;
+  let totalCount = 0;
+
+  accordionItems.forEach((item) => {
+    item.content.forEach((contentItem) => {
+      totalCount++;
+      if (contentItem.completed === "true") {
+        completedCount++;
+      }
+    });
+  });
+
+  // Calculate progress percentage
+  progress.value = Math.round((completedCount / totalCount) * 100);
 });
 
 watchEffect((cleanupFn) => {
