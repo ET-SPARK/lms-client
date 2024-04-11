@@ -122,7 +122,7 @@
                 <div class="mt-2">
                   <Progress v-model="items.pointprogress" class="h-[10px]" />
                   <div class="text-[12px]">
-                    {{ items.pointprogress }}/100 point
+                    {{ items.pointprogress }}/100 score
                   </div>
                 </div>
               </div>
