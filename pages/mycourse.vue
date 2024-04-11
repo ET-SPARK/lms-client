@@ -106,7 +106,6 @@
               <div>
                 <Badge> {{ items.status }}</Badge>
               </div>
-
               <div class="mt-2" v-if="items.status == 'Not Yet Started'">
                 <Payment />
               </div>
