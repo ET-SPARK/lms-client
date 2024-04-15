@@ -16,7 +16,7 @@
           <div class="p-1 max-[640px]:text-[12px]">
             <Card>
               <CardContent
-                class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
+                class="flex items-center flex-col justify-between mt-2 h-[450px] max-[640px]:h-auto"
               >
                 <div class="w-full">
                   <div class="p-2 relative">
@@ -36,9 +36,9 @@
                         {{ course.title }}
                       </p>
                     </div>
-                    <p class="text-sm">{{ course.description }}</p>
+                    <p class="text-[12px]">{{ course.description }}</p>
                   </div>
-                  <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
+                  <div class="ml-2 py-2 text-12px">{{ course.reward }}</div>
                 </div>
               </CardContent>
             </Card>

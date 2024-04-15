@@ -18,29 +18,27 @@
           <div class="p-1 max-[640px]:text-[12px]">
             <Card>
               <CardContent
-                class="flex items-center flex-col justify-between sm:px-6 mt-2 h-[450px]"
+                class="flex items-center flex-col justify-between mt-2 h-[450px] max-[640px]:h-auto"
               >
                 <div class="w-full">
                   <div class="p-2 relative">
                     <div class="absolute mt-1 right-4">
-                      <Badge>{{ course.badge }}</Badge>
+                      <Skeleton class="h-4 w-[50px] ml-2" />
                     </div>
-                    <img class="rounded-xl w-full" :src="course.image" />
+                    <Skeleton
+                      class="h-[225px] max-[640px]:h-[150px] w-full rounded-xl"
+                    />
                   </div>
                   <div class="h-[120px] ml-2 mr-2 border-b">
-                    <p class="text-sm mb-2">{{ course.category }}</p>
-                    <div class="flex items-center">
-                      <img
-                        class="w-8 h-8 rounded-full border"
-                        :src="course.logo"
-                      />
-                      <p class="text-[12px] ml-2 font-light">
-                        {{ course.title }}
-                      </p>
+                    <Skeleton class="h-4 w-[150px]" />
+                    <div class="flex items-center mt-2">
+                      <Skeleton class="w-8 h-8 rounded-full" />
+                      <Skeleton class="h-4 w-[150px] ml-2" />
                     </div>
-                    <p class="text-sm">{{ course.description }}</p>
+                    <Skeleton class="h-4 w-full mt-2" />
+                    <Skeleton class="h-4 w-full mt-2" />
                   </div>
-                  <div class="ml-2 py-2 text-sm">{{ course.reward }}</div>
+                  <Skeleton class="h-4 w-[150px] mt-4 ml-2" />
                 </div>
               </CardContent>
             </Card>
@@ -64,6 +62,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const plugin = Autoplay({
   delay: 2000,
