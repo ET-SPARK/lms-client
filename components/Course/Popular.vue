@@ -6,65 +6,27 @@
     class="grid grid-cols-3 h-[450px] max-[640px]:h-auto mx-16 mt-4 gap-6 max-[640px]:grid-cols-1 max-[820px]:grid-cols-2"
     v-if="courseLists.length === 0"
   >
-    <div class="w-full border rounded-2xl p-6">
-      <div class="p-2 relative">
-        <div class="absolute mt-1 right-4">
-          <Skeleton class="h-4 w-[50px] ml-2" />
+    <div v-for="index in repeatCount" :key="index">
+      <div class="w-full border rounded-2xl p-6">
+        <div class="p-2 relative">
+          <div class="absolute mt-1 right-4">
+            <Skeleton class="h-4 w-[50px] ml-2" />
+          </div>
+          <Skeleton class="h-[225px] max-[640px]:h-[150px] w-full rounded-xl" />
         </div>
-        <Skeleton class="h-[225px] max-[640px]:h-[150px] w-full rounded-xl" />
+        <div class="h-[120px] ml-2 mr-2 border-b">
+          <Skeleton class="h-4 w-[150px]" />
+          <div class="flex items-center mt-2">
+            <Skeleton class="w-8 h-8 rounded-full" />
+            <Skeleton class="h-4 w-[150px] ml-2" />
+          </div>
+          <div class="py-2">
+            <Skeleton class="h-4 w-full mt-2" />
+            <Skeleton class="h-4 w-full mt-2" />
+          </div>
+        </div>
+        <Skeleton class="h-4 w-[150px] mt-4 ml-2" />
       </div>
-      <div class="h-[120px] ml-2 mr-2 border-b">
-        <Skeleton class="h-4 w-[150px]" />
-        <div class="flex items-center mt-2">
-          <Skeleton class="w-8 h-8 rounded-full" />
-          <Skeleton class="h-4 w-[150px] ml-2" />
-        </div>
-        <div class="py-2">
-          <Skeleton class="h-4 w-full mt-2" />
-          <Skeleton class="h-4 w-full mt-2" />
-        </div>
-      </div>
-      <Skeleton class="h-4 w-[150px] mt-4 ml-2" />
-    </div>
-    <div class="w-full border rounded-2xl p-6">
-      <div class="p-2 relative">
-        <div class="absolute mt-1 right-4">
-          <Skeleton class="h-4 w-[50px] ml-2" />
-        </div>
-        <Skeleton class="h-[225px] max-[640px]:h-[150px] w-full rounded-xl" />
-      </div>
-      <div class="h-[120px] ml-2 mr-2 border-b">
-        <Skeleton class="h-4 w-[150px]" />
-        <div class="flex items-center mt-2">
-          <Skeleton class="w-8 h-8 rounded-full" />
-          <Skeleton class="h-4 w-[150px] ml-2" />
-        </div>
-        <div class="py-2">
-          <Skeleton class="h-4 w-full mt-2" />
-          <Skeleton class="h-4 w-full mt-2" />
-        </div>
-      </div>
-      <Skeleton class="h-4 w-[150px] mt-4 ml-2" />
-    </div>
-    <div class="w-full border rounded-2xl p-6">
-      <div class="p-2 relative">
-        <div class="absolute mt-1 right-4">
-          <Skeleton class="h-4 w-[50px] ml-2" />
-        </div>
-        <Skeleton class="h-[225px] max-[640px]:h-[150px] w-full rounded-xl" />
-      </div>
-      <div class="h-[120px] ml-2 mr-2 border-b">
-        <Skeleton class="h-4 w-[150px]" />
-        <div class="flex items-center mt-2">
-          <Skeleton class="w-8 h-8 rounded-full" />
-          <Skeleton class="h-4 w-[150px] ml-2" />
-        </div>
-        <div class="py-2">
-          <Skeleton class="h-4 w-full mt-2" />
-          <Skeleton class="h-4 w-full mt-2" />
-        </div>
-      </div>
-      <Skeleton class="h-4 w-[150px] mt-4 ml-2" />
     </div>
   </div>
   <Carousel
@@ -72,6 +34,7 @@
     :plugins="[plugin]"
     @mouseenter="plugin.stop"
     @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
+    v-if="courseLists.length !== 0"
   >
     <CarouselContent>
       <CarouselItem
@@ -136,6 +99,8 @@ const plugin = Autoplay({
   stopOnMouseEnter: true,
   stopOnInteraction: false,
 });
+
+const repeatCount = ref(3);
 
 const courseLists = [
   {
