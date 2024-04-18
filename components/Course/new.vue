@@ -32,6 +32,7 @@
     :plugins="[plugin]"
     @mouseenter="plugin.stop"
     @mouseleave="[plugin.reset(), plugin.play(), console.log('Running')]"
+    v-if="courseLists.length !== 0"
   >
     <CarouselContent>
       <CarouselItem
