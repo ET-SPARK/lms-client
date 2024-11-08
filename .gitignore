@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+static/video
 
 # Node dependencies
 node_modules

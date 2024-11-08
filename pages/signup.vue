@@ -1,0 +1,4 @@
+<template>
+  <HeaderLandding />
+  <AuthSignup />
+</template>
